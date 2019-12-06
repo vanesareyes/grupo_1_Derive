@@ -1,15 +1,41 @@
-var createError = require('http-errors');
-var express = require('express');
+const express = require('express');
+var app = express();
+var path = require('path');
+
+/*var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');*/
 
-var app = express();
+app.listen(3030, () => console.log(
+  `*------------------------------
+  Server runing in localhost:3030
+  -------------------------------*`
+  ))
+
+app.get('/', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/index.html'));
+})
+app.get('/productDetail', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/productDetail.html'));
+})
+app.get('/productCart', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/productCart.html'));
+})
+app.get('/register', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/register.html'));
+})
+app.get('/addProduct', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/addProduct.html'));
+})
+
+
 
 // view engine setup
+/*
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -39,3 +65,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+  esto va en start en el json cuando esté bien montado  
+  "start": "nodemon app.js"/*"node ./bin/www"*/
