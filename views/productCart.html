@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +9,116 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/cartStyle.css" type="text/css">
 </head>
-<body>
+<body class="container">
 
     <!--HEADER-->
     <header class="row">
-        <div class="container">
-            <h1 class="col-12"><a href="/">Derivé</a></h1>
+        <div class="container header-divisor">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/">Derivé</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Experiencias</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/contact">Contacto</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">FAQ's</a>
+                </li>
+              </ul>
+              <form class="form-inline mr-auto">
+                <div class="md-form my-0">
+                  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                  <i class="fas fa-search text-white ml-3" aria-hidden="true"></i>
+                </div>
+              </form>
+            </div>
+          </nav>
+
+          <nav class="user-cart">
+              <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+              <span>|</span>
+              <a href="/register">Inicia Sesión</a>
+              <span>|</span>
+              <a href="#">Crear usuario</a>
+          </nav>
         </div>
     </header>
     <!--HEADER-->
 
     <!--MAIN-->
-    <main class="row">
+    <main class="container row">
+        <div class="col-12 col-md-8 descript-exp">
+            <div class="row">
+                <div class="col-3">
 
+                </div>
+                <div class="col-3">
+                    <p>Experiencias</p>
+                </div>
+                <div class="col-3">
+                    <p>Cantidad</p>
+                </div>
+                <div class="col-3">
+                    <p>Importe</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <img src="/images/IMG_6034-e1559831469873.jpg" alt="Imagen experiencia">
+                </div>
+                <div class="col-3">
+                    <p>KAYAK</p>
+                </div>
+                <div class="col-3">
+                        <div class="form-row align-items-center">
+                                <div class="col-auto my-1">
+                                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                  </select>
+                                </div>
+                        </div>
+                </div>
+                <div class="col-3">
+                    <p>$12.500</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 importe-tot">
+            <div class="row">
+            <div class="col-6 col-md-12">
+                <p>Subtotal     $12.500</p>
+            </div>
+            <div class="col-6 col-md-12">
+                <p>Total    $12.500</p>
+            </div>
+            </div>
+            <form action="" method="post">
+                <a href="/payment">
+                <button class="botonDeCompra">Comprar</button>
+                </a>
+            </form>
+        </div>
     </main>
     <!--MAIN-->
 
     <!--FOOTER-->
     <footer class="row">
-
+        <a href="#"><i class="fas fa-search"></i>Más experiencias</a>
+        <a href="#">img1</a>
+        <a href="#">img2</a>
+        <a href="#">img3</a>
+        <a href="#">img4</a>
     </footer>
     <!--FOOTER-->
 

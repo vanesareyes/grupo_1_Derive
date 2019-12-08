@@ -1,9 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: darkgray;
+}
+
+
 header {
-    background-color: gray;
+    background-color: #d4d4d4;
 }
 
 main {
+    box-sizing: border-box;
     background-color: blue;
+    margin: 0px;
+    display: flex;
+}
+
+main .container-flex {
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+.row {
+    margin: 0px;
 }
 
 footer {
@@ -12,4 +38,33 @@ footer {
 
 a {
     text-decoration: none;
+    color: black;
+}
+
+
+
+.header-divisor {
+    display: flex;
+    width: 100%;
+}
+
+nav {
+    justify-content: space-around;
+}
+
+nav.user-cart {
+    align-self: center;
+    display: none;
+}
+
+img {
+    width: 60px;
+}
+
+div.descript-exp {
+    height: 70%;
+}
+
+div.importe-tot {
+    height: 30%;
 }
