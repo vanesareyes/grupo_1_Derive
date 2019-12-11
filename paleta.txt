@@ -1,0 +1,48 @@
+body {
+
+background-color: #F1F4ED; (isabelline)
+color: #394032 (kombu green)
+
+}
+
+navbar {
+
+background-color:#100B00; (smoky black)
+color: #D7CDCC; (light gray)
+hover: BACBA9; (ash grey)
+
+}
+
+header {
+
+background-color:#587B7F; (wintergreen dram)
+color: #F9F7F7; (white smoke)
+ 
+}
+
+
+div.footer {
+
+background-color:#274060; (japanese indigo)
+color: #F1F4ED; (isabelline)
+
+}
+
+
+footer.links {
+
+background-color:#274060; (japanese indigo)
+hover: #145C9E; (lapis lazuli)
+
+}
+
+buttons {
+
+background-color:#145C9E; (lapis lazuli)
+
+}
+
+
+
+
+
