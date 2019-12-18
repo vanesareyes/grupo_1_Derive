@@ -24,14 +24,17 @@ app.get('/', function(req,res){
 app.get('/productDetail', function(req,res){
   res.sendFile(path.join(__dirname + '/views/productDetail.html'));
 })
-app.get('/productCart', function(req,res){
-  res.sendFile(path.join(__dirname + '/views/productCart.html'));
+app.get('/shopping-cart', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/shopping-cart.html'));
 })
-app.get('/register', function(req,res){
-  res.sendFile(path.join(__dirname + '/views/register.html'));
+app.get('/registre', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/registre-form.html'));
 })
 app.get('/addProduct', function(req,res){
   res.sendFile(path.join(__dirname + '/views/addProduct.html'));
+})
+app.get('/faqs', function(req,res){
+  res.sendFile(path.join(__dirname + '/views/faqs.html'));
 })
 
 
