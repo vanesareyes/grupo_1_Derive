@@ -12,10 +12,6 @@ var usersRouter = require('./routes/users');
 
 
 
-app.use(express.static('public'));
-
-
-
 app.get('/', indexRouter);
 app.get('/users', usersRouter);
 
