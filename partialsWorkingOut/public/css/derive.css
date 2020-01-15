@@ -1,0 +1,235 @@
+/*
+ * Acá empiezan nuestros estilos propios, los que agregamos a los que vienen por default en el paquete Boostrap 
+*/
+body {
+  padding-top: 56px;
+  font-family: 'Lato', sans-serif;
+  background-color: #F1F4ED;
+}
+
+.bg-primary {
+    background-color: #7180AC!important;
+}
+
+.experience-tittle {
+  margin: 2% 0 2% 0;
+}
+
+
+ /* reglas para el shopping cart*/
+.table td, .table th {
+  border: none;
+}
+
+.more-info-btn {
+    font-size: 0.75rem;
+}
+
+.how-many-stars {
+  text-align: right;
+}
+
+.derive-footer {
+  margin: 5% 0 0 0;
+}
+
+.white-text{
+  color: #ffffff;
+}
+
+.btn-saber-mas{
+  background: #ffffff;
+  border-color: #4b74a0;
+	color:#4b74a0;
+}
+
+.btn-saber-mas:hover{
+	background: #4b74a0;
+	color:#fff;
+}
+
+
+/* Nav Styles*/
+
+.bg-dark {
+	background-color: #FFF!important;
+	-webkit-box-shadow: 0px 0px 10px rgba(158, 158, 158, 0.27);
+	box-shadow: 0px 0px 10px rgba(158, 158, 158, 0.27);
+}
+
+.navbar-content .navbar-brand {
+    color: rgb(3, 0, 0);
+}
+
+.navbar-brand {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+}
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+	color: rgb(249, 58, 136);
+	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
+}
+
+.navbar-dark .navbar-nav .active>.nav-link {
+    color: rgb(3, 0, 0);
+}
+
+li .navbar-dark .navbar-nav {
+    color: rgb(3, 0, 0);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(3, 0, 0);
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+	color: rgb(249, 58, 136);
+	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
+}
+
+.nav-link {font-size: 0.85rem;}
+
+.input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child) {
+    border-radius: 10px;
+    border-color: #eaeaea;
+}
+
+.form-control {
+	font-size: 0.95rem;
+	line-height: 2.5;
+}
+
+/* CSS para el formulario de registro*/
+
+.send-button{
+  background: #ffffff;
+  border-color: #4b74a0;
+	width:100%;
+	font-weight: 600;
+	color:#4b74a0;
+	padding: 8px 25px;
+}
+
+.send-button:hover{
+	background: #4b74a0;
+	width:100%;
+	font-weight: 600;
+	color:#fff;
+	padding: 8px 25px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+}
+
+.g-button{
+	border: 1px solid #EA4335;
+	background: #ffffff !important;
+	width:100%;
+	font-weight: 600;
+	color:#EA4335;
+	padding: 8px 25px;
+}
+
+.g-button:hover{
+	color: #fff !important;
+	border: 1px solid #EA4335;
+	background: #ea4335 !important;
+	width:100%;
+	font-weight: 600;
+	color:#fff;
+	padding: 8px 25px;
+}
+.my-input{
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	cursor: text;
+	padding: 8px 10px;
+	transition: border .1s linear;
+}
+.header-title{
+	margin: 2rem 0;
+}
+.header-title h1{
+	font-size: 31px;
+	line-height: 40px;
+	font-weight: 600;
+	color:#4c5357;
+}
+.header-title h2{
+	color: #5e8396;
+	font-size: 21px;
+	line-height: 32px;
+	font-weight: 400;
+}
+.login-or {
+	position: relative;
+	color: #aaa;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.span-or {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -2px;
+	margin-left: -25px;
+	background-color: #fff;
+	width: 50px;
+	text-align: center;
+}
+.hr-or {
+	height: 1px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+@media screen and (max-width:480px){
+	.header-title h1{ font-size: 26px; }
+  .header-title h2{ font-size: 20px; }
+} 
+
+
+/* CSS para las FAQs */
+
+.card {
+  border: none;
+}
+
+.card-header {
+  border-bottom: none;
+  background-color: #ffffff;
+}
+
+.card-header h2 button:hover {
+  text-decoration: none;
+}
+
+.stars-left-align {
+	text-align: left;
+}
+
+/* Footer Styles */
+
+.footer-band {
+	background-color: #274060!important;
+}
+
+footer p {
+	font-size: 0.8rem;
+	line-height: 1.3;
+	margin-bottom: 0.8rem;
+  }
+  
+  footer p a {
+	text-decoration: none;
+	color: #212529;
+  }
+  
+  footer p a:hover {
+	text-decoration: none;
+  }
