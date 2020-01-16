@@ -3,6 +3,19 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
+const multer = require('multer')
+
+var storage = multer.diskStorage({
+	destination: function (request, file, callback) {
+		callback(null, './public/images/products/');
+	},
+	filename: function (request, file, callback) {
+		callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+	}
+});
+
+const upload = multer({storage: storage})
+
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
@@ -26,7 +39,7 @@ router.get('/edit/:id', productsController.edit); /* GET - Form to edit */
 router.put('/edit/:id', productsController.update); /* PUT - Update in DB */
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/delete/:productId', productsController.destroy); /* DELETE - Delete from DB */
+router.delete('/delete/:productId', productsController.delete); /* DELETE - Delete from DB */
 
 module.exports = router;
 
