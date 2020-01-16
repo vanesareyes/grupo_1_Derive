@@ -75,7 +75,11 @@ const controller = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(products))
 
 		res.send('listo!')
-	},
+    },
+    
+    delete: (req, res){
+
+    }
 };
 
 module.exports = controller;
