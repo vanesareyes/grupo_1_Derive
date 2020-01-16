@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-
-
-
+const faqsFilePath = path.join(__dirname, '../data/faqs.json');
+let faqs = JSON.parse(fs.readFileSync(faqsFilePath, 'utf-8'));
 
 const controller = {
 
@@ -10,19 +9,21 @@ const controller = {
         res.render('index', {})
     },
 
-    productDetail: (req,res)=> {
+    productDetail: (req, res) => {
         res.render('productDetail', {})
     },
 
-    faqs: (req,res)=> {
-        res.render('faqs', {})
+    faqs: (req, res) => {
+        res.render('faqs', {
+
+        })
     },
 
-    registreForm: (req,res)=> {
+    registreForm: (req, res) => {
         res.render('registre-form', {})
     },
 
-    shopppingCart: (req,res)=> {
+    shopppingCart: (req, res) => {
         res.render('shopping-cart', {})
     },
 
