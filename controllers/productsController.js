@@ -77,7 +77,7 @@ const controller = {
 		res.send('listo!')
     },
     
-    delete: (req, res){
+    delete: (req, res) => {
 
     }
 };
