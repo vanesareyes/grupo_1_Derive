@@ -14,8 +14,6 @@ const controller = {
 	// Detail - Detail from one product
 	detail: (req, res) => {
 		
-		})
-
 	},
 
 	// Create - Form to create
@@ -44,8 +42,7 @@ const controller = {
 			return p.id == req.params.id
 		})
 
-		res.render(
-		})
+		res.render()
 	},
 
 
