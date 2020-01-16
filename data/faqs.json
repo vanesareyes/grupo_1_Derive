@@ -1,1 +1,113 @@
-[{"id":1,"name":"","response":"","category":""},{"id":2,"name":"","response":"","category":""},{"id":3,"name":"","response":"","category":""},{"id":4,"name":"","response":"","category":""},{"id":5,"name":"","response":"","category":""},{"id":6,"name":"","response":"","category":""},]
+[
+    {
+        "id":1,
+        "name":"¿Puedo reprogramar mi reserva una vez pasada la fecha de confirmación?",
+        "response":"No, una vez pasada la fecha de la reserva confirmada no se puede reprogramar o realizar una cancelación. Automáticamente el voucher se considera como usado.",
+        "category":"Reservas"
+    },
+    
+    {
+        "id":2,
+        "name":"No recibí el mail de confirmación de mi reserva ¿Qué debo hacer?",
+        "response":"Si pasado las 48 horas hábiles no recibís la respuesta de tu reserva, verifica en la bandeja de notificaciones o correo no deseado de tu mail, luego márcalo como correo seguro. Si no recibiste el correo, comunicate al 5411 3456 7890 / 9876.",
+        "category":"Reservas"
+    },
+
+    {
+        "id":3,
+        "name":"¿Puedo reprogramar una reserva antes de la fecha confirmada?",
+        "response":"Puedes reprogramar antes de la fecha confirmada una sola vez. El tiempo de antelación para poder reprogramar la reserva debe ser como mínimo 72hs antes de la fecha confirmada, sujeto a las indicaciones de algunos servicios que pueden solicitar un plazo mayor. Estos datos figuran en el detalle del servicio solicitado.",
+        "category":"Reservas"
+    },
+
+    {
+        "id":4,
+        "name":"¿Cuál es la vigencia de mi voucher?",
+        "response":"Para conocer la vigencia de su voucher debe ingresar el código en https://derive.com.ar/reservas",
+        "category":"Reservas"
+    },
+
+    {
+        "id":5,
+        "name":"¿Con cuánto tiempo de anticipación debo realizar una reserva?",
+        "response":"Depende de cada experiencia, estos datos figuran en el detalle de la experiencia antes de realizar la reserva.",
+        "category":"Reservas"
+    },
+
+    {
+        "id":6,
+        "name":"Mi voucher está vencido ¿se puede modificar?",
+        "response":"No se puede modificar.",
+        "category":"Reservas"
+    },
+
+    {
+        "id":7,
+        "name":"¿Cómo puedo comprar una Experiencia Derivè?",
+        "response":"Puede adquirir una Experiencia Derivè a través de nuestro sitio web www.fanbag.com.ar, o llamando al 5411 6091 7888 /89.",
+        "category":"Compras/Pagos"
+    },
+
+    {
+        "id":8,
+        "name":"¿Que medios de pago puede utilizar para adquirir una Experiencia Derivè?",
+        "response":"Los pedidos podrán ser abonados mediante tarjeta de crédito, débito o efectivo a través de TodoPago, MercadoPago o PayU. Su pedido será enviado tras la recepción del pago",
+        "category":"Compras/Pagos"
+    },
+
+    {
+        "id":9,
+        "name":"¿Cuánto cuesta enviar una Experiencia Derivè?",
+        "response":"Al iniciar la compra debes seleccionar el modo de envío deseado. El costo está indicado y varía según la alternativa elegida.",
+        "category":"Compras/Pagos"
+    },
+
+    {
+        "id":10,
+        "name":"¿Puedo enviar mi pedido directamente al beneficiario?",
+        "response":"Sí. El formulario de compra prevé el ingreso de la dirección de envío del regalo, la cual puede ser la del beneficiario o el tuyo.",
+        "category":"Compras/Pagos"
+    },
+
+    {
+        "id":11,
+        "name":"¿Qué tiene que hacer su beneficiario para usar su Experiencia Derivè?",
+        "response":"El beneficiario deberá realizar su reserva telefónicamente al 5411 6091 7888 /89 de lunes a viernes y días hábiles de 9hs a 18hs.",
+        "category":"Compras/Pagos"
+    },
+
+    {
+        "id":12,
+        "name":"¿Puede una Experiencia Derivè ser transferible?",
+        "response":"Sí. Como no son nominativas, una Experiencia Derivè puede ser transferida a terceros siempre y cuando su código de voucher no haya sido usado o reservado previamente.",
+        "category":"Compras/Pagos"
+    },
+
+    {
+        "id":13,
+        "name":"¿Qué costos adicionales debe pagar el beneficiario en el lugar de su elección?",
+        "response":"El voucher de regalo proporciona el derecho al beneficiario a disfrutar sin costo alguno de los servicios descriptos en el proceso de reserva y en el mail de la confirmación de la misma. En el caso que el beneficiario deseara incluir servicios adicionales deberá abonar los mismos al prestador de la experiencia que ha elegido.",
+        "category":"Compras/Pagos"
+    },
+
+    {
+        "id":14,
+        "name":"¿Qué seguridad tengo al comprar e ingresar mis datos personales en www.derive.com.ar?",
+        "response":"Experiencias Derivè se compromete a respetar la privacidad del usuario y a manipular con máxima confidencialidad sus datos personales. Estos sólo serán utilizados con el fin de brindarle un mejor servicio, y/o acercarle ofertas o promociones especiales. En ningún caso, sus datos personales serán transmitidos o vendidos a terceras personas no vinculadas directamente a nuestra empresa. En el caso que desee borrar sus datos personales de nuestras bases, deberá comunicarlo a Experiencias Derivè por email o por correo ordinario. Los datos de las tarjetas de crédito siempre serán ingresados al sitio de la empresa MercadoPago, firma homologada por las compañías administradoras de las tarjetas de crédito para tal fin. Experiencias Derivè no tiene acceso a dichos datos. Conozca nuestra política de privacidad.",
+        "category":"Datos/Privacidad"
+    },
+
+    {
+        "id":15,
+        "name":"¿Cómo puedo manifestar mi disconformidad, si la tuviera?",
+        "response":"No dude en comunicarnos cualquier incumplimiento o queja sobre los servicios brindados. Nos esforzamos para cumplir con las expectativas generadas por nuestras propuestas. Nuestros datos de contacto son: info@derive.com.ar, (011) 6091 7888/7889 y libro de quejas en www.derive.com.ar o en nuestras oficinas.",
+        "category":"Comentarios/Reclamos"
+    },
+
+    {
+        "id":15,
+        "name":"Tengo más preguntas o sugerencias ¿A dónde me dirijo?",
+        "response":"Esperamos tu contacto: info@derive.com.ar, (011) 6091 7888/7889.",
+        "category":"Comentarios/Reclamos"
+    }
+]
