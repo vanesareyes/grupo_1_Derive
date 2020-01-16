@@ -11,278 +11,37 @@
   <title>Derivé | Viví tu experiencia</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Bootstrap core JS, jQuery, and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
+  <!--- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Roboto:400,900&display=swap" rel="stylesheet">
+
   <!-- Estilos propios para el sitio Derivé -->
-  <link href="css/derive.css" rel="stylesheet">
+  <link href="../public/css/derive.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="/">Derivé</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="productDetail">Experiencias<!--Hay que definir el objetivo del link-->
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a><!--Hay que definir el objetivo del link-->
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="faqs">FAQs</a><!--Hay que definir el objetivo del link-->
-          </li>
-          <!-- Acá comienza el formulario de búsqueda, incluido dentro del mismo <ul>-->
-          <form>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Buscar...">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"> <!--Asignarle funcionamiento al botón de búsqueda-->
-                  <i class="fas fa-search text-white"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-          <li class="nav-item">
-            <a href="shopping-cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a><!--Hay que definir el objetivo del link-->
-          </li>
-          <li class="nav-item">
-            <a href="registre" class="nav-link">Inicia Sesión</a><!--Hay que definir el objetivo del link-->
-          </li>
-          <li>
-            <a href="registre" class="nav-link">Crear usuario</a><!--Hay que definir el objetivo del link-->
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- NavBar -->
+  <%- include('./partials/navbar.ejs') %>
 
   <!-- Header -->
-  <header class="bg-primary py-5 mb-5">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Dejate llevar por la experiencia</h1>
-          <p class="lead mb-5 text-white-50">Este es un párrafo de ejemplo, para saber que odemos poner contenido acá también.</p>
-        </div>
-      </div>
-    </div>
-  </header>
+  <%- include('./partials/header.ejs') %>
 
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Hot This Week</h2>
-        <hr>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-          <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/300x400" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Nature Escape</h4>
-                <p class="card-text">Descripción sobre Nature Escape.</p>
-                <a href="#" class="btn btn-primary btn-saber-mas">Quiero saber más!</a>
-              </div>
-            </div>
-      </div>
-      <div class="col-md-3">
-          <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/300x400" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Jeep Journey</h4>
-                <p class="card-text">Descripción sobre Jeep Jpurney.</p>
-                <a href="#" class="btn btn-primary">Quiero saber más!</a>
-              </div>
-            </div>
-      </div>
-      <div class="col-md-3">
-          <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/300x400" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Sky Dive</h4>
-                <p class="card-text">Descripción sobre Sky Dive.</p>
-                <a href="#" class="btn btn-primary">Quiero saber más!</a>
-              </div>
-            </div>
-      </div>
-      <div class="col-md-3">
-          <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/300x400" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Spa Day</h4>
-                <p class="card-text">Descripción sobre Spa Day.</p>
-                <a href="#" class="btn btn-primary">Quiero saber más!</a>
-              </div>
-            </div>
-      </div>
-    </div>
-    
-    
-    <!-- /.row -->
-
-    
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
+  <!-- Landing Content -->
+  <%- include('./partials/landingContent.ejs') %>
 
   <!-- Footer -->
-  <!-- Footer -->
-<footer class="derive-footer">
-
-    <div style="background-color: #6351ce;">
-      <div class="container">
-  
-        <!-- Grid row-->
-        <div class="row py-4 d-flex align-items-center">
-  
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0 white-text">Conectate para conocer más Experiencias!</h6>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-7 text-center text-md-right">
-  
-            <!-- Facebook -->
-            <a class="">
-              <i class="fab fa-facebook-f white-text mr-4"> </i>
-            </a>
-            <!-- Twitter -->
-            <a class="tw-ic">
-              <i class="fab fa-twitter white-text mr-4"> </i>
-            </a>
-            <!-- Google +-->
-            <a class="gplus-ic">
-              <i class="fab fa-google-plus-g white-text mr-4"> </i>
-            </a>
-            <!--Linkedin -->
-            <a class="li-ic">
-              <i class="fab fa-linkedin-in white-text mr-4"> </i>
-            </a>
-            <!--Instagram-->
-            <a class="ins-ic">
-              <i class="fab fa-instagram white-text"> </i>
-            </a>
-  
-          </div>
-          <!-- Grid column -->
-  
-        </div>
-        <!-- Grid row-->
-  
-      </div>
-    </div>
-  
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left mt-5">
-  
-      <!-- Grid row -->
-      <div class="row mt-3">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-  
-          <!-- Content -->
-          <h6 class="text-uppercase font-weight-bold">Acerca de Derivé</h6>
-          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>Acá debiera ir una pequeña explicación sobre lo que es Derivé. Muchas empresas ponen su misión y visión, su filosofía como compañía.</p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Servicios</h6>
-          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="#!">Experiencias Personales</a>
-          </p>
-          <p>
-            <a href="#!">Experiencias Grupales</a>
-          </p>
-          <p>
-            <a href="#!">Empresas</a>
-          </p>
-          <p>
-            <a href="#!">Más sobre nosotros...</a>
-          </p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Más...</h6>
-          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="#!">Registrate</a>
-          </p>
-          <p>
-            <a href="#!">Ingresá</a>
-          </p>
-          <p>
-            <a href="#!">Contacto</a>
-          </p>
-          <p>
-            <a href="#!">FAQs</a>
-          </p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Contacto</h6>
-          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p><i class="fas fa-home mr-3"></i> Buenos Aires, Argentina</p>
-          <p><i class="fas fa-envelope mr-3"></i> info@derive.com</p>
-          <p><i class="fas fa-phone mr-3"></i> + 54 911 1234 5678</p>
-          
-  
-        </div>
-        <!-- Grid column -->
-  
-      </div>
-      <!-- Grid row -->
-  
-    </div>
-    <!-- Footer Links -->
-  
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="#"> derive.com</a>
-    </div>
-    <!-- Copyright -->
-  
-  </footer>
-  <!-- Footer -->
- 
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <%- include('./partials/footer.ejs') %>
 </body>
 
 </html>
