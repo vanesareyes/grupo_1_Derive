@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const faqsFilePath = path.join(__dirname, '../data/faqs.json');
 let faqs = JSON.parse(fs.readFileSync(faqsFilePath, 'utf-8'));
-console.log(faqs, "asnjdjsdajsdadsajdas")
+
 
 const controller = {
 
@@ -16,6 +16,7 @@ const controller = {
 
     faqs: (req, res) => {
         res.render('faqs', {
+
 
 
         })
