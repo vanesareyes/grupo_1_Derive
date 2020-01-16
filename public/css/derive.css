@@ -233,3 +233,38 @@ footer p {
   footer p a:hover {
 	text-decoration: none;
   }
+
+/* FAQs Styles*/
+
+
+  .faqs {margin: 2rem 0;}
+
+  .btn-link {
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .card {background-color: #F1F4ED;}
+
+  .card-header {
+    border-bottom: none;
+	background-color: #F1F4ED;
+	padding: 0rem 1.25rem;
+	}
+
+	.btn-link.focus, .btn-link:focus {
+		text-decoration: none;
+		box-shadow: none;
+	}
+
+	hr {
+		margin-top: 0.2rem;
+		margin-bottom: 0.3rem;
+		border: 0;
+		border-top: 1px solid rgba(0,0,0,.1);
+	}
+
+	.card-body {
+		padding: 0.5 1.25rem 1.25rem 1.25rem;
+	}
