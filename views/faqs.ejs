@@ -50,7 +50,22 @@
           </div>
           <div class="col-lg-6" style="margin: 2rem 0;">
               <div class="accordion" id="faqsAccordion">
-                  <!-- Acá debieran desplegarse cada una de las faqsCard.ejs -->
+                  <div class="card">
+      <div class="card-header" id="headingOne"> <!-- El ID "headingOne" debiera ser reemplazado por el ID de la pregunta -->
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <!-- Acá adentro debiera aparecer la pregunta -->
+          </button>
+        </h2>
+        <hr>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqsAccordion"><!-- El aria-labelledby "headingOne" debiera ser reemplazado por el valor del ID de la pregunta, para coincidir con el ID del -->
+        <div class="card-body">
+          <!-- Acá adentro debiera aparecer la respuesta -->
+        </div>
+      </div>
+    </div>
               </div>    
           </div>
         </div>
