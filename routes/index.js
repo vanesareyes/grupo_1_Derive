@@ -14,8 +14,6 @@ router.get('/', indexController.root);
 
 router.get('/faqs', indexController.faqs);
 
-router.get('/productDetail', indexController.productDetail);
-
 router.get('/registre-form', indexController.registreForm);
 
 router.get('/shopping-cart', indexController.shopppingCart);

@@ -17,8 +17,8 @@ const controller = {
 			return p.id == req.params.id
 		})
 		res
-        .cookie('product_ids', generateProductCookie(req, product))
-		.cookie('site', 'derive')
+        //.cookie('product_ids', generateProductCookie(req, product))
+		//.cookie('site', 'derive')
 		.render('detail', {product: product})
 	},
 

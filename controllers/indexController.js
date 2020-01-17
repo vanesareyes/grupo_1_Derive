@@ -2,12 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const faqsFilePath = path.join(__dirname, '../data/faqs.json');
 let faqs = JSON.parse(fs.readFileSync(faqsFilePath, 'utf-8'));
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const controller = {
 
     root: (req, res) => {
-        res.render('index', {})
+        let hotThisWeek = products.filter(
+            (producto)=>{
+                return producto.destacado == 1;
+            });
+        res.render('index', {products:hotThisWeek})
     },
 
     productDetail: (req, res) => {
@@ -15,11 +21,7 @@ const controller = {
     },
 
     faqs: (req, res) => {
-        res.render('faqs', {
-
-
-
-        })
+        res.render('faqs', { faqs : faqs })
     },
 
     registreForm: (req, res) => {
