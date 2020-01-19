@@ -3,19 +3,25 @@
   <div class="container pt-5">
     <div class="row">
         <div class="col-md-12">
-          <h3 class="experience-tittle">Nombre de la experiencia</h3>
+          <h3 class="experience-tittle"><%= product.name %></h3>
         </div>
         <div class="col-md-6">
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="http://placehold.it/500x400" alt="First slide">
+                  <img class="d-block w-100" src="<%= product.img %>" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="http://placehold.it/500x400" alt="Second slide">
+                  <img class="d-block w-100" src="<%= product.img2 %>" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="http://placehold.it/500x400" alt="Third slide">
+                  <img class="d-block w-100" src="<%= product.img3 %>" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="<%= product.img4 %>" alt="Forth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="<%= product.img5 %>" alt="Fifth slide">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -31,8 +37,8 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6 col-sm-6 mb-3">
-                    <h3>Nombre de la Experiencia</h3>
-                    <span class="text-muted font-weight-normal font-italic d-block" id="categoryName">Categoría: la que corresponda</span>
+                    <!--<h3>Nombre de la Experiencia</h3>-->
+                    <span class="text-muted font-weight-normal font-italic d-block" id="categoryName">Categoría: <%= product.category %></span>
                 </div>
                 <div class="col-md-6 col-sm-6">
                   <ul class="list-inline small how-many-stars">
@@ -44,8 +50,8 @@
                   </ul>
                 </div>
                 <div class="col-md-12 mb-3">
-                    <p>Descripción larga de la experiencia, con muchas cosas para decir, cuestión que ocupe gran parte del espacio visible.</p>
-                    <h6 class="font-weight-bold my-2">$5.000,00</h6>
+                    <p><%= product.description %></p>
+                    <h6 class="font-weight-bold my-2">$<%= product.price %></h6>
                 </div>
                 <div class="col-md-12">
                   <a href="#" class="btn btn-primary">Vivir la Experiencia!</a>

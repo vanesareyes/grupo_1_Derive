@@ -1,18 +1,20 @@
 <!-- Product Featured-->
 
 <div class="container">
+   <% if (product.destacado == 1) { %>
     <div class="row">
         <div class="col-md-12">
-            <h4 class="experience-tittle">Hot This Week</h4>
+            <h4 class="experience-tittle">Hot This Week!</h4>
             <hr>
         </div>
     </div>
+    <% } %>
+
     <div class="row">
 
         <!-- Acá deben insertarse las cajas que están en productBox.html-->
-        <%- include productContent.ejs %>
+    <%- include productContent %>
 
     </div>
 </div>
-
 <!-- Product Featured-->
