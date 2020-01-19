@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Derivé | Viví tu experiencia</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Bootstrap core JS, jQuery, and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!--- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Roboto:400,900&display=swap" rel="stylesheet">
+
+    <!-- Estilos propios para el sitio Derivé -->
+   <link href="/css/derive.css" rel="stylesheet">
+    
+
+</head>
+
+<body>
+
+   
+
+<!-- NavBar -->
+<%- include partials/navbar %>
+    <div class="row">
+        <!-- Landing Content -->
+        <% products.forEach( (product) => {%>
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img class="card-img-top" src="<%=product.img%>" alt="" id="experiencePrimaryImage">
+                <div class="card-body">
+                <h4 class="card-title" id="experienceTittle"><%=product.name%></h4>
+                <ul class="list-inline small how-many-stars stars-left-align">
+                    <li class="list-inline-item m-0"><i class="far fa-star text-gray"></i></li>
+                    <li class="list-inline-item m-0"><i class="fas fa-star text-success"></i></li>
+                    <li class="list-inline-item m-0"><i class="fas fa-star text-success"></i></li>
+                    <li class="list-inline-item m-0"><i class="fas fa-star text-success"></i></li>
+                    <li class="list-inline-item m-0"><i class="fas fa-star text-success"></i></li>
+                </ul>
+                <span class="text-muted font-weight-normal font-italic d-block small" id="categoryName">Categoría: <%=product.category%></span>
+                <p class="card-text" id="experienceDescrption"><%=product.description%></p>
+                <a href="/products/detail/<%=product.id%>" class="btn btn-primary">Quiero saber más!</a>
+                </div>
+            </div>
+        </div>
+    
+        <% }) %>
+    </div>
+<!-- Footer -->
+<%- include partials/footer %>
+</body>
+
+</html>

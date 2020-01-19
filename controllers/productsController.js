@@ -16,10 +16,10 @@ const controller = {
 		let product = products.find(function (p) {
 			return p.id == req.params.id
 		})
-		res
+		res.render('productDetail', {product: product})
         //.cookie('product_ids', generateProductCookie(req, product))
 		//.cookie('site', 'derive')
-		.render('detail', {product: product})
+		
 	},
 
 	// Create - Form to create
@@ -78,7 +78,14 @@ const controller = {
     },
     
     delete: (req, res) => {
+		
+		let product = products.find(function (p) {
+			return p.id == req.params.id
+		})
 
+		res.render('product-deletion', {
+			product:product
+		})
     }
 };
 

@@ -12,6 +12,8 @@ router.get('/', function(req, res, next) {
 */
 router.get('/', indexController.root);
 
+router.get('/products', indexController.products);
+
 router.get('/faqs', indexController.faqs);
 
 router.get('/registre-form', indexController.registreForm);

@@ -16,8 +16,8 @@ const controller = {
         res.render('index', {products:hotThisWeek})
     },
 
-    productDetail: (req, res) => {
-        res.render('productDetail', {})
+    products: (req, res) => {
+        res.render('products', {products:products})
     },
 
     faqs: (req, res) => {
