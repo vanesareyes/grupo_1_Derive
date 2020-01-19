@@ -24,8 +24,8 @@ const controller = {
         res.render('faqs', { faqs : faqs })
     },
 
-    registreForm: (req, res) => {
-        res.render('registre-form', {})
+    registerForm: (req, res) => {
+        res.render('register-form', {})
     },
 
     shopppingCart: (req, res) => {
