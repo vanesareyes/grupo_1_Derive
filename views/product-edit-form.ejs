@@ -48,22 +48,22 @@
             <div class="myform form">
                <form action="" method="POST" name="edit-product">
                   <div class="form-group">
-                     <input type="text" name="name"  class="form-control my-input" value= "<%= product.name%>"" id="name" placeholder="Nombre del Producto">
+                     <input type="text" name="name"  class="form-control my-input" value= "<%= product.name%>" id="name" placeholder="Nombre del Producto">
                   </div>
                   <div class="form-group">
-                     <input type="text" name="price"  class="form-control my-input" id="price" placeholder="Valor/Precio">
+                     <input type="text" name="price"  class="form-control my-input" value= "<%= product.price%>" id="price" placeholder="Valor/Precio">
                   </div>
                   <div class="form-group">
-                     <input type="text" name="category"  class="form-control my-input" id="category" placeholder="Categoría">
+                     <input type="text" name="category"  class="form-control my-input" value= "<%= product.category%>" id="category" placeholder="Categoría">
                   </div>
                   <div class="form-group">
-                     <input type="text" name="description"  class="form-control my-input" id="description" placeholder="Descripción">
+                     <input type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description" placeholder="Descripción">
                   </div>
                   <div class="form-group">
-                     <input type="text" name="location"  class="form-control my-input" id="location" placeholder="Ubicación">
+                     <input type="text" name="location"  class="form-control my-input" value= "<%= product.location%>" id="location" placeholder="Ubicación">
                   </div>
                   <div class="text-center ">
-                     <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar producto</button>
+                     <button type="submit" class=" btn btn-block send-button tx-tfm">Editar producto</button>
                   </div>
                   <br>
                   
