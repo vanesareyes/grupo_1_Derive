@@ -78,14 +78,25 @@ const controller = {
     },
     
     delete: (req, res) => {
-		
+						
 		let product = products.find(function (p) {
 			return p.id == req.params.id
+		})	
+		res.render('product-edit-form', {
+			product: product
 		})
+		let finalProducts = products.filter (product => product.id != p.id);
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts,null,''));
+		res.redirect('/products');
 
+		
+/*
+		let product = products.find(function (p) {
+			return p.id == req.params.id
+		})		
 		res.render('product-deletion', {
 			product:product
-		})
+		})*/
     }
 };
 
