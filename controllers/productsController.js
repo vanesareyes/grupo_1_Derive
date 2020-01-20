@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
 	root: (req, res) => {
 		console.log(products)
-		res.render('index', {
+		res.render('products', {
 			products
 		})
 	},
@@ -40,7 +40,7 @@ const controller = {
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products))
 
-		res.redirect('/')
+		res.redirect('/products')
 	},
 
     // Update - Form to edit
@@ -81,7 +81,7 @@ const controller = {
 		//let product = products.find(p => p.id == req.params.id);
 		let finalProducts = products.filter (product => product.id != req.params.id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts,null,''));
-		res.redirect('/');
+		res.redirect('/products');
 	}
 		
 /*
