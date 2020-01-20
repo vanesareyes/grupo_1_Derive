@@ -17,11 +17,11 @@ const controller = {
     },
 
     products: (req, res) => {
-        res.render('products', {products:products})
+        res.render('products', {products})
     },
 
     faqs: (req, res) => {
-        res.render('faqs', { faqs : faqs })
+        res.render('faqs', { faqs})
     },
 
     registerForm: (req, res) => {

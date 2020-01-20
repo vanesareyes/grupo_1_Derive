@@ -48,7 +48,7 @@
             <div class="myform form">
                <form action="" method="POST" name="edit-product">
                   <div class="form-group">
-                     <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nombre del Producto">
+                     <input type="text" name="name"  class="form-control my-input" value= "<%= product.name%>"" id="name" placeholder="Nombre del Producto">
                   </div>
                   <div class="form-group">
                      <input type="text" name="price"  class="form-control my-input" id="price" placeholder="Valor/Precio">
@@ -76,8 +76,7 @@
       <div class="text-center ">
          <button type="submit" class=" btn btn-danger">Eliminar producto</button>
       </div>
-      </div>
-   </form>
+      </form>
    </div>
 
    <!-- Footer -->

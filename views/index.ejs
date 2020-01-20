@@ -41,7 +41,9 @@
             <%- include partials/header %>
                 <div>
                     <!-- Landing Content -->
-                  <% products.forEach( (product) => {%>
+                  <%- include partials/landingContent %>
+                  <!--
+                    <% products.forEach( (product) => {%>
                     <div class="col-md-3">
                       <div class="card h-100">
                           <img class="card-img-top" src="<%=product.img%>" alt="" id="experiencePrimaryImage">
@@ -61,7 +63,7 @@
                         </div>
                     </div>
                 
-                  <% }) %>
+                  <% }) %>-->
                 </div>
                     <!-- Footer -->
                     <%- include partials/footer %>

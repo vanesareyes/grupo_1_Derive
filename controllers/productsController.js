@@ -6,8 +6,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
 	root: (req, res) => {
+		console.log(products)
 		res.render('index', {
-			products: products
+			products
 		})
 	},
 
@@ -16,7 +17,7 @@ const controller = {
 		let product = products.find(function (p) {
 			return p.id == req.params.id
 		})
-		res.render('productDetail', {product: product})
+		res.render('productDetail', {product})
         //.cookie('product_ids', generateProductCookie(req, product))
 		//.cookie('site', 'derive')
 		
@@ -44,13 +45,11 @@ const controller = {
 
     // Update - Form to edit
 	edit: (req, res) => {
-		let product = products.find(function (p) {
-			return p.id == req.params.id
-		})
-
+		let product = products.find(p => p.id == req.params.id)			
+				
 		res.render('product-edit-form', {
-			product: product
-		})
+			product
+		});
 	},
 
 	update: (req, res) => {
@@ -79,16 +78,11 @@ const controller = {
     
     delete: (req, res) => {
 						
-		let product = products.find(function (p) {
-			return p.id == req.params.id
-		})	
-		res.render('product-edit-form', {
-			product: product
-		})
-		let finalProducts = products.filter (product => product.id != p.id);
+		//let product = products.find(p => p.id == req.params.id);
+		let finalProducts = products.filter (product => product.id != req.params.id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts,null,''));
-		res.redirect('/products');
-
+		res.redirect('/');
+	}
 		
 /*
 		let product = products.find(function (p) {
@@ -97,7 +91,7 @@ const controller = {
 		res.render('product-deletion', {
 			product:product
 		})*/
-    }
+    
 };
 
 module.exports = controller;
