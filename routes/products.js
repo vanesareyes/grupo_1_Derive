@@ -39,6 +39,7 @@ router.get('/edit/:id', productsController.edit); /* GET - Form to edit */
 router.put('/edit/:id', productsController.update); /* PUT - Update in DB */
 
 /*** DELETE ONE PRODUCT***/ 
+router.get('/delete/:id', productsController.edit); /* DELETE - Delete from DB */
 router.delete('/delete/:id', productsController.delete); /* DELETE - Delete from DB */
 
 module.exports = router;
