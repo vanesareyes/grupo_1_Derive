@@ -63,6 +63,18 @@ body {
     margin-bottom: .30rem;
 }
 
+.btn-knowmore {
+    color: #fff;
+    background-color: #7180AC!important;
+    border-color: #7180AC!important;
+}
+
+.btn-knowmore:hover {
+    color: #fff;
+    background-color: #274060!important;
+    border-color: #274060!important;
+}
+
 /* Nav Styles*/
 
 .bg-dark {
