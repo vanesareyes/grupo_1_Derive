@@ -48,6 +48,20 @@ body {
 	color:#fff;
 }
 
+/* productBox on landingContent Styles */
+
+.highlighter:hover{
+	-webkit-box-shadow: 0 0 20px rgba(158, 158, 158, 0.27);
+	box-shadow: 0 0 20px rgba(158, 158, 158, 0.27);
+}
+
+.starsize {
+	font-size: 65%;
+}
+
+.card-title {
+    margin-bottom: .30rem;
+}
 
 /* Nav Styles*/
 
@@ -213,6 +227,10 @@ input[type=number]::-webkit-outer-spin-button {
 	text-align: left;
 }
 
+.faq-btn {
+	text-align: left;
+}
+
 /* Footer Styles */
 
 .footer-band {
@@ -268,3 +286,4 @@ footer p {
 	.card-body {
 		padding: 0.5 1.25rem 1.25rem 1.25rem;
 	}
+
