@@ -8,7 +8,10 @@ body {
 }
 
 .bg-primary {
-    background-color: #7180AC!important;
+	background-color: #7180AC!important;
+	background-image: url(/images/pexels-photo-3557497.jpg);
+	background-position: center;
+	
 }
 
 .experience-tittle {
