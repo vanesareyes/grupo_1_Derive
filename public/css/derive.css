@@ -129,6 +129,20 @@ li .navbar-dark .navbar-nav {
 	line-height: 2.5;
 }
 
+input::placeholder { 
+	color: #4c5357; 
+	font-size: 0.9em;
+	line-height: 1.5; 
+	font-style: italic; 
+}
+
+textarea::placeholder { 
+	color: #4c5357; 
+	font-size: 0.9em;
+	line-height: 1.5; 
+	font-style: italic; 
+}
+
 /* CSS para el formulario de registro*/
 
 .send-button{

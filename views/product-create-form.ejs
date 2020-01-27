@@ -47,25 +47,36 @@
          <div class="col-12 mx-auto">
             <div class="myform form">
                <form action="" method="POST" name="new-product">
-                  <div class="form-group">
-                     <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nombre del Producto">
-                  </div>
-                  <div class="form-group">
-                     <input type="text" name="price"  class="form-control my-input" id="price" placeholder="Valor/Precio">
-                  </div>
-                  <div class="form-group">
-                     <input type="text" name="category"  class="form-control my-input" id="category" placeholder="Categoría">
-                  </div>
-                  <div class="form-group">
-                     <input type="text" name="description"  class="form-control my-input" id="description" placeholder="Descripción">
-                  </div>
-                  <div class="form-group">
-                     <input type="text" name="location"  class="form-control my-input" id="location" placeholder="Ubicación">
-                  </div>
-                  <div class="text-center ">
-                     <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar producto</button>
-                  </div>
-               </form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="name">Nombre del Producto</label>
+                                    <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Ej: Escapada romántica">
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Valor/Precio</label>
+                                    <input type="text" name="price"  class="form-control my-input" id="price" placeholder="Ej: $1250">
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Categoría</label>
+                                    <input type="text" name="category"  class="form-control my-input" id="category" placeholder="Ej: Escapada">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="location">Ubicación</label>
+                                    <input type="text" name="location"  class="form-control my-input" id="location" placeholder="Ej: Escobar, Provincia de Buenos Aires, Argentina">
+                                </div>
+                                <div class="form-group">
+                                    <label  for="description">Descripción</label>
+                                    <textarea class="form-control my-input" name="description" rows="3" id="description" placeholder="Ej: Rompé con la rutina y disfrutá de una escapada románticaen el medio de la naturaleza en un hotel con encanto."></textarea>
+                                </div>
+                                <div class="text-center ">
+                                    <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar producto</button>
+                                </div>
+                            </div>
+                        </div>
+                  </form>
             </div>
          </div>
          </div>
