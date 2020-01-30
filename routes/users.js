@@ -30,11 +30,11 @@ router.post('/register', userValidation, function(req, res) {
           }) 
   }
 
-  let users = fs.readFileSync('../data/users.json', { encoding: 'utf-8' })
+  let users = fs.readFileSync('./data/users.json', { encoding: 'utf-8' })
   users = JSON.parse(users)
   users.push(req.body)
   users = JSON.stringify(users)
-  fs.writeFileSync('../data/users.json', users)
+  fs.writeFileSync('./data/users.json', users)
 
   res.redirect(301, '/users/login')
 })
