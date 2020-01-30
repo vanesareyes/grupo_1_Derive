@@ -28,8 +28,8 @@ const controller = {
         res.render('register-form', {})
     },
 
-    shopppingCart: (req, res) => {
-        res.render('shopping-cart', {})
+    shoppingCart: (req, res) => {
+        res.render('shoppingCart')
     },
 
     search: (req, res) => {

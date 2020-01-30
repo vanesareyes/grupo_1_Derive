@@ -18,7 +18,7 @@ router.get('/faqs', indexController.faqs);
 
 router.get('/register-form', indexController.registerForm);
 
-router.get('/shopping-cart', indexController.shopppingCart);
+router.get('/shopping-cart', indexController.shoppingCart);
 
 
 module.exports = router;

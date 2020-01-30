@@ -3,16 +3,23 @@ const router = express.Router();
 const { check, validationResult, body } = require('express-validator');
 const fs = require('fs');
 
-let userValidation = [check('email').isEmail(), check('password').isLength({ min: 6, max: 12 }).withMessage('El password debe tener entre 6 y 12 caracteres')]
+let userValidation = [
+  check('name')
+  .isLength()
+  .withMessage('Este campo debe estar completo'), 
+  check('surname').isLength().withMessage('Este campo debe estar completo'), 
+  check('email').isEmail(), 
+  check('password').isLength({ min: 6, max: 12 }).withMessage('El password debe tener entre 6 y 12 caracteres')
+]
 
-/* GET users listing. */
+/* GET users listing. 
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
-});
+});*/
 
 
 router.get('/login', function(req, res) {
-  res.render('register-form') //cambiar a login
+  res.send('formulario login') //cambiar a vista login
 })
 
 router.get('/register', function(req, res) {
@@ -22,8 +29,9 @@ router.get('/register', function(req, res) {
 router.post('/register', userValidation, function(req, res) {
  
   let result = validationResult(req)
+  console.log(result)
 
-  if (result.isEmpty()) {
+  if (!result.isEmpty()) {
       return res.render('register-form', {
               errors: result.errors,
               data: req.body
@@ -48,7 +56,7 @@ router.post('/login', userValidation, function(req, res) {
               data: req.body
           }) 
   }
-  res.redirect(301, '/users/welcome') //ver a donde redirigimos
+  //res.redirect(301, '/users/welcome') //ver a donde redirigimos
 
 })
 
