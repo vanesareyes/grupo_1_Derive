@@ -36,6 +36,16 @@
 
 
 <!-- Register Content -->
+<% if (typeof errors != 'undefined') { %>
+   <p style="color:red">ERROR</p>
+   <ul>
+      <% for (let i =0; i < errors.length; i++){ %>
+         <li>
+            <%=errors[i].msg%>
+         </li>
+      <% } %>
+   </ul>
+<% } %>
 <div class="container pt-5">
   <div class="row">
     <div class="col-lg-6">

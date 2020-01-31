@@ -1,16 +1,17 @@
 const express = require('express');
-var app = express();
-var path = require('path');
+const app = express();
+const path = require('path');
 
-var createError = require('http-errors');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var productsRouter = require('./routes/products');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
 const methodOverride = require('method-override');
+
+let session = require('express-session');
 
 
 app.get('/', indexRouter);
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
+app.use(session({secret: 'shhhh'}))
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);

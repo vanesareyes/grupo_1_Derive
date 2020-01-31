@@ -16,24 +16,26 @@ const controller = {
         res.render('index', {products:hotThisWeek})
     },
 
-    products: (req, res) => {
+    /*products: (req, res) => {
         res.render('products', {products})
     },
+
+    registerForm: (req, res) => {
+        res.render('register-form', {})
+    },*/
 
     faqs: (req, res) => {
         res.render('faqs', { faqs})
     },
 
-    registerForm: (req, res) => {
-        res.render('register-form', {})
-    },
-
+    
     shoppingCart: (req, res) => {
         res.render('shoppingCart')
     },
 
-    search: (req, res) => {
+    //search: (req, res) => {
         // Do the magic
-    },
+    //},
 };
+
 module.exports = controller;
