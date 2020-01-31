@@ -16,6 +16,7 @@ let session = require('express-session');
 
 app.get('/', indexRouter);
 app.get('/users', usersRouter);
+app.get('/products', productsRouter);
 
 
 
