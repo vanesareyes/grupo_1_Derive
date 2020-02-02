@@ -15,18 +15,19 @@ const controller = {
         res.render('register-form')
     },
     
-    storage: (req, res) => {
+    storage: (req, res, next) => {
         let errors = validationResult(req)
         console.log(errors)
-        if (errors.isEmpty()){
+        if (!errors.isEmpty()){
 
-            let users;
+            //let users;
             if(usersJSON == "") {
-                users = [];
-            } else {
+                usersJSON = [];
+            } /*else {
                 users = JSON.parse(usersJSON)
-            }
-
+                console.log(users)
+            }*/
+            
             let user = {
                 name: req.body.name,
                 surname: req.body.surname,
@@ -34,16 +35,19 @@ const controller = {
                 //password: bcrypt.hashSync(req.body.password,10),
                 phone: req.body.phone,
             }
-            users.push(user)
-            usersJSON = JSON.stringify(users);
+            
+            usersJSON.push(user)
+           // console.log(usersJSON,'aaaaaa')
+            usersJSON = JSON.stringify(usersJSON);
+            //console.log(usersJSON,'ssssss')
             fs.writeFileSync('./data/users.json', usersJSON);
   
         res.redirect(301, '/users/login')
         } else {
-        return res.render('register-form', {
-                    errors: errors.errors,
+        return res.send('Hola')/*res.render('register-form', {
+                    errors: errors,
                     data: req.body
-                     })
+                     })*/
                 }
     },
     
@@ -64,7 +68,7 @@ const controller = {
         let errors = validationResult(req)
         if (!errors.isEmpty()){
             res.render('login', {
-                errors: errors.errors,
+                errors: errors,
                 data: req.body
             })
         }
