@@ -10,14 +10,16 @@ const userValidationRegister = [
     check('surname').isLength().withMessage('Debe ingresar su apellido'), 
     check('email').isEmail().withMessage('El email debe ser un email válido'), 
     check('password').isLength({ min: 6, max: 12 }).withMessage('El password debe tener entre 6 y 12 caracteres'),
-    body('email').custom (value => {
-      return usersJSON.find(email => email == value)
-      .then(user => { console.log(user)
-        //if (user) {
-          //return Promise.reject('Usuario ya existente');
-        //}
+    /*body('email').custom (value) 
+    
+    => {
+      return usersJSON.find(user => user.email == value)
+      .then(user => { console.log (user);
+        if (typeof user != 'undefined') {
+          return Promise.reject('Usuario ya existente');
+        }
       })
-    })
+    })*/
   ]
 
 

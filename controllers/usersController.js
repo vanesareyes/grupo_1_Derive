@@ -18,16 +18,18 @@ const controller = {
     storage: (req, res, next) => {
         let errors = validationResult(req)
         console.log(errors)
-        if (!errors.isEmpty()){
+        if (errors.isEmpty()){
 
             //let users;
             if(usersJSON == "") {
                 usersJSON = [];
-            } /*else {
-                users = JSON.parse(usersJSON)
-                console.log(users)
-            }*/
+            } 
             
+            //hacer find para ver email existente
+            let usuarioExistente = usersJSON.find(user => user.email == req.body.email)
+            if (typeof usuarioExistente != 'undefined') { 
+                res.render('register-form', { message: 'Usuario ya existente' })
+            } else {                  
             let user = {
                 name: req.body.name,
                 surname: req.body.surname,
@@ -36,19 +38,16 @@ const controller = {
                 phone: req.body.phone,
             }
             
-            usersJSON.push(user)
-           // console.log(usersJSON,'aaaaaa')
-            usersJSON = JSON.stringify(usersJSON);
-            //console.log(usersJSON,'ssssss')
+            users = [
+                ...usersJSON,
+                user
+            ]
+            //usersJSON.push(user)
+            usersJSON = JSON.stringify(users);
             fs.writeFileSync('./data/users.json', usersJSON);
-  
-        res.redirect(301, '/users/login')
-        } else {
-        return res.send('Hola')/*res.render('register-form', {
-                    errors: errors,
-                    data: req.body
-                     })*/
-                }
+            res.redirect(301, '/users/login')
+            } 
+        }
     },
     
     loginByPost: (req, res) => {
@@ -68,7 +67,7 @@ const controller = {
         let errors = validationResult(req)
         if (!errors.isEmpty()){
             res.render('login', {
-                errors: errors,
+                errors: errors.errors,
                 data: req.body
             })
         }
