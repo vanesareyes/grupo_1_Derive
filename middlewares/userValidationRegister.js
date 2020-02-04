@@ -6,10 +6,10 @@ let usersFilePath = path.join(__dirname, '../data/users.json');
 let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const userValidationRegister = [
-    check('name').isLength().withMessage('Debe ingresar su nombre'), 
-    check('surname').isLength().withMessage('Debe ingresar su apellido'), 
+    check('name').isLength({ min: 1 }).withMessage('Debe ingresar su nombre'), 
+    check('surname').isLength({ min: 1 }).withMessage('Debe ingresar su apellido'), 
     check('email').isEmail().withMessage('El email debe ser un email válido'), 
-    check('password').isLength({ min: 6, max: 12 }).withMessage('El password debe tener entre 6 y 12 caracteres'),
+    //check('password').isLength({ min: 6, max: 12 }).withMessage('El password debe tener entre 6 y 12 caracteres'),
     /*body('email').custom (value) 
     
     => {
