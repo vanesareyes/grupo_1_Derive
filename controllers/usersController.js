@@ -15,21 +15,16 @@ const controller = {
         res.render('register-form')
     },
     
-    storage: (req, res, next) => {
+    storage: (req, res) => {
         let errors = validationResult(req)
         console.log(errors)
         if (errors.isEmpty()){
 
-            //let users;
-            if(usersJSON == "") {
-                usersJSON = [];
-            } 
-            
-            //hacer find para ver email existente
             let usuarioExistente = usersJSON.find(user => user.email == req.body.email)
+            console.log(usuarioExistente)
             if (typeof usuarioExistente != 'undefined') { 
-                res.render('register-form', { message: 'Usuario ya existente' })
-            } else {                  
+                res.render('register-form', { errors: [{msg: 'Usuario ya existente'}] })
+                } else {                  
             let user = {
                 name: req.body.name,
                 surname: req.body.surname,
@@ -40,7 +35,7 @@ const controller = {
             
             users = [
                 ...usersJSON,
-                user
+                user,
             ]
             //usersJSON.push(user)
             usersJSON = JSON.stringify(users);
@@ -48,15 +43,35 @@ const controller = {
             res.redirect(301, '/users/login')
             } 
         }
+        
     },
     
-    loginByPost: (req, res) => {
-        let users;
-            if(usersJSON == "") {
-                users = [];
-            } else {
-                users = JSON.parse(usersJSON)
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+        let usuarioALoguearse
+        console.log(errors)
+        if (errors.isEmpty()){
+            for (let i = 0; i < usersJSON.length; i++){
+                if(usersJSON[i].email == req.body.email && bcrypt.compareSync(req.body.password, usersJSON[i].password))
+                return usuarioALoguearse = usersJSON[i];
+                break;
+                }
+            
+            if (usuarioALoguearse == undefined) {
+                return res.render('login', {
+                    errors: [
+                        {msg: 'Credenciales inválidas'}
+                    ]});
             }
+            req.session.usuarioLogueado = usuarioALoguearse;
+        } else {
+            return res.render('login', {
+                errors: errors.errors,
+                data: req.body
+            })
+        } 
+            
+        }
 
       /*  for (let i = 0; i < users.length; i ++){
             if(users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password))
@@ -64,19 +79,14 @@ const controller = {
         }
     */
 
-        let errors = validationResult(req)
-        if (!errors.isEmpty()){
-            res.render('login', {
-                errors: errors.errors,
-                data: req.body
-            })
+            
         }
                 
-        res.send('Welcome!')
-    },
+        
+    
     
 
-}
+
 
 
 
