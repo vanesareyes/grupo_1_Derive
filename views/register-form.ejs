@@ -36,6 +36,16 @@
 
 
 <!-- Register Content -->
+<% if (typeof errors != 'undefined') { %>
+   <p style="color:red">ERROR</p>
+   <ul>
+      <% for (let i =0; i < errors.length; i++){ %>
+         <li>
+            <%=errors[i].msg%>
+         </li>
+      <% } %>
+   </ul>
+<% } %>
 <div class="container pt-5">
   <div class="row">
     <div class="col-lg-6">
@@ -52,11 +62,11 @@
         <div class="myform form ">
             <form action="" method="post" name="register">
              <div class="form-group">
-              <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nombre">
+                <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nombre">
              </div>
              <div class="form-group">
                  <input type="text" name="surname"  class="form-control my-input" id="surname" placeholder="Apellido">
-                </div>
+              </div>
              <div class="form-group">
               <input type="email" name="email"  class="form-control my-input" id="email" placeholder="eMail">
              </div>
@@ -77,7 +87,7 @@
                  <i class="fab fa-google"></i> • Ingresar con Google
               </a>
              </div>
-             <p class="small mt-3">Al registrate, nos indicas que has leído y aceptado nuestros <a href="#" class="ps-hero__content__link">Términos y Condiciones de Uso</a> y nuestra <a href="#">Política de Privacidad</a>.
+             <p class="small mt-3">Al registrarte, nos indicas que has leído y aceptado nuestros <a href="#" class="ps-hero__content__link">Términos y Condiciones de Uso</a> y nuestra <a href="#">Política de Privacidad</a>.
              </p>
             </form>
          </div>

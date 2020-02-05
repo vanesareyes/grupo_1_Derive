@@ -36,7 +36,7 @@
     "img3":"https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "img4":"https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "img5":"https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","destacado":0},
-    {"id":7,"name":"Día de campo","price":"3500","category":"Escapadas","description":"Disfrutá de un entorno natural con actividades al aire libre y gastronomía típica en las mejores estancias rurales con ambiente de época.","location":"Luján",
+    {"id":7,"name":"Día de campo","price":"3500","category":"Escapada","description":"Disfrutá de un entorno natural con actividades al aire libre y gastronomía típica en las mejores estancias rurales con ambiente de época.","location":"Luján",
     "img":"https://images.pexels.com/photos/2714627/pexels-photo-2714627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "img2":"https://images.pexels.com/photos/1038259/pexels-photo-1038259.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "img3":"https://images.pexels.com/photos/1481284/pexels-photo-1481284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
