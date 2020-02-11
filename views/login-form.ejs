@@ -51,7 +51,7 @@
     <div class="col-lg-6">
         <div class="header-title">
             <h1 class="wv-heading--title">
-               Registrate — es gratis!
+               Ingresa para disfrutar de todos nuestros beneficios!
             </h1>
             <h2 class="wv-heading--subtitle">
                Te enviaremos las mejores promociones para que vivas experiencias únicas, especialmente curadas por nuestro equipo de expertos.
@@ -62,22 +62,13 @@
         <div class="myform form ">
             <form action="" method="post" name="register">
              <div class="form-group">
-                <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nombre" value="<%= locals.data.name ? locals.data.name : '' %>">
-             </div>
-             <div class="form-group">
-                 <input type="text" name="surname"  class="form-control my-input" id="surname" placeholder="Apellido" value="<%= locals.data.surname ? locals.data.surname : '' %>">
-              </div>
-             <div class="form-group">
-              <input type="email" name="email"  class="form-control my-input" id="email" placeholder="eMail" value="<%= locals.data.email ? locals.data.email : '' %>">
-             </div>
-             <div class="form-group">
-              <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Teléfono" value="<%= locals.data.phone ? locals.data.phone : '' %>">
+              <input type="email" name="email"  class="form-control my-input" id="email" placeholder="eMail">
              </div>
              <div class="form-group">
                <input type="password" min="0" name="password" id="password"  class="form-control my-input" placeholder="Contraseña">
               </div>
              <div class="text-center ">
-              <button type="submit" class=" btn btn-block send-button tx-tfm">Registrarme gratis!</button>
+              <button type="submit" class=" btn btn-block send-button tx-tfm">Ingresá!</button>
              </div>
              <div class="col-md-12 ">
               <div class="login-or">
@@ -89,9 +80,9 @@
               <a class="btn btn-block g-button" href="#">
                  <i class="fab fa-google"></i> • Ingresar con Google
               </a>
-             </div>
+             <!--</div>
              <p class="small mt-3">Al registrarte, nos indicas que has leído y aceptado nuestros <a href="#" class="ps-hero__content__link">Términos y Condiciones de Uso</a> y nuestra <a href="#">Política de Privacidad</a>.
-             </p>
+             </p>-->
             </form>
          </div>
     </div>

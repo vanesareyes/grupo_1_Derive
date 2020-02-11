@@ -33,6 +33,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 app.use(session({secret: 'shhhh'}))
 
+app.use(function(req, res, next){
+    res.locals.data = req.body;
+    next();
+  });
+
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);

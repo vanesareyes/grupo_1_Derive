@@ -8,7 +8,7 @@ let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const controller = {
     
     login: (req, res) => {
-        res.send('formulario login') //cambiar a vista login
+        res.render('login-form') 
       },
     
     register: (req, res) => {      
@@ -18,6 +18,7 @@ const controller = {
     storage: (req, res) => {
         let errors = validationResult(req)
         console.log(errors)
+        
         if (errors.isEmpty()){
 
             let usuarioExistente = usersJSON.find(user => user.email == req.body.email)
@@ -29,7 +30,7 @@ const controller = {
                 name: req.body.name,
                 surname: req.body.surname,
                 email: req.body.email,
-                //password: bcrypt.hashSync(req.body.password,10),
+                password: bcrypt.hashSync(req.body.password,10),
                 phone: req.body.phone,
             }
             
@@ -42,34 +43,48 @@ const controller = {
             fs.writeFileSync('./data/users.json', usersJSON);
             res.redirect(301, '/users/login')
             } 
+        } else {
+            //sessionStorage.setItem("user", req.body.name)
+            //let data = sessionStorage.getItem("user")
+            //console.log(data)
+            //res.locals.data = req.body
+            //let data = res.locals
+           // console.log(res.locals.data)
+            res.render('register-form', { 
+                errors: errors.errors
+            })
         }
         
     },
     
     processLogin: (req, res) => {
         let errors = validationResult(req)
-        let usuarioALoguearse
         console.log(errors)
         if (errors.isEmpty()){
+            let usuarioALoguearse
             for (let i = 0; i < usersJSON.length; i++){
                 if(usersJSON[i].email == req.body.email && bcrypt.compareSync(req.body.password, usersJSON[i].password))
-                return usuarioALoguearse = usersJSON[i];
+                usuarioALoguearse = usersJSON[i];
                 break;
                 }
             
             if (usuarioALoguearse == undefined) {
-                return res.render('login', {
+                return res.render('login-form', {
                     errors: [
-                        {msg: 'Credenciales inválidas'}
+                        {msg: 'La combinación de usuario y contraseña es inválida'}
                     ]});
             }
             req.session.usuarioLogueado = usuarioALoguearse;
         } else {
-            return res.render('login', {
-                errors: errors.errors,
-                data: req.body
+            /*let user = {
+                email: req.body.email,
+            }
+            res.locals = {userss : user}*/
+            res.render('login-form', { 
+            errors: errors.errors,
             })
-        } 
+
+            } 
             
         }
 
