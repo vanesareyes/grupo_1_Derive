@@ -55,7 +55,7 @@ const controller = {
             fs.writeFileSync('./data/users.json', usersJSON);
             res.redirect(301, '/users/login')
             } 
-        } else {
+        else {
             res.render('register-form', { 
                 errors: errors.errors
             })
@@ -90,28 +90,6 @@ const controller = {
 
             
         }
-                
-        
-    
-    
-
-
-
-
-
-/*    req.session.user = {
-            id: 1,
-            email: 'john@doe.com'
-        }
-    welcomeUser: (req,res) => {
-        res.render('welcomeUser', {usuario: req.session.user})
-    }, */
-
-
-/*res.send('estas logueado')
-        
-        /res.redirect(301, '/users/welcome')/
-    }*/
-
-//};
+    }
+           
 module.exports = controller;
