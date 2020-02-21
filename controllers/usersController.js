@@ -1,10 +1,12 @@
 const fs = require('fs');
-//const bcrypt = require ('bcrypt');
+const bcrypt = require ('bcrypt');
 const path = require('path');
 const { check, validationResult, body } = require('express-validator');
 let usersFilePath = path.join(__dirname, '../data/users.json');
 let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+
+console.log(usersJSON)
 const controller = {
     
     login: (req, res) => {
@@ -15,7 +17,7 @@ const controller = {
         res.render('register-form')
     },
     
-    storage: (req, res) => {
+    store: (req, res) => {
         let errors = validationResult(req)
         console.log(errors)
         
@@ -34,7 +36,7 @@ const controller = {
                 phone: req.body.phone,
             }
             
-            users = [
+           let users = [
                 ...usersJSON,
                 user,
             ]
@@ -44,12 +46,6 @@ const controller = {
             res.redirect(301, '/users/login')
             } 
         } else {
-            //sessionStorage.setItem("user", req.body.name)
-            //let data = sessionStorage.getItem("user")
-            //console.log(data)
-            //res.locals.data = req.body
-            //let data = res.locals
-           // console.log(res.locals.data)
             res.render('register-form', { 
                 errors: errors.errors
             })
@@ -59,40 +55,29 @@ const controller = {
     
     processLogin: (req, res) => {
         let errors = validationResult(req)
-        console.log(errors)
+            console.log(errors)
         if (errors.isEmpty()){
-            let usuarioALoguearse
-            for (let i = 0; i < usersJSON.length; i++){
-                if(usersJSON[i].email == req.body.email && bcrypt.compareSync(req.body.password, usersJSON[i].password))
-                usuarioALoguearse = usersJSON[i];
-                break;
-                }
-            
-            if (usuarioALoguearse == undefined) {
-                return res.render('login-form', {
+            let usuarioALoguearse = usersJSON.find(user => user.email == req.body.email) 
+            console.log(usuarioALoguearse ,'usuarioALoguearse')
+            if (typeof usuarioALoguearse != 'undefined' && bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
+                req.session.usuarioLogueado = usuarioALoguearse;
+                console.log('session', req.session.usuarioLogueado)
+                    res.send('Bienvenido')
+                } else {res.render('login-form', {
                     errors: [
                         {msg: 'La combinación de usuario y contraseña es inválida'}
                     ]});
             }
-            req.session.usuarioLogueado = usuarioALoguearse;
+
+                
         } else {
-            /*let user = {
-                email: req.body.email,
-            }
-            res.locals = {userss : user}*/
-            res.render('login-form', { 
-            errors: errors.errors,
-            })
+                res.render('login-form', { 
+                errors: errors.errors,
+                })
 
             } 
             
         }
-
-      /*  for (let i = 0; i < users.length; i ++){
-            if(users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password))
-            res.send('Welcome!')
-        }
-    */
 
             
         }

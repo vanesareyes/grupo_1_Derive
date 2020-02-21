@@ -20,5 +20,8 @@
     "multer": "^1.4.2",
     "nodemon": "^2.0.2",
     "path": "^0.12.7"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.2"
   }
 }

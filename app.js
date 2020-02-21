@@ -11,7 +11,7 @@ const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 const methodOverride = require('method-override');
 
-let session = require('express-session');
+const session = require('express-session');
 
 
 app.get('/', indexRouter);
