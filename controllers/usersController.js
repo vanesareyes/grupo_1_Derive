@@ -8,32 +8,42 @@ let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 console.log(usersJSON)
 const controller = {
-    
+
     login: (req, res) => {
-        res.render('login-form') 
-      },
-    
-    register: (req, res) => {      
+        res.render('login-form')
+    },
+
+    register: (req, res) => {
         res.render('register-form')
     },
     
     store: (req, res) => {
         let errors = validationResult(req)
         console.log(errors)
-        
-        if (errors.isEmpty()){
+
+        if (errors.isEmpty()) {
 
             let usuarioExistente = usersJSON.find(user => user.email == req.body.email)
             console.log(usuarioExistente)
-            if (typeof usuarioExistente != 'undefined') { 
-                res.render('register-form', { errors: [{msg: 'Usuario ya existente'}] })
-                } else {                  
-            let user = {
-                name: req.body.name,
-                surname: req.body.surname,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password,10),
-                phone: req.body.phone,
+            if (typeof usuarioExistente != 'undefined') {
+                res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
+            } else {
+                let user = {
+                    name: req.body.name,
+                    surname: req.body.surname,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    phone: req.body.phone,
+                }
+
+                users = [
+                        ...usersJSON,
+                        user,
+                    ]
+                    //usersJSON.push(user)
+                usersJSON = JSON.stringify(users);
+                fs.writeFileSync('./data/users.json', usersJSON);
+                res.redirect(301, '/users/login')
             }
             
            let users = [
@@ -50,9 +60,9 @@ const controller = {
                 errors: errors.errors
             })
         }
-        
+
     },
-    
+
     processLogin: (req, res) => {
         let errors = validationResult(req)
             console.log(errors)
@@ -65,8 +75,9 @@ const controller = {
                     res.send('Bienvenido')
                 } else {res.render('login-form', {
                     errors: [
-                        {msg: 'La combinación de usuario y contraseña es inválida'}
-                    ]});
+                        { msg: 'La combinación de usuario y contraseña es inválida' }
+                    ]
+                });
             }
 
                 
@@ -75,8 +86,6 @@ const controller = {
                 errors: errors.errors,
                 })
 
-            } 
-            
         }
 
             
@@ -98,11 +107,11 @@ const controller = {
         res.render('welcomeUser', {usuario: req.session.user})
     }, */
 
-            
-        /*res.send('estas logueado')
+
+/*res.send('estas logueado')
         
         /res.redirect(301, '/users/welcome')/
     }*/
-   
+
 //};
 module.exports = controller;
