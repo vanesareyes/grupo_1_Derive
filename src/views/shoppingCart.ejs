@@ -6,7 +6,11 @@
 <body>
   
   <!-- NavBar -->
-  <%- include partials/navbar.ejs %>
+  <% if (typeof locals.user != 'undefined') {
+    %> <%- include partials/usernavbar %> <%
+  } else { %> 
+  <%- include partials/navbar %>
+  <% } %>
 
   <!--Shopping Cart-->
 

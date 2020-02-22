@@ -6,7 +6,11 @@
 <body>
   
   <!-- NavBar -->
+  <% if (typeof locals.user != 'undefined') {
+    %> <%- include partials/usernavbar %> <%
+  } else { %> 
   <%- include partials/navbar %>
+  <% } %>
 
   <!-- Header -->
   <%- include partials/header %>

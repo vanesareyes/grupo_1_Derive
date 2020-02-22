@@ -8,7 +8,11 @@
    
 
 <!-- NavBar -->
-<%- include partials/navbar %>
+<% if (typeof locals.user != 'undefined') {
+    %> <%- include partials/usernavbar %> <%
+  } else { %> 
+  <%- include partials/navbar %>
+  <% } %>
     <div class="row">
         <!-- Landing Content -->
         <%- include partials/landingContent %>

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <%- include partials/head %>
+
 <body>
 
   <!-- NavBar -->
-  <%- include partials/navbar.ejs %>
+  <% if (typeof locals.user != 'undefined') {
+    %> <%- include partials/usernavbar %> <%
+  } else { %> 
+  <%- include partials/navbar %>
+  <% } %>
 
 
 <!-- FAQs Content -->

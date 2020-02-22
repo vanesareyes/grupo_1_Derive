@@ -4,7 +4,7 @@ const path = require('path');
 const { check, validationResult, body } = require('express-validator');
 let usersFilePath = path.join(__dirname, '../data/users.json');
 let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
+delete usersJSON['password'];
 
 console.log(usersJSON)
 const controller = {
@@ -68,19 +68,25 @@ const controller = {
             console.log(errors)
         if (errors.isEmpty()){
             let usuarioALoguearse = usersJSON.find(user => user.email == req.body.email) 
-            console.log(usuarioALoguearse ,'usuarioALoguearse')
-            if (typeof usuarioALoguearse != 'undefined' && bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
-                req.session.usuarioLogueado = usuarioALoguearse;
-                console.log('session', req.session.usuarioLogueado)
-                    res.send('Bienvenido')
-                } else {res.render('login-form', {
+            if (typeof usuarioALoguearse != 'undefined'){
+                if (bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
+                    delete usuarioALoguearse.password;
+                    req.session.usuarioLogueado = usuarioALoguearse;
+                    res.redirect('/');
+                    } else {res.render('login-form', {
+                        errors: [
+                            { msg: 'La contraseña es inválida' }
+                        ]
+                    });
+                }
+            } else { res.render('login-form', {
                     errors: [
-                        { msg: 'La combinación de usuario y contraseña es inválida' }
+                        { msg: 'El usuario no existe' }
                     ]
-                });
-            }
 
-                
+            })
+        }
+    
         } else {
                 res.render('login-form', { 
                 errors: errors.errors,

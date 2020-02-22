@@ -12,11 +12,13 @@ const usersRouter = require('./routes/users');
 const methodOverride = require('method-override');
 
 const session = require('express-session');
+let guestMiddleware = require('./middlewares/guestMiddleware');
+let userMiddleware = require('./middlewares/userMiddleware');
 
-
-app.get('/', indexRouter);
-app.get('/users', usersRouter);
-app.get('/products', productsRouter);
+//Routes
+//app.get('/', indexRouter);
+//app.get('/users', usersRouter);
+//app.get('/products', productsRouter);
 
 
 
@@ -24,20 +26,23 @@ app.get('/products', productsRouter);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
+//Middlewares
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 app.use(session({secret: 'shhhh'}))
-
 app.use(function(req, res, next){
     res.locals.data = req.body;
     next();
   });
+app.use(userMiddleware)
 
+
+//Routes
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
