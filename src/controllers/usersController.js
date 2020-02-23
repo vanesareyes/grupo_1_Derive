@@ -4,9 +4,9 @@ const path = require('path');
 const { check, validationResult, body } = require('express-validator');
 let usersFilePath = path.join(__dirname, '../data/users.json');
 let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-delete usersJSON['password'];
+//const db = require('../database/models/index');
+//const sequelize = db.sequelize; 
 
-console.log(usersJSON)
 const controller = {
 
     login: (req, res) => {
@@ -34,15 +34,17 @@ const controller = {
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     phone: req.body.phone,
-                }
+                } 
+                console.log('user',user)
 
-                users = [
+                let users = [
                         ...usersJSON,
                         user,
-                    ]
+                    ] 
+                console.log('users',users)
                     //usersJSON.push(user)
                 usersJSON = JSON.stringify(users);
-                fs.writeFileSync('./data/users.json', usersJSON);
+                fs.writeFileSync(usersFilePath, usersJSON);
                 res.redirect(301, '/users/login')
             }
             
