@@ -35,6 +35,12 @@ const controller = {
         res.render('shoppingCart')
     },
 
+
+    contact: (req, res) => {
+        res.render('contact')
+    },
+
+
     //search: (req, res) => {
         // Do the magic
     //},

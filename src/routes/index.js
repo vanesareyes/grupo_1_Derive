@@ -15,5 +15,11 @@ router.get('/faqs', indexController.faqs);
 
 router.get('/shopping-cart', indexController.shoppingCart);
 
+//router.get('/contact', indexController.contact);
+
+router.get('/contact', indexController.contact);
+
+
+
 
 module.exports = router;

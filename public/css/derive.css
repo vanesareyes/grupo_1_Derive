@@ -13,6 +13,12 @@ body {
 	background-position: center;
 }
 
+.bg-green {
+	background-color: #50934A!important;
+	background-image: url(/images/nature-forest-trees-fog.jpg);
+	background-position: center;
+}
+
 .experience-tittle {
   margin: 2% 0 2% 0;
 }
