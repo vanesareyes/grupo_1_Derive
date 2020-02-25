@@ -15,12 +15,6 @@ const session = require('express-session');
 let guestMiddleware = require('./middlewares/guestMiddleware');
 let userMiddleware = require('./middlewares/userMiddleware');
 
-//Routes
-//app.get('/', indexRouter);
-//app.get('/users', usersRouter);
-//app.get('/products', productsRouter);
-
-
 
 // view engine setup
 

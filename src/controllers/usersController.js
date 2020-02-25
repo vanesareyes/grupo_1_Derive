@@ -2,10 +2,10 @@ const fs = require('fs');
 const bcrypt = require ('bcrypt');
 const path = require('path');
 const { check, validationResult, body } = require('express-validator');
-let usersFilePath = path.join(__dirname, '../data/users.json');
-let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-//const db = require('../database/models/index');
-//const sequelize = db.sequelize; 
+//let usersFilePath = path.join(__dirname, '../data/users.json');
+//let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const db = require('../database/models');
+const sequelize = db.sequelize; 
 
 const controller = {
 
@@ -23,45 +23,66 @@ const controller = {
 
         if (errors.isEmpty()) {
 
-            let usuarioExistente = usersJSON.find(user => user.email == req.body.email)
-            console.log(usuarioExistente)
-            if (typeof usuarioExistente != 'undefined') {
-                res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
-            } else {
-                let user = {
+            //let usuarioExistente = usersJSON.find(user => user.email == req.body.email)
+            //     let usuarioExistente = db.User.findOrCreate(
+            //         { where: {
+            //              email: req.body.email
+            //          },
+ 
+            // })
+
+            const [user, created] = db.User.findOrCreate({
+                where: { email: req.body.email },
+                defaults: {
                     name: req.body.name,
                     surname: req.body.surname,
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     phone: req.body.phone,
-                } 
-                console.log('user',user)
+                }
+              })
+              .then(res => console.info(res));
 
-                let users = [
-                        ...usersJSON,
-                        user,
-                    ] 
-                console.log('users',users)
-                    //usersJSON.push(user)
-                usersJSON = JSON.stringify(users);
-                fs.writeFileSync(usersFilePath, usersJSON);
-                res.redirect(301, '/users/login')
-            }
+        //     console.log(usuarioExistente)
+        //     if (typeof usuarioExistente != 'undefined') {
+        //         res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
+        //     } else {
+        //         let user = {
+        //             name: req.body.name,
+        //             surname: req.body.surname,
+        //             email: req.body.email,
+        //             password: bcrypt.hashSync(req.body.password, 10),
+        //             phone: req.body.phone,
+        //         } 
+
+        //         db.User.
+        //         console.log('user',user)
+
+        //         let users = [
+        //                 ...usersJSON,
+        //                 user,
+        //             ] 
+        //         console.log('users',users)
+        //             //usersJSON.push(user)
+        //         usersJSON = JSON.stringify(users);
+        //         fs.writeFileSync(usersFilePath, usersJSON);
+        //         res.redirect(301, '/users/login')
+        //     }
             
-           let users = [
-                ...usersJSON,
-                user,
-            ]
-            //usersJSON.push(user)
-            usersJSON = JSON.stringify(users);
-            fs.writeFileSync('./data/users.json', usersJSON);
-            res.redirect(301, '/users/login')
-            } 
-        else {
-            res.render('register-form', { 
-                errors: errors.errors
-            })
-        }
+        //    let users = [
+        //         ...usersJSON,
+        //         user,
+        //     ]
+        //     //usersJSON.push(user)
+        //     usersJSON = JSON.stringify(users);
+        //     fs.writeFileSync('./data/users.json', usersJSON);
+        //     res.redirect(301, '/users/login')
+        //     } 
+        // else {
+        //     res.render('register-form', { 
+        //         errors: errors.errors
+        //     })
+         }
 
     },
 
