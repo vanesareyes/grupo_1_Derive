@@ -28,7 +28,7 @@ const server = http.createServer(app);
 server.listen(port);
 console.log(`
 /------------------------
-Sever listening on PORT 3000
+Sever listening on http://localhost:3000/
 Happy programming
 ------------------------/
 `)
