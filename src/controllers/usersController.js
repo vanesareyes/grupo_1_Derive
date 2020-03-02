@@ -6,6 +6,7 @@ const { check, validationResult, body } = require('express-validator');
 //let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const db = require('../database/models');
 const sequelize = db.sequelize; 
+//console.log(db)
 
 const controller = {
 
@@ -17,21 +18,12 @@ const controller = {
         res.render('register-form')
     },
     
-    store: (req, res) => {
+    store: (req, res, next) => {
         let errors = validationResult(req)
         console.log(errors)
 
         if (errors.isEmpty()) {
-
-            //let usuarioExistente = usersJSON.find(user => user.email == req.body.email)
-            //     let usuarioExistente = db.User.findOrCreate(
-            //         { where: {
-            //              email: req.body.email
-            //          },
- 
-            // })
-
-            const [user, created] = db.User.findOrCreate({
+            db.user.findOrCreate({
                 where: { email: req.body.email },
                 defaults: {
                     name: req.body.name,
@@ -41,7 +33,22 @@ const controller = {
                     phone: req.body.phone,
                 }
               })
-              .then(res => console.info(res));
+              .then(([user, created]) => {
+                  if (!created){
+                    res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
+                } else {
+                    console.log(user.get)
+                    res.redirect(301, '/users/login')
+                }
+
+                })
+            } else {
+                   res.render('register-form', { 
+                        errors: errors.errors
+                    })
+                }
+
+        },
 
         //     console.log(usuarioExistente)
         //     if (typeof usuarioExistente != 'undefined') {
@@ -82,9 +89,7 @@ const controller = {
         //     res.render('register-form', { 
         //         errors: errors.errors
         //     })
-         }
-
-    },
+     
 
     processLogin: (req, res) => {
         let errors = validationResult(req)
@@ -119,6 +124,8 @@ const controller = {
 
             
         }
-    }
+}
            
 module.exports = controller;
+
+//crear, editar y ver detalle

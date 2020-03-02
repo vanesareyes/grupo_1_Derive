@@ -1,29 +1,41 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
 const sequelize = db.sequelize; 
 
 const controller = {
-	root: (req, res) => {
-		//console.log(products)
+
+	//List products
+	root: (req, res, next) => {
+		db.product.findAll(/*{
+			include: [
+				{association: db.location},
+				{association: db.category},
+			]
+		}*/).then( products => {
 		res.render('products', {
 			products
 		})
-	},
+		})
+		next();
+		},
+	
 
 	// Detail - Detail from one product
-	detail: (req, res) => {
-		let product = products.find(function (p) {
-			return p.id == req.params.id
+	detail: (req, res, next) => {
+		db.product.findByPk(req.params.id).then( data => {  
+			res.render('productDetail', {
+				product
+			})	
 		})
-		res.render('productDetail', {product})
+		next();	
+	},
         //.cookie('product_ids', generateProductCookie(req, product))
 		//.cookie('site', 'derive')
-		
-	},
+	
 
 	// Create - Form to create
 	create: (req, res) => {
@@ -97,3 +109,7 @@ const controller = {
 };
 
 module.exports = controller;
+
+//crear, editar, eliminar, listar, ver detalle, buscar
+
+
