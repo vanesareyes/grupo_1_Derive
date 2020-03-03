@@ -50,47 +50,6 @@ const controller = {
 
         },
 
-        //     console.log(usuarioExistente)
-        //     if (typeof usuarioExistente != 'undefined') {
-        //         res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
-        //     } else {
-        //         let user = {
-        //             name: req.body.name,
-        //             surname: req.body.surname,
-        //             email: req.body.email,
-        //             password: bcrypt.hashSync(req.body.password, 10),
-        //             phone: req.body.phone,
-        //         } 
-
-        //         db.User.
-        //         console.log('user',user)
-
-        //         let users = [
-        //                 ...usersJSON,
-        //                 user,
-        //             ] 
-        //         console.log('users',users)
-        //             //usersJSON.push(user)
-        //         usersJSON = JSON.stringify(users);
-        //         fs.writeFileSync(usersFilePath, usersJSON);
-        //         res.redirect(301, '/users/login')
-        //     }
-            
-        //    let users = [
-        //         ...usersJSON,
-        //         user,
-        //     ]
-        //     //usersJSON.push(user)
-        //     usersJSON = JSON.stringify(users);
-        //     fs.writeFileSync('./data/users.json', usersJSON);
-        //     res.redirect(301, '/users/login')
-        //     } 
-        // else {
-        //     res.render('register-form', { 
-        //         errors: errors.errors
-        //     })
-     
-
     processLogin: (req, res) => {
         let errors = validationResult(req)
             console.log(errors)

@@ -21,8 +21,8 @@ module.exports = (sequelize, dataTypes) => {
     const Location = sequelize.define(alias, cols, config);
 /*
     Location.associate = function (models) {
-        Location.hasMany(models.products, {
-            foreignKey: 'location_id'
+        Location.hasMany(location, {
+            foreignKey: 'locations_id'
         })
     }
 

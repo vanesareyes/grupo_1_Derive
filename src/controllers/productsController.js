@@ -15,23 +15,28 @@ const controller = {
 				{association: db.location},
 				{association: db.category},
 			]
-		}*/).then( products => {
+		}*/).then( (products) => {
 		res.render('products', {
 			products
 		})
 		})
-		next();
-		},
 	
-
+	},
+	
 	// Detail - Detail from one product
 	detail: (req, res, next) => {
-		db.product.findByPk(req.params.id).then( data => {  
+		db.product.findByPk(req.params.id, /*{
+			include: [
+				{association: db.location},
+				{association: db.category},
+			]
+		}*/)
+		.then( (product) => {  
 			res.render('productDetail', {
 				product
 			})	
 		})
-		next();	
+		
 	},
         //.cookie('product_ids', generateProductCookie(req, product))
 		//.cookie('site', 'derive')
@@ -39,72 +44,77 @@ const controller = {
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('product-create-form')
+		db.category.findAll().then((categories) => {
+			res.render('product-create-form', {
+				categories
+			})
+		})
+		
 	},
 	
 	// Create -  Method to store
-	store: (req, res, next) => {
-		console.log(req.files)
-
-		products.push({
-			id: productsFilePath.length,
-			...req.body,
-			...{image: req.files[0].filename}
+	store: (req, res) => {
+		db.product.create({
+			name: req.body.name ,
+			price: req.body.price,
+			img: "" ,
+			img2: "" ,
+			img3: "",
+			img4: "",
+			img5: "",
+			categories_id: req.body.category ,  //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
+			locations_id:req.body.location,  //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
+			description: req.body.description ,        
+			created_at: "",
+			updated_at:"",
+			destacado: ""
 		})
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products))
-
 		res.redirect('/products')
+
 	},
 
     // Update - Form to edit
 	edit: (req, res) => {
-		let product = products.find(p => p.id == req.params.id)			
-				
-		res.render('product-edit-form', {
-			product
-		});
+		let productoAEditar = db.product.findByPk(req.params.id);
+		let categories = db.category.findAll();
+		Promise.all([productoAEditar, categories])
+		.then(([product, categories]) => {
+			res.render('product-edit-form', {
+				product, categories
+			});
+		})			
 	},
 
 	update: (req, res) => {
-		let arrayIndex
-
-		let product = products.find(function (p, index) {
-			if (p.id == req.params.id) {
-				arrayIndex = index
-				return true
-			}
-
-			return false
-		})
-
-		let editado = {
-			...product,
-			...req.body
-		}
-
-		products[arrayIndex] = editado
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products))
-
-		res.send('listo!')
+		db.product.update({
+			name: req.body.name ,
+			price: req.body.price,
+			img: "" ,
+			img2: "" ,
+			img3: "",
+			img4: "",
+			img5: "",
+			categories_id: req.body.category ,  //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
+			locations_id:req.body.location,  //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
+			description: req.body.description ,        
+			created_at: "",
+			updated_at:"",
+			destacado: ""
+		}, {where: {
+			id: req.params.id
+		}}
+		)
+		res.redirect('/products/' + req.params.id)
     },
     
     delete: (req, res) => {
-						
-		//let product = products.find(p => p.id == req.params.id);
-		let finalProducts = products.filter (product => product.id != req.params.id);
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts,null,''));
+		db.product.destroy({
+			where: {
+				id: req.params.id,
+			}
+		})
 		res.redirect('/products');
 	}
-		
-/*
-		let product = products.find(function (p) {
-			return p.id == req.params.id
-		})		
-		res.render('product-deletion', {
-			product:product
-		})*/
     
 };
 
