@@ -13,19 +13,19 @@ module.exports = (sequelize, dataTypes) => {
         surname: {
             type: dataTypes.STRING(15),
             allowNull: false,
-        },        
+        },
         email: {
             type: dataTypes.STRING(45),
             allowNull: false,
         },
         password: {
-            type: dataTypes.STRING(12),
+            type: dataTypes.STRING(100),
             allowNull: false,
         },
         phone: {
             type: dataTypes.INTEGER(15),
             allowNull: false,
-        } ,
+        },
         profile_img: {
             type: dataTypes.STRING(200),
             allowNull: true,
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
         }
 
     };
-    
+
     let config = {
         timestamps: true,
         underscored: true,
@@ -52,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
-     User.associate = function (models){
+    User.associate = function(models) {
         User.belongsToMany(models.product, {
             through: 'user_product',
             timestamps: false,
@@ -60,7 +60,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'products_id',
 
         })
-    
+
     }
     return User;
 }

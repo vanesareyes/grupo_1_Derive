@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include partials/head %>
+<%- include partials/head %>
 
-<body>
+    <body>
 
-<!-- NavBar -->
-<% if (typeof locals.user != 'undefined') {
-  %> <%- include partials/usernavbar %> <%
-} else { %> 
-<%- include partials/navbar %>
-<% } %>
+        <!-- NavBar -->
+        <% if (typeof locals.user != 'undefined') { %>
+            <%- include partials/usernavbar %>
+                <% } else { %>
+                    <%- include partials/navbar %>
+                        <% } %>
 
-<!-- Product Featured-->
-<%- include partials/productFeatured %>
+                            <!-- Product Featured-->
+                            <%- include partials/productFeatured %>
 
-<!-- Footer -->
-<%- include partials/footer.ejs %>
+                                <!-- Footer -->
+                                <%- include partials/footer.ejs %>
 
-</body>
+    </body>
 
 </html>

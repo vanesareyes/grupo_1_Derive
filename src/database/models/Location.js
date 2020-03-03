@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'location';
-    
+
     let cols = {
         id: {
             type: dataTypes.INTEGER(11),
@@ -19,13 +19,13 @@ module.exports = (sequelize, dataTypes) => {
 
 
     const Location = sequelize.define(alias, cols, config);
-/*
-    Location.associate = function (models) {
-        Location.hasMany(location, {
+
+    Location.associate = function(models) {
+        Location.hasMany(models.product, {
             foreignKey: 'locations_id'
         })
     }
 
-  */  
+
     return Location;
 }
