@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   <%- include partials/head %>
-<body>
+<%- include partials/head %>
 
-  <!-- NavBar -->
-  <%- include partials/navbar %>
+    <body>
 
-  <!-- Header -->
-  <%- include partials/headerContact %>
+        <!-- NavBar -->
+        <% if (typeof locals.user != 'undefined') { %>
+            <%- include partials/usernavbar %>
+                <% } else { %>
+                    <%- include partials/navbar %>
+                        <% } %>
 
-  <!-- Contact Content -->
+                            <!-- Header -->
+                            <%- include partials/headerContact %>
 
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-          <div class="header-title">
-              <h1 class="wv-heading--title">
-                Acerca de Derivé
-              </h1>
-              <h2 class="wv-heading--subtitle">
-                
-                En Derivé llevamos mas de diez años brindando experiencias únicas e innovadoras. <br>
-
-                Nuestra meta es que vivas al máximo cada momento, a través de placenteras propuestas creadas para explorar los sentidos.
-                
-              </h2> <br>
-
-<h2>eMail</h2> <p>info@derive.com</p>
-
-<h2>Telefono</h2><p>+ 54 911 1234 5678</p>
+                                <!-- Contact Content -->
 
 
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="header-title">
+                                                <h1 class="wv-heading--title">
+                                                    Acerca de Derivé
+                                                </h1>
+                                                <h2 class="wv-heading--subtitle">
 
-             </div>
-      </div>
+                                                    En Derivé llevamos mas de diez años brindando experiencias únicas e innovadoras. <br> Nuestra meta es que vivas al máximo cada momento, a través de placenteras propuestas creadas para explorar los sentidos.
 
-      <div class="col-lg-6">
-        <div class="header-title">
-          <h1 class="wv-heading--title">
-            Contacto
-          </h1>
-        </div>  
-        <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" name="name" class="form-control my-input">
-        </div>
-        <div class="form-group">
-            <label for="description">Comentarios</label>
-            <textarea class="form-control my-input" name="description" rows="3" id="description"></textarea>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Suscribirme al Newsletter</label>
-        </div>
+                                                </h2> <br>
 
-        <div class="text-center ">
-            <button type="submit" class=" btn btn-block send-button tx-tfm">Enviar</button>
-        </div>
+                                                <h2>eMail</h2>
+                                                <p>info@derive.com</p>
 
-       
+                                                <h2>Telefono</h2>
+                                                <p>+ 54 911 1234 5678</p>
 
 
 
+                                            </div>
+                                        </div>
 
+                                        <div class="col-lg-6">
+                                            <div class="header-title">
+                                                <h1 class="wv-heading--title">
+                                                    Contacto
+                                                </h1>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Nombre</label>
+                                                <input type="text" name="name" class="form-control my-input">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="description">Comentarios</label>
+                                                <textarea class="form-control my-input" name="description" rows="3" id="description"></textarea>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">Suscribirme al Newsletter</label>
+                                            </div>
 
-    </div>
+                                            <div class="text-center ">
+                                                <button type="submit" class=" btn btn-block send-button tx-tfm">Enviar</button>
+                                            </div>
 
 
 
 
-  </div>
-  </div>
-      
-  
-       
-   
-  
-
-  
-  
 
 
-  <!-- Footer -->
-  <%- include partials/footerContact.ejs %>
 
-</body>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <!-- Footer -->
+                                <%- include partials/footerContact.ejs %>
+
+    </body>
 
 </html>

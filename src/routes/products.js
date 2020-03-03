@@ -27,7 +27,10 @@ function ejemplo(req, res, next) {
 	next()
 }
 
-router.get('/', ejemplo, productsController.root); /* GET - All products */
+/*** LISTING PRODUCTS***/
+//router.get('/', ejemplo, productsController.root); /* GET - All products */
+router.get('/', productsController.root);
+
 router.get('/detail/:id/', productsController.detail); /* GET - Product detail */
 
 /*** CREATE ONE PRODUCT ***/ 
@@ -41,6 +44,9 @@ router.put('/edit/:id', productsController.update); /* PUT - Update in DB */
 /*** DELETE ONE PRODUCT***/ 
 router.get('/delete/:id', productsController.edit); /* DELETE - Delete from DB */
 router.delete('/delete/:id', productsController.delete); /* DELETE - Delete from DB */
+
+
+
 
 module.exports = router;
 
