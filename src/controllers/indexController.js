@@ -15,10 +15,10 @@ const controller = {
             where: {
                 destacado: 0  //hotThisWeek 
             },
-			/*include: [
-				{association: db.location},
-				{association: db.category},
-			]*/
+			include: [
+				"location",
+				"category"
+			]
 		}).then ((products) => {
             console.log(products)
                 res.render('index', {

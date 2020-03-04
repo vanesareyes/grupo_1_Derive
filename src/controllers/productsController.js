@@ -17,6 +17,7 @@ const controller = {
             ]
         }).then((products) => {
 
+            console.log(product.category)
             res.render('products', {
                 products
             })
@@ -64,8 +65,8 @@ const controller = {
             img3: "",
             img4: "",
             img5: "",
-            categories_id: req.body.category, //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
-            locations_id: req.body.location, //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
+            categories_id: req.body.category, 
+            locations_id: req.body.location, 
             description: req.body.description,
             created_at: "",
             updated_at: "",
@@ -77,10 +78,16 @@ const controller = {
 
     // Update - Form to edit
     edit: (req, res) => {
-        let productoAEditar = db.product.findByPk(req.params.id);
+        let productoAEditar = db.product.findByPk(req.params.id, {
+            include: [
+                "location",
+                "category"
+            ]
+        });
         let categories = db.category.findAll();
         Promise.all([productoAEditar, categories])
             .then(([product, categories]) => {
+                console.log('categories',categories)
                 res.render('product-edit-form', {
                     product,
                     categories
@@ -98,7 +105,7 @@ const controller = {
             img4: "",
             img5: "",
             categories_id: req.body.category, //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
-            locations_id: req.body.location, //FALLA XQ NO ESTA TOMANDO LA RELACION SUPONGO
+            locations_id: req.body.location, 
             description: req.body.description,
             created_at: "",
             updated_at: "",
