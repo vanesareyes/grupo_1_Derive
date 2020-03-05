@@ -47,11 +47,17 @@ const controller = {
 
     // Create - Form to create
     create: (req, res) => {
-        db.category.findAll().then((categories) => {
-            res.render('product-create-form', {
-                categories
+        let categories = db.category.findAll();
+        let locations = db.location.findAll();
+        Promise.all([categories,locations])
+            .then(data => {
+                let [categories, locations] = data
+
+                res.render('product-create-form', {
+                    locations,
+                    categories
+                });
             })
-        })
 
     },
 

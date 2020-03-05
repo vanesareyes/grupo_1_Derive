@@ -25,7 +25,8 @@
          <div class="container">
             <div class="col-12 mx-auto">
                <div class="myform form">
-                  <form action="/products/edit/<%=product.id%>" method="PUT" name="edit-product">
+                  <form action="/products/edit/<%=product.id%>"  name="edit-product" method="POST">
+                     <input type="hidden" value="PUT" name="_method">
                      <div class="row">
                         <div class="col">
                            <div class="form-group">
