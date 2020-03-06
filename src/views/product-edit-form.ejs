@@ -26,7 +26,7 @@
             <div class="col-12 mx-auto">
                <div class="myform form">
                   <form action="/products/edit/<%=product.id%>"  name="edit-product" method="POST">
-                     <input type="hidden" value="PUT" name="_method">
+                     <input type="hidden" name="_method" value="PUT" >
                      <div class="row">
                         <div class="col">
                            <div class="form-group">
@@ -42,16 +42,14 @@
                               <select name="category"  class="form-control my-input" id="category" placeholder="Escapada">
                                  <% categories.forEach( category => {%>
                                     <% if (category.id == product.categories_id) { %>
-                                       <option value = "<%=category.id%>" selected>
+                                       <option value = "<%=product.category.id%>" selected>
                                           <%=product.category.category%>
                                       </option>                                   
                                        <%} else { %>
                                           <option value = "<%=category.id%>">
                                              <%=category.category%>
                                          </option> 
-                                          <% } %>
-                                   
-                           
+                                          <% } %>                                                        
                                 <% }) %>
                             </select>
                            </div>
@@ -59,11 +57,23 @@
                         <div class="col">
                            <div class="form-group">
                               <label for="location">Ubicación</label>
-                              <input type="text" name="location"  class="form-control my-input" value= "<%= product.location.location%>" id="location" placeholder="Escobar, Provincia de Buenos Aires, Argentina">
+                              <select name="location"  class="form-control my-input" id="location">
+                                 <% locations.forEach(location => {%>
+                                    <% if (location.id == product.location_id) { %>
+                                       <option value = "<%=location.id%>" selected>
+                                          <%=product.location.location%>
+                                      </option>                                   
+                                       <%} else { %>
+                                          <option value = "<%=location.id%>">
+                                             <%=location.location%>
+                                         </option> 
+                                          <% } %>                                                        
+                                <% }) %>
+                            </select>
                            </div>
                            <div class="form-group">
                               <label  for="description">Descripción</label>
-                              <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description" placeholder="Ej: Rompé con la rutina y disfrutá de una escapada romántica en el medio de la naturaleza en un hotel con encanto." rows="3"></textarea>
+                              <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="3"><%=product.description%></textarea>
                            </div>
                            <div class="text-center ">
                               <button type="submit" class=" btn btn-block send-button tx-tfm">Editar producto</button>
