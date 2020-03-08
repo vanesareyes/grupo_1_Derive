@@ -20,8 +20,7 @@ const controller = {
 				"category"
 			]
 		}).then ((products) => {
-            console.log(products)
-                res.render('index', {
+            res.render('index', {
                     products
                 })
     })

@@ -6,7 +6,7 @@ const { check, validationResult, body } = require('express-validator');
 //let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const db = require('../database/models');
 const sequelize = db.sequelize;
-
+const crypto = require('crypto');
 
 const controller = {
 
@@ -52,17 +52,35 @@ const controller = {
 
     processLogin: (req, res) => {
         let errors = validationResult(req)
-        console.log(errors)
+        console.log('errores', errors)
         if (errors.isEmpty()) {
             db.user.findOne({
                 where: {email: req.body.email}
             }).then((usuarioALoguearse) => {
-               console.log('USUARIOALOGUEARSE', usuarioALoguearse)
             if (usuarioALoguearse != null) {
                 if (bcrypt.compare(req.body.password, usuarioALoguearse.password)) {
                     delete usuarioALoguearse.password;
-                    req.session.usuarioLogueado = usuarioALoguearse;
-                    res.redirect('/');
+                    req.session.user = usuarioALoguearse;
+                    res.locals.user = req.session.user;
+                    if (req.body.remember) {
+                        // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
+                        const token = crypto.randomBytes(64).toString('base64');
+                        res.cookie('rememberToken', token, { maxAge: 1000 * 60 * 60 * 24 * 90 });
+                        db.userstoken.create({
+                            token: token,
+                            users_id: usuarioALoguearse.id,
+                            created_at: "",
+                            updated_at: "",
+                            
+                        },{
+                            include: [
+                                "user"
+                            ]
+                        }).then((result)=>{
+                    //res.redirect('/users/perfil');
+                            res.redirect('/');
+                        })
+                }                     
                 } else {
                     res.render('login-form', {
                         errors: [
@@ -75,17 +93,14 @@ const controller = {
                     errors: [
                         { msg: 'El usuario no existe' }
                     ]
-
                 })
             }
-
         })
     } else {
             res.render('login-form', {
                 errors: errors.errors,
             })
-        }
-    
+        } 
 }
 }
 

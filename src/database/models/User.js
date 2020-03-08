@@ -58,7 +58,10 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false,
             foreignKey: 'users_id',
             otherKey: 'products_id',
-
+        })
+        User.hasOne(models.userstoken,{
+            as: "user",
+            foreignKey: "users_id"
         })
 
     }
