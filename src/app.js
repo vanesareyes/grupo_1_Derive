@@ -13,7 +13,7 @@ const methodOverride = require('method-override');
 
 const session = require('express-session');
 let guestMiddleware = require('./middlewares/guestMiddleware');
-const userMiddleware = require('./middlewares/userMiddleware');
+const auth = require('./middlewares/auth');
 
 
 // view engine setup
@@ -33,7 +33,7 @@ app.use(function(req, res, next){
     res.locals.data = req.body;
     next();
   });
-app.use(userMiddleware);
+app.use(auth);
 
 
 //Routes

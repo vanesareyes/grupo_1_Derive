@@ -3,16 +3,20 @@ const router = express.Router();
 const usersController = require('../controllers/usersController');
 let userValidationRegister = require('../middlewares/userValidationRegister');
 let userValidationLogin = require('../middlewares/userValidationLogin');
+const guestMiddleware = require('../middlewares/guestMiddleware')
+const userMiddleware = require('../middlewares/userMiddleware')
 
-
-//let logDBMiddleware = require(‘../middlewares/lodDBMidleware’)
-
-router.get('/login', usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 
 router.post('/login', userValidationLogin, usersController.processLogin);
 
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 
 router.post('/register', userValidationRegister, usersController.store);
+
+//router.get('/profile', userMiddleware, usersController.profile);
+//router.get('/logout', usersController.logout);
+//router.get('/:id/edit', usersController.edit);
+//router.delete('/:id', usersController.destroy);
 
 module.exports = router;

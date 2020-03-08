@@ -80,7 +80,10 @@ const controller = {
                     //res.redirect('/users/perfil');
                             res.redirect('/');
                         })
-                }                     
+                    } else {
+                        //res.redirect('/users/perfil');
+                        res.redirect('/');
+                    }                     
                 } else {
                     res.render('login-form', {
                         errors: [
@@ -96,12 +99,29 @@ const controller = {
                 })
             }
         })
-    } else {
+        } else {
             res.render('login-form', {
                 errors: errors.errors,
             })
         } 
-}
+    },
+    // logout: (req, res) => {
+    //     // Al hacer logout borramos todos las cookies activas
+    //     db.userstoken.destroy({
+    //         where: {
+    //             users_id: req.session.user.id 
+    //         }
+    //     })
+    //     req.session.destroy();
+    //     res.cookie('rememberToken', null, { maxAge: -1 });
+    //     res.redirect('/login');
+    // },
+
+        // La otra opción sería solo borrar la que corresponda a esta sesión.
+        // let token = userTokensModel.findByField('token', req.cookies.rememberToken);
+        // if (token) { userTokensModel.destroy(token.id) }
+
+ 
 }
 
 module.exports = controller

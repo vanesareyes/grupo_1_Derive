@@ -9,15 +9,13 @@ const sequelize = db.sequelize;
 const controller = {
 
     //List products
-    root: (req, res, next) => {
+    root: (req, res) => {
         db.product.findAll({
             include: [
                 "location",
                 "category",
             ]
         }).then((products) => {
-
-            console.log(product.category)
             res.render('products', {
                 products
             })
