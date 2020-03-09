@@ -12,7 +12,6 @@ const usersRouter = require('./routes/users');
 const methodOverride = require('method-override');
 
 const session = require('express-session');
-let guestMiddleware = require('./middlewares/guestMiddleware');
 const auth = require('./middlewares/auth');
 
 
