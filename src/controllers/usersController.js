@@ -105,23 +105,40 @@ const controller = {
             })
         } 
     },
-    // logout: (req, res) => {
-    //     // Al hacer logout borramos todos las cookies activas
-    //     db.userstoken.destroy({
-    //         where: {
-    //             users_id: req.session.user.id 
-    //         }
-    //     })
-    //     req.session.destroy();
-    //     res.cookie('rememberToken', null, { maxAge: -1 });
-    //     res.redirect('/login');
-    // },
+    profile: (req, res) => {
+        res.send('VER TU PERFIL')
+    },
+
+    editProfile: (req, res) => {
+        res.send('EDITA TUS DATOS')
+    },
+
+
+    logout: (req, res) => {
+        console.log('sesion', req.session.user.id)
+        // Al hacer logout borramos todos las cookies activas
+        db.userstoken.destroy({
+            where: {
+                users_id: req.session.user.id 
+            }
+        })
+        // },{
+        //     include: [
+        //         "user"
+        //     ]
+        // })
+        .then((result)=>{
+            req.session.destroy();
+            res.cookie('rememberToken', null, { maxAge: -1 });
+            res.redirect('login');
+        })
+    }
+    
 
         // La otra opción sería solo borrar la que corresponda a esta sesión.
         // let token = userTokensModel.findByField('token', req.cookies.rememberToken);
         // if (token) { userTokensModel.destroy(token.id) }
 
- 
 }
 
 module.exports = controller
