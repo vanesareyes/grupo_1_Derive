@@ -13,7 +13,7 @@
                         <% } %>
                                 <!-- Contact Content -->
 
-
+                                <div class="separador"></div>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -22,6 +22,32 @@
                                                     Estos son los resultados de tu búsqueda
                                                 </h1>
                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <% products.forEach((product) => { %>
+                                                <div class="col-md-3 col-lg-3 highlighter">
+                                                    <div class="card h-100">
+                                                        <img class="card-img-top mt-2" src="<%=product.img%>" alt="" id="experiencePrimaryImage">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title" id="experienceTittle">
+                                                                <%= product.name%>
+                                                            </h4>
+                                                            <ul class="list-inline small how-many-stars stars-left-align">
+                                                                <li class="list-inline-item m-0"><i class="far fa-star text-gray starsize"></i></li>
+                                                                <li class="list-inline-item m-0"><i class="fas fa-star text-success starsize"></i></li>
+                                                                <li class="list-inline-item m-0"><i class="fas fa-star text-success starsize"></i></li>
+                                                                <li class="list-inline-item m-0"><i class="fas fa-star text-success starsize"></i></li>
+                                                                <li class="list-inline-item m-0"><i class="fas fa-star text-success starsize"></i></li>
+                                                            </ul>
+                                                            <span class="text-muted font-weight-normal font-italic d-block small" id="categoryName">Categoría: <%= product.category.category%></span>
+                                                            <p class="card-text" id="experienceDescrption">
+                                                                <%= product.description%>
+                                                            </p>
+                                                            <a href="/products/detail/<%= product.id%>" class="btn btn-primary">Quiero saber más!</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <% } ) %>
                                         </div>
                                     </div>
                                 </div>

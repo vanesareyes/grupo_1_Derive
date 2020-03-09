@@ -14,9 +14,9 @@
             <a class="nav-link" href="/faqs">FAQs</a><!--Hay que definir el objetivo del link-->
           </li>
           <!-- Acá comienza el formulario de búsqueda, incluido dentro del mismo <ul>-->
-          <form action="/busqueda">
+          <form action="/busqueda" method="GET">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Encontrá tu experiencia...">
+              <input name="busqueda" type="text" class="form-control" placeholder="Encontrá tu experiencia...">
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit"> <!--Asignarle funcionamiento al botón de búsqueda-->
                   <i class="fas fa-search"></i>
@@ -35,11 +35,11 @@
           <li class="nav-item">
             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hola <strong><%= user.name %> </strong><i class="fas fa-user-circle"></i></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Ver Perfil</a>
+                <a class="dropdown-item" href="/users/profile">Ver Perfil</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Edita Perfil</a>
+                <a class="dropdown-item" href="/users/edit-profile">Edita Perfil</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
             </div>
           </li>
           <li class="nav-item">
