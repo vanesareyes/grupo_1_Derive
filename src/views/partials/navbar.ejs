@@ -14,9 +14,9 @@
             <a class="nav-link" href="/faqs">FAQs</a><!--Hay que definir el objetivo del link-->
           </li>
           <!-- Acá comienza el formulario de búsqueda, incluido dentro del mismo <ul>-->
-          <form>
+          <form action="/busqueda" method="GET">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Encontrá tu experiencia...">
+              <input name="busqueda" type="text" class="form-control" placeholder="Encontrá tu experiencia...">
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit"> <!--Asignarle funcionamiento al botón de búsqueda-->
                   <i class="fas fa-search"></i>

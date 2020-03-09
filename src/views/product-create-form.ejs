@@ -6,7 +6,7 @@
 <body>
     <!-- NavBar -->
     <% if (typeof locals.user != 'undefined') {
-        %> <%- include partials/newUserNavbar %> <%
+        %> <%- include partials/usernavbar %> <%
       } else { %> 
       <%- include partials/navbar %>
       <% } %>
@@ -46,6 +46,51 @@
                                    
                                         <% }) %>
                                     </select>
+                                </div>
+                                
+                                <div style="position:relative;">
+                                    <a class='btn btn-primary' href='javascript:;'>
+                                        Seleccionar imagen #1
+                                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img" name="img" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+                                    </a>
+                                    &nbsp;
+                                    <span class='label label-info' id="upload-file-info"></span>
+                                </div>
+                                <div class= "dropdown-divider"> </div>
+                                <div style="position:relative;">
+                                    <a class='btn btn-primary' href='javascript:;'>
+                                        Seleccionar imagen #2
+                                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img2" name="img2" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+                                    </a>
+                                    &nbsp;
+                                    <span class='label label-info' id="upload-file-info"></span>
+                                </div>
+                                <div class= "dropdown-divider"> </div>
+                                <div style="position:relative;">
+                                    <a class='btn btn-primary' href='javascript:;'>
+                                        Seleccionar imagen #3
+                                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img3" name="img3" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+                                    </a>
+                                    &nbsp;
+                                    <span class='label label-info' id="upload-file-info"></span>
+                                </div>
+                                <div class= "dropdown-divider"> </div>
+                                <div style="position:relative;">
+                                    <a class='btn btn-primary' href='javascript:;'>
+                                        Seleccionar imagen #4
+                                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img4 "name="img4" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+                                    </a>
+                                    &nbsp;
+                                    <span class='label label-info' id="upload-file-info"></span>
+                                </div>
+                                <div class= "dropdown-divider"> </div>
+                                <div style="position:relative;">
+                                    <a class='btn btn-primary' href='javascript:;'>
+                                        Seleccionar imagen #5
+                                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img5 "name="img5" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+                                    </a>
+                                    &nbsp;
+                                    <span class='label label-info' id="upload-file-info"></span>
                                 </div>
                             </div>
                             <div class="col">

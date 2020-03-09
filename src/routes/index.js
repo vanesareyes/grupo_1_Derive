@@ -19,6 +19,8 @@ router.get('/shopping-cart', indexController.shoppingCart);
 
 router.get('/contact', indexController.contact);
 
+router.get('/busqueda', indexController.buscar);
+
 
 
 
