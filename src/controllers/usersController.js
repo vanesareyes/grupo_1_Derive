@@ -121,7 +121,7 @@ const controller = {
         // let token = userTokensModel.findByField('token', req.cookies.rememberToken);
         // if (token) { userTokensModel.destroy(token.id) }
 
- 
+
 }
 
 module.exports = controller

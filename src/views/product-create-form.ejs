@@ -5,8 +5,8 @@
 
 <body>
     <!-- NavBar -->
-    <% if (typeof locals.user != 'undefined') {
-        %> <%- include partials/usernavbar %> <%
+    <% if (isAuthenticated) {
+        %> <%- include partials/newUserNavbar %> <%
       } else { %> 
       <%- include partials/navbar %>
       <% } %>
