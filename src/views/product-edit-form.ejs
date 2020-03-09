@@ -59,9 +59,9 @@
                               <label for="location">Ubicación</label>
                               <select name="location"  class="form-control my-input" id="location">
                                  <% locations.forEach(location => {%>
-                                    <% if (location.id == product.location_id) { %>
-                                       <option value = "<%=location.id%>" selected>
-                                          <%=product.location.location%>
+                                    <% if (location.id == product.locations_id) { %>
+                                       <option value = "<%=product.location.id%>" selected>
+                                          <%=location.location%>
                                       </option>                                   
                                        <%} else { %>
                                           <option value = "<%=location.id%>">
