@@ -26,17 +26,27 @@
           </form>
         </ul>
         <ul class="navbar-nav ml-auto">
+          <!--<li class="nav-item">
+            <a href="/users/login" class="nav-link">INGRESAR</a>
+          </li>
+          <li>
+            <a href="/users/register" class="nav-link">REGRISTRARSE</a>
+          </li>-->
           <li class="nav-item">
-            <a href="" class="nav-link">Hola <strong><%= user.name %></strong></a><!--Hay que definir el objetivo del link-->
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hola <strong><%= user.name %> </strong><i class="fas fa-user-circle"></i></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Ver Perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Edita Perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Cerrar Sesión</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a href="user-profile" class="nav-link"><i class="fas fa-user-circle"></i></a><!--Hay que definir el objetivo del link-->
+            <a href="/shopping-cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
           </li>
           <li class="nav-item">
-            <a href="shopping-cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a><!--Hay que definir el objetivo del link-->
-          </li>
-          <li class="nav-item">
-            <a href="contact" class="nav-link"><i class="fas fa-comment-alt"></i></a><!--Hay que definir el objetivo del link-->
+            <a href="contact" class="nav-link"><i class="fas fa-comment-alt"></i></a>
           </li>
         </ul>
       </div>
