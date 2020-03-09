@@ -45,17 +45,20 @@
              <div class="form-group">
               <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Teléfono" value="<%= locals.data.phone ? locals.data.phone : '' %>">
              </div>
-             <div class="form-group">
+             
+             <!--<div class="form-group">
                <input type="password" min="0" name="password" id="password"  class="form-control my-input" placeholder="Contraseña">
+              </div>-->
+
+              <div class="form-group">
+                <label for="UserImageFile">Cargar imagen de perfil</label>
+                <input type="file" class="form-control-file" id="UserImageFile">
               </div>
+
              <div class="text-center ">
               <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar mis datos!</button>
              </div>
 
-             <div class="form-group">
-                <label for="FormControlUserImageFile">Cargar imagen de perfil</label>
-                <input type="file" class="form-control-file" id="FormControlUserImageFile">
-              </div>
 
              <div class="col-md-12 ">
               <div class="login-or">
