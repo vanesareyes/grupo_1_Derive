@@ -5,7 +5,7 @@
 <body>
 
   <!-- NavBar -->
-  <%- include partials/navbar %>
+  <%- include partials/usernavbar %>
 
 <!-- Register Content -->
 <% if (typeof errors != 'undefined') { %>
@@ -23,10 +23,10 @@
     <div class="col-lg-6">
         <div class="header-title">
             <h1 class="wv-heading--title">
-               Registrate — es gratis!
+               Gracias por registrarte!
             </h1>
             <h2 class="wv-heading--subtitle">
-               Te enviaremos las mejores promociones para que vivas experiencias únicas, especialmente curadas por nuestro equipo de expertos.
+               Completar tu perfil nos ayuda a brindarte una experiencia personalizada, a la medida de tus gustos y búsquedas.
             </h2>
            </div>
     </div>
@@ -42,15 +42,21 @@
              <div class="form-group">
               <input type="email" name="email"  class="form-control my-input" id="email" placeholder="eMail" value="<%= locals.data.email ? locals.data.email : '' %>">
              </div>
-             <!--<div class="form-group">
+             <div class="form-group">
               <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Teléfono" value="<%= locals.data.phone ? locals.data.phone : '' %>">
-             </div>-->
+             </div>
              <div class="form-group">
                <input type="password" min="0" name="password" id="password"  class="form-control my-input" placeholder="Contraseña">
               </div>
              <div class="text-center ">
-              <button type="submit" class=" btn btn-block send-button tx-tfm">Registrarme gratis!</button>
+              <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar mis datos!</button>
              </div>
+
+             <div class="form-group">
+                <label for="FormControlUserImageFile">Cargar imagen de perfil</label>
+                <input type="file" class="form-control-file" id="FormControlUserImageFile">
+              </div>
+
              <div class="col-md-12 ">
               <div class="login-or">
                <hr class="hr-or">
