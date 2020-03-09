@@ -40,6 +40,10 @@ const controller = {
         res.render('contact')
     },
 
+    buscar: (req, res) => {
+        res.render('busqueda')
+    },
+
 };
 
 module.exports = controller;

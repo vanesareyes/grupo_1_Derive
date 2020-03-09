@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include partials/head %>
+
+    <body>
+
+        <!-- NavBar -->
+        <% if (isAuthenticated) { %>
+            <%- include partials/newUserNavbar %>
+                <% } else { %>
+                    <%- include partials/navbar %>
+                        <% } %>
+                                <!-- Contact Content -->
+
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="header-title">
+                                                <h1 class="wv-heading--title">
+                                                    Estos son los resultados de tu búsqueda
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Footer -->
+                                <%- include partials/footerContact.ejs %>
+
+    </body>
+
+</html>
