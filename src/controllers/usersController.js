@@ -139,10 +139,6 @@ const controller = {
         // let token = userTokensModel.findByField('token', req.cookies.rememberToken);
         // if (token) { userTokensModel.destroy(token.id) }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d8446d274189eed171ce78ce48a9fed6e23515ec
 }
 
 module.exports = controller
