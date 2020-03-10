@@ -32,9 +32,8 @@ const controller = {
                 ]
             })
             .then((product) => {
-                console.log(product.category)
                 res.render('productDetail', {
-                    product
+                    product,
                 })
             })
 
