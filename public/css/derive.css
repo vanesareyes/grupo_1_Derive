@@ -348,4 +348,15 @@ footer p {
 		padding: 8px 25px;
 	  }
 
+	.btn-reset{
+		background: rgba(255, 255, 255, 0);
+		border-color: rgba(255, 255, 255, 0) ;
+		width:100%;
+		font-weight: 600;
+		color: #4c5357;
+		padding: 8px 25px;
+      }	
+
+}
+
 	
