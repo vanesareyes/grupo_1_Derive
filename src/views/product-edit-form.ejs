@@ -13,7 +13,7 @@
 
 
 
-    <div class="container">
+   <div class="container">
       <div class="col-12 mx-auto text-center">
          <div class="header-title">
             <h1 class="wv-heading--title">
@@ -25,7 +25,7 @@
          <div class="container">
             <div class="col-12 mx-auto">
                <div class="myform form">
-                  <form action="/products/edit/<%=product.id%>"  name="edit-product" method="POST">
+                  <form action="/products/edit/<%=product.id%>?_method=put"  name="edit-product" method="POST">
                      <input type="hidden" name="_method" value="PUT" >
                      <div class="row">
                         <div class="col">
@@ -54,69 +54,45 @@
                             </select>
                            </div>
 
-                           <div style="position:relative;">
+                          <div style="position:relative;">
                               <img src="<%=product.img%>" width="150" height="100" alt="#">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                  Editar imagen #1 
-                                  <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img" name="img" size="40"  value= "<%=product.img%>" onchange='$("#upload-file-info").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info"></span>
+                              <input type="text" name="img"  class="form-control my-input" id="img" placeholder="Imagen#1">
                           </div>
                           <div class= "dropdown-divider"> </div>
                           <div style="position:relative;">
-                           <img src="<%=product.img2%>" width="150" height="100" alt="#">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                 Editar imagen #2
-                                  <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img2" name="img2" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info"></span>
+                              <img src="<%=product.img2%>" width="150" height="100" alt="#">
+                              <input type="text" name="img2"  class="form-control my-input" id="img2" placeholder="Imagen#2">
                           </div>
                           <div class= "dropdown-divider"> </div>
                           <div style="position:relative;">
-                           <img src="<%=product.img3%>" width="150" height="100" alt="#">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                 Editar imagen #3
-                                  <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img3" name="img3" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info"></span>
+                              <img src="<%=product.img3%>" width="150" height="100" alt="#">
+                              <input type="text" name="img3"  class="form-control my-input" id="img3" placeholder="Imagen#3"> 
                           </div>
                           <div class= "dropdown-divider"> </div>
                           <div style="position:relative;">
-                           <img src="<%=product.img4%>" width="150" height="100" alt="#">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                 Editar imagen #4
-                                  <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img4 "name="img4" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info"></span>
+                              <img src="<%=product.img4%>" width="150" height="100" alt="#">
+                              <input type="text" name="img4"  class="form-control my-input" id="img4" placeholder="Imagen#4">
                           </div>
                           <div class= "dropdown-divider"> </div>
                           <div style="position:relative;">
-                           <img src="<%=product.img5%>" width="150" height="100" alt="#">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                 Editar imagen #5
-                                  <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' id="img5 "name="img5" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info"></span>
+                              <img src="<%=product.img5%>" width="150" height="100" alt="#">
+                              <input type="text" name="img5"  class="form-control my-input" id="img5" placeholder="Imagen#5">
                           </div>
-
                         </div>
+
+
                         <div class="col">
                            <div class="form-group">
                               <label for="location">Ubicación</label>
                               <select name="location"  class="form-control my-input" id="location">
-                                 <% locations.forEach(location => {%>
-                                    <% if (location.id == product.location_id) { %>
-                                       <option value = "<%=location.id%>" selected>
+                                 <% locations.forEach(place => {%>
+                                    <% if (place.id == product.location.id) { %>
+                                       <option value = "<%=product.location.id%>" selected>
                                           <%=product.location.location%>
                                       </option>                                   
                                        <%} else { %>
-                                          <option value = "<%=location.id%>">
-                                             <%=location.location%>
+                                          <option value = "<%=place.id%>">
+                                             <%=place.location%>
                                          </option> 
                                           <% } %>                                                        
                                 <% }) %>
@@ -126,27 +102,23 @@
                               <label  for="description">Descripción</label>
                               <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="3"><%=product.description%></textarea>
                            </div>
-                           <div class="text-center ">
+                           <div class="text-center">
                               <button type="submit" class=" btn btn-block send-button tx-tfm">Editar producto</button>
+                           </div>
+                           <div class="text-center">
+                              <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="edit-product">
+                                 <button type="submit" class=" btn btn-danger">Eliminar producto</button>  
+                              </form>
                            </div>
                         </div>
                      </div>
                   </form>
                </div>
             </div>
-         </div>
-      </div>
-      <div class="row mt-5">
-            <div class="container">
-               <div class="col-12 mx-auto">
-                  <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="edit-product">
-                  <div class="text-center ">
-                     <button type="submit" class=" btn btn-danger">Eliminar producto</button>
-                  </div>
-                  </form>
-               </div>
-            </div>
-      </div>
+                
+          </div>
+         </div>       
+        </div>
    </div>
 
    <!-- Footer -->
