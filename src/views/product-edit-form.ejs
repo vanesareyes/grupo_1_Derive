@@ -109,14 +109,14 @@
                            <div class="form-group">
                               <label for="location">Ubicación</label>
                               <select name="location"  class="form-control my-input" id="location">
-                                 <% locations.forEach(location => {%>
-                                    <% if (location.id == product.location_id) { %>
-                                       <option value = "<%=location.id%>" selected>
+                                 <% locations.forEach(place => {%>
+                                    <% if (place.id == product.location.id) { %>
+                                       <option value = "<%=product.location.id%>" selected>
                                           <%=product.location.location%>
                                       </option>                                   
                                        <%} else { %>
-                                          <option value = "<%=location.id%>">
-                                             <%=location.location%>
+                                          <option value = "<%=place.id%>">
+                                             <%=place.location%>
                                          </option> 
                                           <% } %>                                                        
                                 <% }) %>
