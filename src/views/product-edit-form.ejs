@@ -25,7 +25,7 @@
          <div class="container">
             <div class="col-12 mx-auto">
                <div class="myform form">
-                  <form action="/products/edit/<%=product.id%>"  name="edit-product" method="POST">
+                  <form action="/products/edit/<%=product.id%>?_method=put"  name="edit-product" method="POST">
                      <input type="hidden" name="_method" value="PUT" >
                      <div class="row">
                         <div class="col">

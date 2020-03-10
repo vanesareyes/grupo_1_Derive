@@ -133,8 +133,8 @@ const controller = {
             ]
         }
         ).then((updatedProduct) => {
-            console.log(updatedProduct,'product') //no esta llegando aca
-            res.redirect('/products/' + updatedProduct.id)
+            console.log(updatedProduct,'product') 
+            res.redirect('/products/detail/' + req.params.id)
         })
                 
     },
