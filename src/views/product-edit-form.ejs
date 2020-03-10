@@ -25,7 +25,7 @@
          <div class="container">
             <div class="col-12 mx-auto">
                <div class="myform form">
-                  <form action="/products/edit/<%=product.id%>"  name="edit-product" method="POST">
+                  <form action="/products/edit/<%=product.id%>?_method=put"  name="edit-product" method="POST">
                      <input type="hidden" name="_method" value="PUT" >
                      <div class="row">
                         <div class="col">
@@ -85,14 +85,14 @@
                            <div class="form-group">
                               <label for="location">Ubicación</label>
                               <select name="location"  class="form-control my-input" id="location">
-                                 <% locations.forEach(location => {%>
-                                    <% if (location.id == product.location_id) { %>
-                                       <option value = "<%=location.id%>" selected>
+                                 <% locations.forEach(place => {%>
+                                    <% if (place.id == product.location.id) { %>
+                                       <option value = "<%=product.location.id%>" selected>
                                           <%=product.location.location%>
                                       </option>                                   
                                        <%} else { %>
-                                          <option value = "<%=location.id%>">
-                                             <%=location.location%>
+                                          <option value = "<%=place.id%>">
+                                             <%=place.location%>
                                          </option> 
                                           <% } %>                                                        
                                 <% }) %>

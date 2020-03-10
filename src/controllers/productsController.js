@@ -99,6 +99,10 @@ const controller = {
         let locations = db.location.findAll();
         Promise.all([productoAEditar, categories, locations])
             .then(([product, categories, locations]) => {
+                // console.log('UBICACION', location.id)
+                console.log('UBICACION', product.location.id)
+                console.log('UBICACION', product.location_id)
+                console.log('UBICACION', product.location.location)
                 res.render('product-edit-form', {
                     product,
                     categories,
@@ -133,8 +137,8 @@ const controller = {
             ]
         }
         ).then((updatedProduct) => {
-            console.log(updatedProduct,'product') //no esta llegando aca
-            res.redirect('/products/' + updatedProduct.id)
+            console.log(updatedProduct,'product') 
+            res.redirect('/products/detail/' + req.params.id)
         })
                 
     },

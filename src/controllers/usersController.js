@@ -30,7 +30,7 @@ const controller = {
                         surname: req.body.surname,
                         email: req.body.email,
                         password: bcrypt.hashSync(req.body.password, 10),
-                        phone: req.body.phone,
+                        //phone: req.body.phone,
                     }
                 })
                 .then(([user, created]) => {
@@ -77,12 +77,18 @@ const controller = {
                                 "user"
                             ]
                         }).then((result)=>{
-                    //res.redirect('/users/perfil');
-                            res.redirect('/');
+                            if(!req.session.user.phone) {
+                                res.redirect('/edit-profile')
+                            } else{
+                                res.redirect('/profile');
+                            }
                         })
                     } else {
-                        //res.redirect('/users/perfil');
-                        res.redirect('/');
+                        if(!req.session.user.phone) {
+                            res.redirect('/edit-profile')
+                        } else{
+                            res.redirect('/profile');
+                        }
                     }                     
                 } else {
                     res.render('login-form', {
