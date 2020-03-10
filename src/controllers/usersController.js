@@ -78,16 +78,16 @@ const controller = {
                             ]
                         }).then((result)=>{
                             if(!req.session.user.phone) {
-                                res.redirect('/edit-profile')
+                                res.redirect('edit-profile')
                             } else{
-                                res.redirect('/profile');
+                                res.redirect('profile');
                             }
                         })
                     } else {
                         if(!req.session.user.phone) {
-                            res.redirect('/edit-profile')
+                            res.redirect('edit-profile')
                         } else{
-                            res.redirect('/profile');
+                            res.redirect('profile');
                         }
                     }                     
                 } else {
@@ -116,7 +116,7 @@ const controller = {
     },
 
     editProfile: (req, res) => {
-        res.send('EDITA TUS DATOS')
+        res.render('user-create-form')
     },
 
 
