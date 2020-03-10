@@ -340,4 +340,12 @@ footer p {
 
 	.separador {margin: 5% 0}
 
+	.del-btn{
+		background: #EA4335;
+		width:100%;
+		font-weight: 600;
+		color: #fff;
+		padding: 8px 25px;
+	  }
+
 	
