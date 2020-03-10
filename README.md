@@ -35,3 +35,6 @@ https://www.bigbox.com.ar/
 
 Tablero de trabajo: https://trello.com/b/cYwbG55W/deriv%C3%A9-tareas
 
+Usuario administrador: email: esperaba@hotmail.com, password: esperaba
+
+
