@@ -78,9 +78,9 @@ const controller = {
                             ]
                         }).then((result)=>{
                             if(!req.session.user.phone) {
-                                res.redirect('/edit-profile')
+                                res.redirect('edit-profile')
                             } else{
-                                res.redirect('/profile');
+                                res.redirect('profile');
                             }
                         })
                     } else {
