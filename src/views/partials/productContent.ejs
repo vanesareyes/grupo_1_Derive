@@ -61,8 +61,10 @@
                 </div>
                 <div class="col-md-12">
                     <a href="#" class="btn btn-primary">Vivir la Experiencia!</a>
+                    <% if (isAuthenticated && user.admin == 1) {%> 
                     <a href="/products/edit/<%= product.id%>" class="btn btn-secondary">Editar</a>
                     <a href="/products/delete/<%= product.id%>" class="btn btn-danger">Eliminar</a>
+                    <% } %>
                 </div>
 
             </div>
