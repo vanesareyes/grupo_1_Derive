@@ -34,10 +34,12 @@
                               <label for="name">Nombre del Producto</label>
                               <input type="text" name="name"  class="form-control my-input" value= "<%= product.name%>" id="name" placeholder="Ej: Escapada romántica">
                            </div>
+                           <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label for="price">Valor/Precio</label>
                               <input type="text" name="price"  class="form-control my-input" value= "<%= product.price%>" id="price" placeholder="Ej: 1250">
                            </div>
+                           <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label for="category">Categoría</label>
                               <select name="category"  class="form-control my-input" id="category" placeholder="Escapada">
@@ -54,17 +56,7 @@
                                 <% }) %>
                             </select>
                            </div>
-
-                          
-
-
-
-
-
-
-
-                          
-                        
+                           <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label for="location">Ubicación</label>
                               <select name="location"  class="form-control my-input" id="location">
@@ -81,12 +73,10 @@
                                 <% }) %>
                             </select>
                            </div>
+                           <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label  for="description">Descripción</label>
                               <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="3"><%=product.description%></textarea>
-                           </div>
-                           <div class="text-center">
-                              <button type="submit" class=" btn btn-block send-button tx-tfm">Editar producto</button>
                            </div>
                            <div class= "dropdown-divider"> </div>
                         </div>
@@ -128,6 +118,12 @@
                            </div>
                         </div>
                      </div>
+                     <div class="separador"></div>
+                     <div class= "dropdown-divider"> </div>
+                     <div>
+                        <button type="submit" class=" btn btn-block send-button tx-tfm">Editar producto</button>
+                     </div>
+                     
                   </form>
                   
                      
@@ -139,16 +135,18 @@
          
          </div>       
       </div>
-      <div class="separador"></div>
+      <div class= "dropdown-divider"> </div>
       <div class="row">
-         <div class="col">
-            <div class="text-center">
-               <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="delete-product">
-                  <input type="hidden" name="_method" value="PUT" >
-                  <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>
-               </form> 
+         <div class="container">
+            <div class="col">
+               <div class="text-center">
+                  <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="delete-product">
+                     <input type="hidden" name="_method" value="PUT" >
+                     <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>
+                  </form> 
+               </div>
+               <div class= "dropdown-divider"> </div>
             </div>
-            <div class= "dropdown-divider"> </div>
          </div>
       </div>
    </div>
