@@ -55,34 +55,16 @@
                             </select>
                            </div>
 
-                          <div style="position:relative;">
-                              <img src="<%=product.img%>" width="150" height="100" alt="#">
-                              <input type="text" name="img"  class="form-control my-input" id="img" placeholder="Imagen#1">
-                          </div>
-                          <div class= "dropdown-divider"> </div>
-                          <div style="position:relative;">
-                              <img src="<%=product.img2%>" width="150" height="100" alt="#">
-                              <input type="text" name="img2"  class="form-control my-input" id="img2" placeholder="Imagen#2">
-                          </div>
-                          <div class= "dropdown-divider"> </div>
-                          <div style="position:relative;">
-                              <img src="<%=product.img3%>" width="150" height="100" alt="#">
-                              <input type="text" name="img3"  class="form-control my-input" id="img3" placeholder="Imagen#3"> 
-                          </div>
-                          <div class= "dropdown-divider"> </div>
-                          <div style="position:relative;">
-                              <img src="<%=product.img4%>" width="150" height="100" alt="#">
-                              <input type="text" name="img4"  class="form-control my-input" id="img4" placeholder="Imagen#4">
-                          </div>
-                          <div class= "dropdown-divider"> </div>
-                          <div style="position:relative;">
-                              <img src="<%=product.img5%>" width="150" height="100" alt="#">
-                              <input type="text" name="img5"  class="form-control my-input" id="img5" placeholder="Imagen#5">
-                          </div>
-                        </div>
+                          
 
 
-                        <div class="col">
+
+
+
+
+
+                          
+                        
                            <div class="form-group">
                               <label for="location">Ubicación</label>
                               <select name="location"  class="form-control my-input" id="location">
@@ -107,27 +89,68 @@
                               <button type="submit" class=" btn btn-block send-button tx-tfm">Editar producto</button>
                            </div>
                            <div class= "dropdown-divider"> </div>
+                        </div>
+
+                        <div class="col lasimagenes">
+                           <div>
+                              <div class="row">
+                                 <div class="col img-edit-col"><img src="<%=product.img%>" class="img-edit-content" alt="#"></div>
+                                 <div class="col"><input type="text" name="img"  class="form-control my-input" id="img" placeholder="Imagen#1"></div>
+                              </div>
+                          </div>
+                          <div class= "dropdown-divider"> </div>
+                          <div>
+                              <div class="row">
+                                 <div class="col img-edit-col"><img src="<%=product.img2%>" class="img-edit-content" alt="#"></div>
+                                 <div class="col"><input type="text" name="img2"  class="form-control my-input" id="img2" placeholder="Imagen#2"></div>
+                              </div>
                            </div>
+                           <div class= "dropdown-divider"> </div>
+                           <div>
+                              <div class="row">
+                                 <div class="col img-edit-col"><img src="<%=product.img3%>" class="img-edit-content" alt="#"></div>
+                                 <div class="col"><input type="text" name="img3"  class="form-control my-input" id="img3" placeholder="Imagen#3"></div>
+                              </div>
+                           </div>
+                           <div class= "dropdown-divider"> </div>
+                           <div>
+                              <div class="row">
+                                 <div class="col img-edit-col"><img src="<%=product.img4%>" class="img-edit-content" alt="#"></div>
+                                 <div class="col"><input type="text" name="img4"  class="form-control my-input" id="img4" placeholder="Imagen#4"></div>
+                              </div>
+                           </div>
+                           <div class= "dropdown-divider"> </div>
+                           <div>
+                              <div class="row">
+                                 <div class="col img-edit-col"><img src="<%=product.img5%>" class="img-edit-content" alt="#"></div>
+                                 <div class="col"><input type="text" name="img5"  class="form-control my-input" id="img5" placeholder="Imagen#5"></div>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                   </form>
-                  <div class="row">
-                     <div class="col">
-                  <div class="text-center">
-                  <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="delete-product">
-                     <input type="hidden" name="_method" value="PUT" >
-                     <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>  
-                  </div>
-                  <div class= "dropdown-divider"> </div>
-               </div>
-            </div>   
-               </form>
+                  
+                     
+               
                   <%} %>
                </div>
             </div>
                 
-          </div>
+         
          </div>       
-        </div>
+      </div>
+      <div class="separador"></div>
+      <div class="row">
+         <div class="col">
+            <div class="text-center">
+               <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="delete-product">
+                  <input type="hidden" name="_method" value="PUT" >
+                  <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>
+               </form> 
+            </div>
+            <div class= "dropdown-divider"> </div>
+         </div>
+      </div>
    </div>
 
    <!-- Footer -->
