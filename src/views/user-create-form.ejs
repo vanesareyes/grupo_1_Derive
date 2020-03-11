@@ -46,14 +46,12 @@
               <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Teléfono" value="<%= locals.data.phone ? locals.data.phone : '' %>">
              </div>
              
-             <!--<div class="form-group">
-               <input type="password" min="0" name="password" id="password"  class="form-control my-input" placeholder="Contraseña">
-              </div>-->
+            <div class="custom-file">
+               <label for="profile_img" class="custom-file-label">Cargar imagen de perfil</label>
+               <input type="file" class="form-control-file" id="profile_img" lang="es">
+            </div>
 
-              <div class="form-group">
-                <label for="profile_img">Cargar imagen de perfil</label>
-                <input type="file" class="form-control-file" id="profile_img">
-              </div>
+              
 
              <div class="text-center ">
               <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar mis datos!</button>
