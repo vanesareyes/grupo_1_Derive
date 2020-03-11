@@ -25,6 +25,7 @@
          <div class="container">
             <div class="col-12 mx-auto">
                <div class="myform form">
+                  <% if(product){%>
                   <form action="/products/edit/<%=product.id%>?_method=put"  name="edit-product" method="POST">
                      <input type="hidden" name="_method" value="PUT" >
                      <div class="row">
@@ -106,14 +107,21 @@
                               <button type="submit" class=" btn btn-block send-button tx-tfm">Editar producto</button>
                            </div>
                            <div class= "dropdown-divider"> </div>
-                           <div class="text-center">
-                              <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="edit-product">
-                                 <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>  
-                              </form>
                            </div>
-                        </div>
                      </div>
                   </form>
+                  <div class="row">
+                     <div class="col">
+                  <div class="text-center">
+                  <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="delete-product">
+                     <input type="hidden" name="_method" value="PUT" >
+                     <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>  
+                  </div>
+                  <div class= "dropdown-divider"> </div>
+               </div>
+            </div>   
+               </form>
+                  <%} %>
                </div>
             </div>
                 

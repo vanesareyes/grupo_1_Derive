@@ -63,11 +63,11 @@ const controller = {
         db.product.create({
             name: req.body.name,
             price: req.body.price,
-            img: "",
-            img2: "",
-            img3: "",
-            img4: "",
-            img5: "",
+            img: req.body.img,
+            img2: req.body.img2,
+            img3: req.body.img3,
+            img4: req.body.img4,
+            img5: req.body.img5,
             categories_id: req.body.category, 
             locations_id: req.body.location, 
             description: req.body.description,
@@ -98,10 +98,6 @@ const controller = {
         let locations = db.location.findAll();
         Promise.all([productoAEditar, categories, locations])
             .then(([product, categories, locations]) => {
-                // console.log('UBICACION', location.id)
-                console.log('UBICACION', product.location.id)
-                console.log('UBICACION', product.location_id)
-                console.log('UBICACION', product.location.location)
                 res.render('product-edit-form', {
                     product,
                     categories,
@@ -148,7 +144,7 @@ const controller = {
                 id: req.params.id,
             }
         })
-        res.redirect('/products');
+        res.redirect('products');
     }
 
 };

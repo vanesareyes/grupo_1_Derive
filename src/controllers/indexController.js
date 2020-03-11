@@ -14,7 +14,7 @@ const controller = {
     root: (req, res, next) => {
         db.product.findAll({
             where: {
-                destacado: 0  //hotThisWeek 
+                destacado: 1  //hotThisWeek 
             },
 			include: [
 				"location",
