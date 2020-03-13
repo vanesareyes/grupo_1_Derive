@@ -132,9 +132,9 @@ li .navbar-dark .navbar-nav {
     border-color: #eaeaea;
 }
 
-input:invalid {
+/*input:invalid {
 	border: red solid 3px;
-}
+}*/
 
 .form-control {
 	font-size: 0.95rem;
@@ -159,6 +159,25 @@ input:invalid {
 	color:#fff;
 	padding: 8px 25px;
 }
+
+.reset-button{
+background: #ffffff;
+border-color: #e2470a;
+	width:100%;
+	font-weight: 600;
+	color:#e2470a;
+	padding: 8px 25px;
+}
+
+.reset-button:hover{
+	background: #e2470a;
+	width:100%;
+	font-weight: 600;
+	color:#fff;
+	padding: 8px 25px;
+}
+
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
 	-webkit-appearance: none; 
@@ -353,11 +372,11 @@ footer p {
 	  }
 
 	.btn-reset{
-		background: rgba(255, 255, 255, 0);
-		border-color: rgba(255, 255, 255, 0) ;
+		/*background: rgba(255, 255, 255, 0);
+		border-color: rgba(255, 255, 255, 0) ;*/
 		width:100%;
 		font-weight: 600;
-		color: #4c5357;
+		/*color: #4c5357;*/
 		padding: 8px 25px;
       }	
 
