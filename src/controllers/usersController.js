@@ -112,6 +112,7 @@ const controller = {
         } 
     },
     profile: (req, res) => {
+        // res.render('user-profile') FALTA LA VISTA
         res.send('VER TU PERFIL')
     },
 
@@ -119,6 +120,24 @@ const controller = {
         res.render('user-create-form')
     },
 
+    processEditProfile: (req, res) => {
+        db.user.update({
+                name: req.body.name,
+                surname: req.body.surname,
+                email: req.body.email,
+                phone: req.body.phone,
+                // profile_img:   VER MULTER
+            }, {
+                where: {
+                    id: req.session.user.id
+                }
+            }
+        ).then((updatedProfile) => {
+            console.log(updatedProfile,'profile') 
+            res.redirect('/profile')
+        })
+                
+    },
 
     logout: (req, res) => {
         console.log('sesion', req.session.user.id)

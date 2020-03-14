@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         price: {
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.FLOAT,
             allowNull: false,
         },
         img: {
@@ -50,12 +50,23 @@ module.exports = (sequelize, dataTypes) => {
         },        
         created_at: {
             type: dataTypes.DATE,
+            allowNull: false,
         },
         updated_at: {
             type: dataTypes.DATE,
+            allowNull: true,
+        },
+        stock: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false,
         },
         destacado: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.TINYINT,
+            defaultValue: 0,
+        },
+        deleted_at: {
+            type: dataTypes.DATE,
+            allowNull: true,
         }
     };
     
@@ -82,6 +93,12 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false,
             foreignKey: 'products_id',
             otherKey: 'users_id',
+        })
+        Product.belongsToMany(models.cart, {
+            through: 'cart_product',
+            timestamps: true,
+            foreignKey: 'carts_id',
+            otherKey: 'products_id',
         })
     }
     

@@ -35,6 +35,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         updated_at: {
             type: dataTypes.DATE,
+            allowNull: true,
         },
         admin: {
             type: dataTypes.TINYINT,

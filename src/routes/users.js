@@ -15,7 +15,11 @@ router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', userValidationRegister, usersController.store);
 
 router.get('/profile', userMiddleware, usersController.profile);
+
 router.get('/edit-profile', userMiddleware, usersController.editProfile);
+
+router.put('/profile', usersController.processEditProfile);
+
 router.get('/logout', usersController.logout);
 //router.get('/:id/edit', usersController.edit);
 //router.delete('/:id', usersController.destroy);

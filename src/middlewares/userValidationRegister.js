@@ -9,7 +9,7 @@ const userValidationRegister = [
     check('name').isLength({ min: 1 }).withMessage('Debe ingresar su nombre'), 
     check('surname').isLength({ min: 1 }).withMessage('Debe ingresar su apellido'), 
     check('email').isEmail().withMessage('El email debe ser un email válido'), 
-    check('password').isLength({ min: 6, max: 12 }).withMessage('El password debe tener entre 6 y 12 caracteres'),
+    check('password').isLength({ min: 5, max: 29 }).withMessage('El password debe tener entre 5 y 20 caracteres'),
     /*body('email').custom (value) 
     
     => {
