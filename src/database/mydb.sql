@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(15) NOT NULL,
   `surname` varchar(15) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `password` varchar(12) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `phone` int(15) NOT NULL,
   `profile_img` varchar(200) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
