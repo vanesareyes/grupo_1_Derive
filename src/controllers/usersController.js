@@ -34,7 +34,6 @@ const controller = {
                     }
                 })
                 .then(([user, created]) => {
-                   // console.log('USUARIOOOO',user)
                     if (!created) {
                         res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
                     } else {
@@ -53,14 +52,16 @@ const controller = {
 
     processLogin: (req, res) => {
         let errors = validationResult(req)
-        console.log('errores', errors)
+        // console.log('errores', errors)
         if (errors.isEmpty()) {
             db.user.findOne({
                 where: {email: req.body.email}
             }).then((usuarioALoguearse) => {
+                console.log('USUARIOOOOO', usuarioALoguearse)
             if (usuarioALoguearse != null) {
-                if (bcrypt.compare(req.body.password, usuarioALoguearse.password)) {
+                if (bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
                     delete usuarioALoguearse.password;
+                    console.log('USUARIOOOOO22222', usuarioALoguearse)
                     req.session.user = usuarioALoguearse;
                     res.locals.user = req.session.user;
                     if (req.body.remember) {

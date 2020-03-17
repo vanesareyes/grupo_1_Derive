@@ -35,16 +35,16 @@
          <form action="/users/edit-profile?_method=put"  name="register" method="POST">
             <input type="hidden" name="_method" value="PUT" >
             <div class="form-group">
-                <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nombre" value="<%= locals.data.name ? locals.data.name : '' %>">
+                <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nombre" value="<%= user.name ? user.name : '' %>">
              </div>
              <div class="form-group">
-                 <input type="text" name="surname"  class="form-control my-input" id="surname" placeholder="Apellido" value="<%= locals.data.surname ? locals.data.surname : '' %>">
+                 <input type="text" name="surname"  class="form-control my-input" id="surname" placeholder="Apellido" value="<%= user.surname ? user.surname : '' %>">
               </div>
              <div class="form-group">
-              <input type="email" name="email"  class="form-control my-input" id="email" placeholder="eMail" value="<%= locals.data.email ? locals.data.email : '' %>">
+              <input type="email" name="email"  class="form-control my-input" id="email" placeholder="eMail" value="<%= user.email ? user.email : '' %>">
              </div>
              <div class="form-group">
-              <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Teléfono" value="<%= locals.data.phone ? locals.data.phone : '' %>">
+              <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Teléfono" value="<%= user.phone ? user.phone : '' %>">
              </div>
              
             <div class="custom-file">

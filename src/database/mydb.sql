@@ -137,22 +137,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   `surname` varchar(15) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `phone` int(15) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
   `profile_img` varchar(200) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `admin` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla mydb.users: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.users: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`Id`, `name`, `surname`, `email`, `password`, `phone`, `profile_img`, `created_at`, `updated_at`, `admin`) VALUES
-	(1, 'Vanesa', 'Reyes', 'reyesvanesa@yahoo.com.ar', '$2b$10$.Ah1i', 2147483647, NULL, '2020-03-03 22:24:43', '2020-03-03 22:24:43', 1),
-	(2, 'Jezabel', 'Amin', 'jezabel@hotmail.com', '$2b$10$rhJ8H', 1189332222, NULL, '2020-03-03 22:12:46', '2020-03-03 22:12:46', 0),
-	(3, 'Cecilia', 'Gomez', 'cecilia@yahoo.com.ar', '$2b$10$HkOuU', 22229001, NULL, '2020-03-09 16:21:06', '2020-03-09 16:21:06', 0),
-	(4, 'Estono', 'Melo', 'esperaba@hotmail.com', '$2b$10$lVxqG', 0, NULL, '2020-03-10 17:47:35', '2020-03-10 17:47:35', 1);
+	(10, 'Karina', 'Karina', 'karina38@yahoo.com.ar', '$2b$10$NK2fuTdRDwKN6CKpaSiC4uR9FwPJoygWX0dfOyzFm2R.nNDVJ.ev2', NULL, NULL, '2020-03-17 15:36:43', '2020-03-17 15:36:43', 0),
+	(11, 'Daniela', 'Haro', 'daniela@hotmail.com', '$2b$10$Y5t/JW.rsuauUBb2DsF8YuHvEle40skt7QPPhMKwrfsyVpQEpOoMW', NULL, NULL, '2020-03-17 15:37:33', '2020-03-17 15:37:33', 0),
+	(12, 'Alejandro', 'Villa', 'a@a.com', '$2b$10$G2Kq0GnWo2dNlQ7VS768DOJ2/x91/HQPYAFC8b6wC.K.6TMcPbqPu', NULL, NULL, '2020-03-17 16:55:02', '2020-03-17 16:55:02', 0),
+	(13, 'Estono', 'Melo', 'esperaba@hotmail.com', '$2b$10$n8dNUboqwp9dc2C9bURfOeyrKrJ9pAPUe4PDzquI09g7NIgBZeXy2', NULL, NULL, '2020-03-17 17:10:59', '2020-03-17 17:10:59', 1),
+	(14, 'Vanesa', 'Reyes', 'reyesvanesa@yahoo.com.ar', '$2b$10$.NSUwleGwH2bK8RRT2recuUL7wGu0N0R4BMcfIBDcUU1q5XROcaPO', NULL, NULL, '2020-03-17 17:10:56', '2020-03-17 17:10:56', 1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.userstokens
@@ -167,10 +168,8 @@ CREATE TABLE IF NOT EXISTS `userstokens` (
   CONSTRAINT `users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla mydb.userstokens: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.userstokens: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `userstokens` DISABLE KEYS */;
-INSERT INTO `userstokens` (`token`, `created_at`, `updated_at`, `users_id`, `id`) VALUES
-	('VrxLCJGKRO0QExeP5FGKVahbdHdvnIlaHu5if7x/BzEMy0K91oE9QtjRAjcnS8Is6flyV0A0kZ0RZ2swKEJHcw==', '2020-03-09 16:23:47', '2020-03-09 16:23:47', 3, 11);
 /*!40000 ALTER TABLE `userstokens` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.user_product
