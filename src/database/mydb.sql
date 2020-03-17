@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(15) NOT NULL,
   `surname` varchar(15) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `password` varchar(12) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `phone` int(15) NOT NULL,
   `profile_img` varchar(200) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `password_UNIQUE` (`password`),
   UNIQUE KEY `phone` (`phone`),
   UNIQUE KEY `profile_img_UNIQUE` (`profile_img`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla mydb.users: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;

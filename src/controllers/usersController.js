@@ -34,6 +34,7 @@ const controller = {
                     }
                 })
                 .then(([user, created]) => {
+                   // console.log('USUARIOOOO',user)
                     if (!created) {
                         res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
                     } else {
