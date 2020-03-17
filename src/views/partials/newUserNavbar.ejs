@@ -33,7 +33,13 @@
             <a href="/users/register" class="nav-link">REGRISTRARSE</a>
           </li>-->
           <li class="nav-item">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hola <strong><%= user.name %> </strong><i class="fas fa-user-circle"></i></a>
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hola <strong><%= user.name %> </strong>
+              <% if (user.profile_img != null) { %> 
+                <img src="<%= user.profile_img %>" class="user-profile-image"> 
+                <% } else { %> 
+               <i class="fas fa-user-circle"></i> 
+              <% } %>
+            </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/users/profile">Ver Perfil</a>
                 <div class="dropdown-divider"></div>
