@@ -137,20 +137,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `surname` varchar(15) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `phone` int(15) NOT NULL,
+  `phone` int(15) DEFAULT NULL,
   `profile_img` varchar(200) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `admin` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Id`),
-  UNIQUE KEY `name_UNIQUE` (`name`),
-  UNIQUE KEY `surname_UNIQUE` (`surname`),
-  UNIQUE KEY `id_UNIQUE` (`Id`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `password_UNIQUE` (`password`),
-  UNIQUE KEY `phone` (`phone`),
-  UNIQUE KEY `profile_img_UNIQUE` (`profile_img`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla mydb.users: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
@@ -173,12 +167,10 @@ CREATE TABLE IF NOT EXISTS `userstokens` (
   CONSTRAINT `users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla mydb.userstokens: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.userstokens: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `userstokens` DISABLE KEYS */;
 INSERT INTO `userstokens` (`token`, `created_at`, `updated_at`, `users_id`, `id`) VALUES
-	('VrxLCJGKRO0QExeP5FGKVahbdHdvnIlaHu5if7x/BzEMy0K91oE9QtjRAjcnS8Is6flyV0A0kZ0RZ2swKEJHcw==', '2020-03-09 16:23:47', '2020-03-09 16:23:47', 3, 11),
-	('LoRQ3EXFC6IEghjaaZD9b6pZ0w79KdRQMSn5kvWwuDizMzcPC/JFe8VgTAtZfGFU6gWB8EBUqRIxBowiYkwLiA==', '2020-03-11 00:10:17', '2020-03-11 00:10:17', 1, 18),
-	('5z/wOf/Flp31N6Rc6KVqq3OdVfX0GUxqz/XkYHWOECqcb1DrbV+UCewFacGQvUFyMpzaThlbEYNvLJUORcsMsQ==', '2020-03-11 00:23:29', '2020-03-11 00:23:29', 1, 19);
+	('VrxLCJGKRO0QExeP5FGKVahbdHdvnIlaHu5if7x/BzEMy0K91oE9QtjRAjcnS8Is6flyV0A0kZ0RZ2swKEJHcw==', '2020-03-09 16:23:47', '2020-03-09 16:23:47', 3, 11);
 /*!40000 ALTER TABLE `userstokens` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.user_product
