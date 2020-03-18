@@ -19,7 +19,6 @@ module.exports = (sequelize, dataTypes) => {
         },           
         created_at: {
             type: dataTypes.DATE,
-            allowNull: false,
         },
         updated_at: {
             type: dataTypes.DATE,
@@ -51,10 +50,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "users_id"
         })
         Cart.belongsToMany(models.product, {
-            through: 'cart_product',
+            through: models.cartProduct,
             timestamps: true,
-            foreignKey: 'products_id',
-            otherKey: 'carts_id',
+            // foreignKey: 'products_id',
+            // otherKey: 'carts_id',
         })
     }
     

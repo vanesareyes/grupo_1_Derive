@@ -32,9 +32,14 @@ const controller = {
     },
 
     
-    shoppingCart: (req, res) => {
-        res.render('shoppingCart')
-    },
+    // shoppingCart: (req, res) => {
+    //     db.cart.findByPk(req.session.cart)
+    //     .then(data => {
+    //         res.json({cart: data})
+    //         // res.render('shoppingCart')
+    //     })
+        
+    // },
 
 
     contact: (req, res) => {

@@ -7,15 +7,9 @@ const indexController = require('../controllers/indexController');
 
 router.get('/', indexController.root);
 
-//router.get('/products', indexController.products);
-
 router.get('/faqs', indexController.faqs);
 
-//router.get('/register-form', indexController.registerForm);
-
-router.get('/shopping-cart', indexController.shoppingCart);
-
-//router.get('/contact', indexController.contact);
+// router.get('/shopping-cart', indexController.shoppingCart);
 
 router.get('/contact', indexController.contact);
 

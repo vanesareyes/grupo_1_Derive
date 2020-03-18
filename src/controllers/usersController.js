@@ -57,14 +57,13 @@ const controller = {
             db.user.findOne({
                 where: {email: req.body.email}
             }).then((usuarioALoguearse) => {
-                console.log('USUARIOOOOO', usuarioALoguearse)
-            if (usuarioALoguearse != null) {
-                if (bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
+                if (usuarioALoguearse != null) {
+                    if (bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
                     delete usuarioALoguearse.password;
                     console.log('USUARIOOOOO22222', usuarioALoguearse)
                     req.session.user = usuarioALoguearse;
                     res.locals.user = req.session.user;
-                    if (req.body.remember) {
+                        if (req.body.remember) {
                         // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
                         const token = crypto.randomBytes(64).toString('base64');
                         res.cookie('rememberToken', token, { maxAge: 1000 * 60 * 60 * 24 * 90 });
@@ -85,28 +84,28 @@ const controller = {
                                 res.redirect('profile');
                             }
                         })
-                    } else {
-                        if(!req.session.user.phone) {
-                            res.redirect('edit-profile')
-                        } else{
-                            res.redirect('profile');
+                        } else {
+                            if(!req.session.user.phone) {
+                                res.redirect('edit-profile')
+                            } else {
+                                res.redirect('profile');
+                            }
+                        }                     
+                        } else {
+                            res.render('login-form', {
+                                errors: [
+                                 { msg: 'La contraseña es inválida' }
+                                ]
+                            });
                         }
-                    }                     
                 } else {
                     res.render('login-form', {
                         errors: [
-                            { msg: 'La contraseña es inválida' }
+                         { msg: 'El usuario no existe' }
                         ]
-                    });
+                    })
                 }
-            } else {
-                res.render('login-form', {
-                    errors: [
-                        { msg: 'El usuario no existe' }
-                    ]
-                })
-            }
-        })
+            })
         } else {
             res.render('login-form', {
                 errors: errors.errors,

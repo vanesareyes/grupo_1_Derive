@@ -60,7 +60,11 @@
                     </h6>
                 </div>
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-primary">Vivir la Experiencia!</a>
+                    <form action="/carts" method="POST">
+                        <input type="hidden" name="product_id" value="<%= product.id %>" />
+                        <input class="form-control col-1" type="number" name="qty" min="1" max="<%= product.stock%>" value="1" />
+                        <button class="btn btn-primary">Vivir la Experiencia!</button>
+                    </form>
                     <% if (isAuthenticated && user.admin == 1) {%> 
                     <a href="/products/edit/<%= product.id%>" class="btn btn-secondary">Editar</a>
                     <a href="/products/delete/<%= product.id%>" class="btn btn-danger">Eliminar</a>

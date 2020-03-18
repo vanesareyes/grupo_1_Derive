@@ -9,10 +9,12 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
+const cartsRouter = require('./routes/carts');
 const methodOverride = require('method-override');
 
 const session = require('express-session');
 const auth = require('./middlewares/auth');
+const cartCheck = require('./middlewares/cartCheck');
 
 
 // view engine setup
@@ -28,17 +30,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'))
 app.use(session({secret: 'shhhh'}))
+
 app.use(function(req, res, next){
     res.locals.data = req.body;
     next();
   });
 app.use(auth);
+app.use(cartCheck);
 
 
 //Routes
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+app.use('/carts', cartsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

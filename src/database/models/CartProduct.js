@@ -3,22 +3,20 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "cartProduct";
 
     let cols = {
-        id: {
-            type: dataTypes.INTEGER(11),
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        carts_id: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false,
-        },
-        products_id: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false,
-        },
+        // id: {
+        //     type: dataTypes.INTEGER(11),
+        //     primaryKey: true,
+        //     autoIncrement: true,
+        // },
+        // carts_id: {
+        //     type: dataTypes.INTEGER(11),
+        // },
+        // products_id: {
+        //     type: dataTypes.INTEGER(11),
+        // },
         quantity: {
             type: dataTypes.INTEGER(11),
-            allowNull: false,
+            allowNull: true,
         },
         subtotal: {
             type: dataTypes.FLOAT,
@@ -27,7 +25,6 @@ module.exports = (sequelize, dataTypes) => {
         },               
         created_at: {
             type: dataTypes.DATE,
-            allowNull: false,
         },
         updated_at: {
             type: dataTypes.DATE,
