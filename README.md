@@ -78,9 +78,9 @@ Instructivo para iniciar el sitio localmente:
 
 Para utilizar y testear las funcionalidades de administrador (CRUD de productos, dashboard) es necesario iniciar sesión con un usuario que posea dichos permisos. Para eso, utilidar el siguiente:
 
-**Usuario administrador: 
+Usuario administrador: 
  - email: esperaba@hotmail.com
- **- password: esperaba
+ - password: esperaba
 
 Que tengas un gran codeo y gracias por ver nuestro código.
 
