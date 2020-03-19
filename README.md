@@ -7,11 +7,11 @@ Derivé ofrece un canal retail con un total de X experiencias que incluyen más 
 
 Sus productos apuntan a cubrir todos los deseos de su espectro de clientes, a través de 5 temáticas:
 
-*'Aventura'
-*'Bienestar'
-*'Gastronomía'
-*'Escapada'
-*'Cultura'
+- 'Aventura'
+- 'Bienestar'
+- 'Gastronomía'
+- 'Escapada'
+- 'Cultura'
 
 Su eslogan es "Dejate llevar por la experiencia"
 
@@ -25,30 +25,30 @@ Se planteó la construcción de un sitio eComerce en el que los usuarios puedan 
 
 ### Lenguajes de construcción y FrameWorks
 
-Adobe CC XD
-HTML5
-CSS3
-Boostrap
-JavaScript
-Node JS
-React JS
+- Adobe CC XD
+- HTML5
+- CSS3
+- Boostrap
+- JavaScript
+- Node JS
+- React JS
 
 ### Herramientas y librerías de Node utilizadas
 
-Express
-Multer
-Method Override
-Express-Session
-Path
-Sequelize
-Sequelizer
-Sequelize-cli
+- Express
+- Multer
+- Method Override
+- Express-Session
+- Path
+- Sequelize
+- Sequelizer
+- Sequelize-cli
 
 ### Sitios de referencia
 
-> https://fanbag.com.ar/
+- https://fanbag.com.ar/
 
-> https://www.bigbox.com.ar/
+- https://www.bigbox.com.ar/
 
 ### Tablero de trabajo: 
 - [https://trello.com/b/cYwbG55W/deriv%C3%A9-tareas]
