@@ -13,7 +13,22 @@ Sus productos apuntan a cubrir todos los deseos de su espectro de clientes, a tr
 - 'Escapada'
 - 'Cultura'
 
-Su eslogan es "Dejate llevar por la experiencia"
+Su eslogan es **"Dejate llevar por la experiencia"**
+
+## Participantes
+
+###### Tadeo Angheben Martin
+JR Full Stack developer. Orientado a Back End y JavaScript. Estudiante de la licenciatura en Actuación en la Universidad Nacional de las Artes.
+En 2019 realicé en Digital House el curso de Fullstack Node JS a raíz de obtener una Beca del Banco Santander. En 2020 trabajé como 'software engineer' con el equipo de desarrollo de Orchard Mile.
+
+###### Matias Sicardi
+Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
+
+###### Leonardo Bana
+Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
+
+###### Vanesa Reyes
+Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
 
 ## Acerca de 'derive.com'
 
