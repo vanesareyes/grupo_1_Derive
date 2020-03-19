@@ -53,7 +53,7 @@ Sequelize-cli
 ##### Tablero de trabajo: 
 - [https://trello.com/b/cYwbG55W/deriv%C3%A9-tareas]
 
-Instructivo para iniciar el sitio localmente:
+## Instructivo para iniciar el sitio localmente:
 
 **Programas requeridos:**
 | SQL Workbench (para correr el script de la base de datos) |
@@ -76,7 +76,7 @@ Instructivo para iniciar el sitio localmente:
 
 #### El sitio corre en [https://localhost:3000](https://localhost:3000)
 
-Para utilizar y testear las funcionalidades de administrador (CRUD de productos, dashboard) es necesario iniciar sesión con un usuario que posea dichos permisos. Para eso, utilidar el siguiente:
+Para utilizar y testear las funcionalidades de administrador (CRUD de productos, dashboard) es necesario iniciar sesión con un usuario que posea dichos permisos. Para eso, utilizar el siguiente:
 
 Usuario administrador: 
  - email: esperaba@hotmail.com
