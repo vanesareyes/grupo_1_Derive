@@ -14,6 +14,9 @@ module.exports = (sequelize, dataTypes) => {
         // products_id: {
         //     type: dataTypes.INTEGER(11),
         // },
+        unit_price: {
+            type: dataTypes.FLOAT
+        },
         quantity: {
             type: dataTypes.INTEGER(11),
             allowNull: true,

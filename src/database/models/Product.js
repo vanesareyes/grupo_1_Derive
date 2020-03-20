@@ -58,7 +58,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         stock: {
             type: dataTypes.INTEGER(11),
-            allowNull: false,
         },
         destacado: {
             type: dataTypes.TINYINT,
@@ -95,6 +94,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'users_id',
         })
         Product.belongsToMany(models.cart, {
+            as: 'carts',
             through: models.cartProduct,
             timestamps: true,
             // foreignKey: 'carts_id',

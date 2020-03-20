@@ -28,21 +28,19 @@ const controller = {
         db.product.findByPk(req.params.id, {
                 include: [
                     "location",
-                    "category"
+                    "category",
+                    "carts" 
                 ]
             })
             .then((product) => {
+                console.log('PRODUCTO',product)
                 res.render('productDetail', {
                     product,
                 })
             })
 
     },
-    //.cookie('product_ids', generateProductCookie(req, product))
-    //.cookie('site', 'derive')
-
-
-    // Create - Form to create
+       // Create - Form to create
     create: (req, res) => {
         let categories = db.category.findAll();
         let locations = db.location.findAll();
@@ -74,6 +72,7 @@ const controller = {
             created_at: "",
             updated_at: "",
             destacado: "",
+            stock: req.body.stock
         },{
             include: [
                 "location",
@@ -118,6 +117,7 @@ const controller = {
             categories_id: req.body.category, 
             locations_id: req.body.location, 
             description: req.body.description,
+            stock: req.body.stock
             // created_at: "",
             // updated_at: "",
             // destacado: ""

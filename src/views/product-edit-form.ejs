@@ -77,41 +77,46 @@
                               <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="5"><%=product.description%></textarea>
                            </div>
                            <div class= "dropdown-divider"> </div>
+                           <div class="form-group">
+                              <label  for="stock">Stock</label>
+                              <input type="number" class="form-control" name="stock" min="1" value="<%= product.stock%>">
+                           </div>
+                           <div class= "dropdown-divider"> </div>
                         </div>
                            
                         <div class="col">
                            <div>
                               <div class="row">
                                  <div class="col img-edit-col"><img src="<%=product.img%>" class="img-edit-content" alt="#"></div>
-                                 <div class="col"><input type="url" name="img"  class="form-control my-input" id="img" placeholder="Imagen#1"></div>
+                                 <div class="col"><input type="url" name="img"  class="form-control my-input" id="img" value="<%= product.img%>"></div>
                               </div>
                           </div>
                           <div class= "dropdown-divider"> </div>
                           <div>
                               <div class="row">
                                  <div class="col img-edit-col"><img src="<%=product.img2%>" class="img-edit-content" alt="#"></div>
-                                 <div class="col"><input type="url" name="img2"  class="form-control my-input" id="img2" placeholder="Imagen#2"></div>
+                                 <div class="col"><input type="url" name="img2"  class="form-control my-input" id="img2" value="<%= product.img2%>"></div>
                               </div>
                            </div>
                            <div class= "dropdown-divider"> </div>
                            <div>
                               <div class="row">
                                  <div class="col img-edit-col"><img src="<%=product.img3%>" class="img-edit-content" alt="#"></div>
-                                 <div class="col"><input type="url" name="img3"  class="form-control my-input" id="img3" placeholder="Imagen#3"></div>
+                                 <div class="col"><input type="url" name="img3"  class="form-control my-input" id="img3" value="<%= product.img3%>"></div>
                               </div>
                            </div>
                            <div class= "dropdown-divider"> </div>
                            <div>
                               <div class="row">
                                  <div class="col img-edit-col"><img src="<%=product.img4%>" class="img-edit-content" alt="#"></div>
-                                 <div class="col"><input type="url" name="img4"  class="form-control my-input" id="img4" placeholder="Imagen#4"></div>
+                                 <div class="col"><input type="url" name="img4"  class="form-control my-input" id="img4" value="<%= product.img4%>"></div>
                               </div>
                            </div>
                            <div class= "dropdown-divider"> </div>
                            <div>
                               <div class="row">
                                  <div class="col img-edit-col"><img src="<%=product.img5%>" class="img-edit-content" alt="#"></div>
-                                 <div class="col"><input type="url" name="img5"  class="form-control my-input" id="img5" placeholder="Imagen#5"></div>
+                                 <div class="col"><input type="url" name="img5"  class="form-control my-input" id="img5" value="<%= product.img5%>"></div>
                               </div>
                            </div>
                            <div class= "dropdown-divider"> </div>
@@ -134,7 +139,6 @@
             <div class="col">
                <div class="text-center">
                   <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="delete-product">
-                     <input type="hidden" name="_method" value="PUT" >
                      <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>
                   </form> 
                   <%} %>
