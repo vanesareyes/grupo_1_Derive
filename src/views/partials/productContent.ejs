@@ -59,21 +59,23 @@
                         <%= product.price %>
                     </h6>
                 </div>
-                <div class="col-md-12">
-                    <form action="/carts" method="POST">
-                        <input type="hidden" name="product_id" value="<%= product.id %>" />
-                        <input type="number" class="form-control" name="qty" min="1" max="<%= product.stock%>" value="1">  
-                        
-                </div>
-                        <button class="btn btn-primary">Vivir la Experiencia!</button>
-                    </form>
-
+                
+                    <% if (isAdded) { %> 
                     <div class="col-md-12">
                         <form action="/carts/<%= product.id %>?_method=put" method="POST">
                             <input type="number" class="form-control" name="qty" min="1" max="<%= product.stock%>" value="1">  
                     </div>
                         <button class="btn btn-primary">Actualizar</button>
                         </form>
+                    <% } else { %>
+                    <div class="col-md-12">
+                        <form action="/carts" method="POST">
+                            <input type="hidden" name="product_id" value="<%= product.id %>" />
+                            <input type="number" class="form-control" name="qty" min="1" max="<%= product.stock%>" value="1">  
+                    </div>
+                        <button class="btn btn-primary">Vivir la Experiencia!</button>
+                        </form>
+                     <% } %>
 
                     <% if (isAuthenticated && user.admin == 1) {%> 
                     <a href="/products/edit/<%= product.id%>" class="btn btn-secondary">Editar</a>

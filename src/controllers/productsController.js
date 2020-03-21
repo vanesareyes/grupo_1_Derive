@@ -24,7 +24,19 @@ const controller = {
     },
 
     // Detail - Detail from one product
-    detail: (req, res, next) => {
+    detail: async function (req, res) {
+        req.session.cart = 11
+
+        let cart = await db.cart.findByPk(req.session.cart, {
+            include:'products'
+        })
+
+        let isAdded = Array.from(cart.products).filter(function(product){
+            return product.id == req.params.id
+
+
+        })
+
         db.product.findByPk(req.params.id, {
                 include: [
                     "location",
@@ -36,6 +48,8 @@ const controller = {
                 console.log('PRODUCTO',product)
                 res.render('productDetail', {
                     product,
+                    cart,
+                    isAdded: isAdded.length > 0
                 })
             })
 

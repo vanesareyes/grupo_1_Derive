@@ -54,7 +54,17 @@ const controller = {
                 }
             })
             
-            res.redirect('/products')
+        sequelize.raw('select round(sum(subtotal)) as total from cart_product where cart_id = 11', {
+            raw: true,
+            type: sequelize.QueryTypes.SELECT,
+        })
+        .then(result => 
+            cart.update({
+                total: result[0].total
+            })
+        )            
+
+        res.redirect('/products')
         })
     },
 
