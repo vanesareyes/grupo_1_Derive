@@ -134,8 +134,8 @@ const controller = {
                 }
             }
         ).then((updatedProfile) => {
-            console.log(updatedProfile,'profile') 
-            res.redirect('/profile')
+            res.send('Perfil actualizado')           
+            // res.redirect('/profile')
         })
                 
     },

@@ -45,7 +45,7 @@ const controller = {
                 ]
             })
             .then((product) => {
-                console.log('PRODUCTO',product)
+                // console.log('PRODUCTO',product)
                 res.render('productDetail', {
                     product,
                     cart,

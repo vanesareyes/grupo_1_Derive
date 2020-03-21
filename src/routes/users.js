@@ -18,7 +18,7 @@ router.get('/profile', userMiddleware, usersController.profile);
 
 router.get('/edit-profile', userMiddleware, usersController.editProfile);
 
-router.put('/profile', usersController.processEditProfile);
+router.put('/edit-profile', usersController.processEditProfile);
 
 router.get('/logout', usersController.logout);
 //router.get('/:id/edit', usersController.edit);

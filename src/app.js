@@ -14,7 +14,7 @@ const methodOverride = require('method-override');
 
 const session = require('express-session');
 const auth = require('./middlewares/auth');
-const cartCheck = require('./middlewares/cartCheck');
+// const cartCheck = require('./middlewares/cartCheck');
 
 
 // view engine setup
@@ -36,7 +36,7 @@ app.use(function(req, res, next){
     next();
   });
 app.use(auth);
-app.use(cartCheck);
+// app.use(cartCheck);
 
 
 //Routes

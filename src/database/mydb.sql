@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS `carts` (
   PRIMARY KEY (`id`),
   KEY `fk_carts_users_id` (`users_id`),
   CONSTRAINT `fk_carts_users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=362 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=386 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla mydb.carts: ~361 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.carts: ~385 rows (aproximadamente)
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
 INSERT INTO `carts` (`id`, `users_id`, `created_at`, `updated_at`, `deleted_at`, `total`, `confirmed_at`) VALUES
 	(1, NULL, '2020-03-18 14:47:19', '2020-03-18 14:47:19', NULL, 0, NULL),
@@ -393,7 +393,31 @@ INSERT INTO `carts` (`id`, `users_id`, `created_at`, `updated_at`, `deleted_at`,
 	(358, NULL, '2020-03-20 21:55:41', '2020-03-20 21:55:41', NULL, 0, NULL),
 	(359, NULL, '2020-03-20 21:55:46', '2020-03-20 21:55:46', NULL, 0, NULL),
 	(360, NULL, '2020-03-20 22:25:36', '2020-03-20 22:25:36', NULL, 0, NULL),
-	(361, NULL, '2020-03-20 22:25:39', '2020-03-20 22:25:39', NULL, 0, NULL);
+	(361, NULL, '2020-03-20 22:25:39', '2020-03-20 22:25:39', NULL, 0, NULL),
+	(362, NULL, '2020-03-21 11:33:58', '2020-03-21 11:33:58', NULL, 0, NULL),
+	(363, NULL, '2020-03-21 11:34:09', '2020-03-21 11:34:09', NULL, 0, NULL),
+	(364, NULL, '2020-03-21 11:34:31', '2020-03-21 11:34:31', NULL, 0, NULL),
+	(365, NULL, '2020-03-21 11:34:39', '2020-03-21 11:34:39', NULL, 0, NULL),
+	(366, NULL, '2020-03-21 11:34:41', '2020-03-21 11:34:41', NULL, 0, NULL),
+	(367, NULL, '2020-03-21 11:35:56', '2020-03-21 11:35:56', NULL, 0, NULL),
+	(368, NULL, '2020-03-21 11:36:13', '2020-03-21 11:36:13', NULL, 0, NULL),
+	(369, NULL, '2020-03-21 11:36:18', '2020-03-21 11:36:18', NULL, 0, NULL),
+	(370, NULL, '2020-03-21 11:36:23', '2020-03-21 11:36:23', NULL, 0, NULL),
+	(371, NULL, '2020-03-21 11:37:29', '2020-03-21 11:37:29', NULL, 0, NULL),
+	(372, NULL, '2020-03-21 11:37:42', '2020-03-21 11:37:42', NULL, 0, NULL),
+	(373, NULL, '2020-03-21 11:37:45', '2020-03-21 11:37:45', NULL, 0, NULL),
+	(374, NULL, '2020-03-21 11:37:52', '2020-03-21 11:37:52', NULL, 0, NULL),
+	(375, NULL, '2020-03-21 11:38:18', '2020-03-21 11:38:18', NULL, 0, NULL),
+	(376, NULL, '2020-03-21 11:38:18', '2020-03-21 11:38:18', NULL, 0, NULL),
+	(377, NULL, '2020-03-21 11:38:42', '2020-03-21 11:38:42', NULL, 0, NULL),
+	(378, NULL, '2020-03-21 11:38:48', '2020-03-21 11:38:48', NULL, 0, NULL),
+	(379, NULL, '2020-03-21 11:38:49', '2020-03-21 11:38:49', NULL, 0, NULL),
+	(380, NULL, '2020-03-21 11:38:53', '2020-03-21 11:38:53', NULL, 0, NULL),
+	(381, NULL, '2020-03-21 11:42:23', '2020-03-21 11:42:23', NULL, 0, NULL),
+	(382, NULL, '2020-03-21 11:42:36', '2020-03-21 11:42:36', NULL, 0, NULL),
+	(383, NULL, '2020-03-21 11:42:36', '2020-03-21 11:42:36', NULL, 0, NULL),
+	(384, NULL, '2020-03-21 11:42:51', '2020-03-21 11:42:51', NULL, 0, NULL),
+	(385, NULL, '2020-03-21 11:48:47', '2020-03-21 11:48:47', NULL, 0, NULL);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.cart_product
@@ -411,15 +435,16 @@ CREATE TABLE IF NOT EXISTS `cart_product` (
   CONSTRAINT `fk_cart_product_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla mydb.cart_product: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.cart_product: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `cart_product` DISABLE KEYS */;
 INSERT INTO `cart_product` (`cart_id`, `product_id`, `unit_price`, `quantity`, `subtotal`, `updated_at`, `created_at`) VALUES
-	(11, 8, 2500, 1, 2500, '2020-03-20 20:47:43', '2020-03-19 16:07:55'),
-	(11, 9, 800, 1, 800, '2020-03-19 16:08:00', '2020-03-19 16:08:00'),
+	(11, 8, 2500, 2, 5000, '2020-03-21 11:38:18', '2020-03-19 16:07:55'),
+	(11, 9, 800, 3, 2400, '2020-03-21 11:38:49', '2020-03-19 16:08:00'),
 	(11, 15, 1800, 1, 1800, '2020-03-19 20:54:20', '2020-03-19 20:54:20'),
 	(11, 19, 1700, 1, 1700, '2020-03-20 12:15:00', '2020-03-20 12:15:00'),
 	(11, 16, 3200, 2, 6400, '2020-03-20 12:32:42', '2020-03-20 12:31:58'),
-	(11, 20, 9000, 2, 18000, '2020-03-20 12:52:13', '2020-03-20 12:43:52');
+	(11, 20, 9000, 2, 18000, '2020-03-20 12:52:13', '2020-03-20 12:43:52'),
+	(11, 17, 15000, 1, 15000, '2020-03-21 11:34:39', '2020-03-21 11:34:39');
 /*!40000 ALTER TABLE `cart_product` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.categories
@@ -504,19 +529,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   `surname` varchar(15) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `phone` int(15) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
   `profile_img` varchar(200) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `admin` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla mydb.users: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.users: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`Id`, `name`, `surname`, `email`, `password`, `phone`, `profile_img`, `created_at`, `updated_at`, `admin`) VALUES
-	(10, 'Estono', 'Melo', 'esperaba@hotmail.com', '$2b$10$LuHuU/0/j4nc1BjhecpD6OCjMMJqEIMXpvRjoW9ec81Nm2U6fBi/i', NULL, NULL, '2020-03-20 14:05:22', '2020-03-20 14:05:54', 1);
+	(10, 'Estono', 'Melo', 'esperaba@hotmail.com', '$2b$10$LuHuU/0/j4nc1BjhecpD6OCjMMJqEIMXpvRjoW9ec81Nm2U6fBi/i', '11549302293', NULL, '2020-03-20 14:05:22', '2020-03-21 11:52:33', 1),
+	(11, 'Vanesa', 'Reyes', 'reyesvanesa@yahoo.com.ar', '$2b$10$xwAVAtds934tPlRB3.nNqu9y7w9YNITSn7B/18yiwRmIUeR1htyZi', '11542232677', NULL, '2020-03-21 11:53:36', '2020-03-21 11:56:03', 1),
+	(12, 'Jezabel', 'Gomez', 'jezabel@hotmail.com', '$2b$10$QS6XdQ.najLEjD6/vWkPwOqFY62vEIq0RJCXa/R8fyNoKjR/1.ZXq', NULL, NULL, '2020-03-21 11:57:17', '2020-03-21 11:57:17', 0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.userstokens
@@ -529,10 +556,12 @@ CREATE TABLE IF NOT EXISTS `userstokens` (
   PRIMARY KEY (`id`),
   KEY `users_id` (`users_id`),
   CONSTRAINT `users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla mydb.userstokens: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.userstokens: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `userstokens` DISABLE KEYS */;
+INSERT INTO `userstokens` (`token`, `created_at`, `updated_at`, `users_id`, `id`) VALUES
+	('dwo98dnxeA1JEbfZCa5Da+oucd7fgs9uHqmqk2AG0rVutcjz89eovOKFqjW5IbX5BxCJHbRe7Sr+mcYjxLC0Ng==', '2020-03-21 11:54:46', '2020-03-21 11:54:46', 11, 24);
 /*!40000 ALTER TABLE `userstokens` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.user_product
