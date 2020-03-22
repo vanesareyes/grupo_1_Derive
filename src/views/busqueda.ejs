@@ -28,40 +28,41 @@
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchModal">
                                             Búsqueda Avanzada
                                             </button>
-  
-                                            <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                    <h5 class="modal-title text-center" id="searchModalLabel">Búsqueda avanzada</h5>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        
-
-                                                        <form class="text-left">
+                                            <form class="text-left" action="/busqueda-avanzada" method="GET">  
+                                                <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title text-center" id="searchModalLabel">Búsqueda avanzada</h5>
+                                                        </div>
+                                                        <div class="modal-body">
                                                             <div class="form-row">
                                                                 <div class="form-group col">
                                                                     <label for="searchByKey">Palabra Clave</label>
-                                                                    <input type="text" class="form-control" placeholder="Ej. Navegar" id="searchByKey">
+                                                                    <input type="text" name="keyWord" class="form-control" placeholder="Ej. Navegar" id="searchByKey">
                                                                 </div>
                                                             </div>
                                                             <div class="form-row">
                                                                 <div class="form-group col">
                                                                     <label for="searchByCategory">Categoría</label>
-                                                                    <select class="custom-select" id="searchByCategory">
+                                                                    <select name="category" class="custom-select" id="searchByCategory">
                                                                         <option selected>Elegir...</option>
-                                                                        <option value="1">One</option>
-                                                                        <option value="2">Two</option>
-                                                                        <option value="3">Three</option>
+                                                                        <% categories.forEach( category => {%>
+                                                                            <option value = "<%=category.id%>">
+                                                                                <%=category.category%>
+                                                                            </option>                                                                   
+                                                                        <% }) %>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group col">
                                                                     <label for="searchByLocation">Lugar</label>
-                                                                    <select class="custom-select" id="searchByLocation">
+                                                                    <select name="location"class="custom-select" id="searchByLocation">
                                                                         <option selected>Elegir...</option>
-                                                                        <option value="1">One</option>
-                                                                        <option value="2">Two</option>
-                                                                        <option value="3">Three</option>
+                                                                        <% locations.forEach( location => {%>
+                                                                            <option value = "<%=location.id%>">
+                                                                                <%=location.location%>
+                                                                            </option>
+                                                                        <% }) %>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -72,27 +73,21 @@
                                                                         <div class="input-group-prepend">
                                                                             <span class="input-group-text">$</span>
                                                                         </div>
-                                                                        <input type="text" class="form-control" id="searchByPrice">
+                                                                        <input type="number" name= "price" class="form-control" id="searchByPrice">
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </form>
-
-
-
-
-
-                                                    </div>
+                                                        </div>
                                                     <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                    <button type="button" class="btn btn-primary">Buscar!</button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                        <button type="submit" class="btn btn-primary">Buscar!</button>
                                                     </div>
                                                 </div>
-                                                </div>
-                                            </div>
-
+                                            </form>    
                                         </div>
                                     </div>
+                                </div>
+                                    
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <% products.forEach((product) => { %>
@@ -121,7 +116,7 @@
                                             <% } ) %>
                                         </div>
                                     </div>
-                                </div>
+                                
 
                                 <!-- Footer -->
                                 <%- include partials/footerContact.ejs %>

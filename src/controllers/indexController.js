@@ -46,8 +46,10 @@ const controller = {
         res.render('contact')
     },
 
-    buscar: (req, res) => {
-        db.product.findAll({
+    search: (req, res) => {
+        let categories = db.category.findAll();
+        let locations = db.location.findAll();
+        let products = db.product.findAll({
             where: {
                     [Op.or]: [
                       {
@@ -59,23 +61,70 @@ const controller = {
                         description: {
                             [Op.like]: '%'+req.query.busqueda+'%'
                         }
-                      }//,
-                        //{
-                        // location_id: {
-                        //     [Op.like]: '%'+req.params.busqueda+'%'
-                        //  }
-                        // }
+                      }
                     ]
             },
 			include: [
 				"location",
 				"category"
 			]
-		}).then ((products) => {
+        });
+        Promise.all([categories,locations,products])
+            .then (data => {
+                let [categories, locations, products] = data;
             res.render('busqueda', {
-                    products
+                    products,
+                    categories,
+                    locations
                 })
     })
+    },
+
+    advancedSearch: (req,res) => {
+        let categories = db.category.findAll();
+        let locations = db.location.findAll();
+        let products = db.product.findAll({
+            where: {
+                    [Op.and]: [
+                        {
+                        [Op.or]: [
+                        {
+                            name: {
+                              [Op.like]: '%'+req.query.keyWord+'%'
+                            }
+                          },
+                          {
+                            description: {
+                                [Op.like]: '%'+req.query.keyWord+'%'
+                            }
+                          }
+                        ]},
+                      {
+                        categories_id: req.query.category
+                        }
+                      ,
+                      {
+                        locations_id: req.query.location
+                        },{
+                        price: {
+                            [Op.lte]: req.query.price
+                      }}
+                    ]
+            },
+			include: [
+				"location",
+				"category"
+			]
+        })
+        Promise.all([categories,locations,products])
+        .then (data => {
+            let [categories, locations, products] = data;
+            res.render('busqueda', {
+                    products,
+                    categories,
+                    locations
+            })
+        })
     },
 
 };

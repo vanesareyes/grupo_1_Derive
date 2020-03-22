@@ -13,7 +13,8 @@ router.get('/faqs', indexController.faqs);
 
 router.get('/contact', indexController.contact);
 
-router.get('/busqueda', indexController.buscar);
+router.get('/busqueda', indexController.search);
+router.get('/busqueda-avanzada', indexController.advancedSearch);
 
 
 
