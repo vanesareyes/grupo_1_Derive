@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 const admin = require('../middlewares/admin')
-
+let productFormValidation = require('../middlewares/productFormValidation');
 const multer = require('multer')
 
 var storage = multer.diskStorage({
@@ -36,11 +36,11 @@ router.get('/detail/:id/', productsController.detail); /* GET - Product detail *
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', admin, productsController.create); /* GET - Form to create */
-router.post('/create', admin, upload.any(), productsController.store); /* POST - Store in DB */
+router.post('/create', productFormValidation, upload.any(), productsController.store); /* POST - Store in DB */
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', admin, productsController.edit); /* GET - Form to edit */
-router.put('/edit/:id', admin, productsController.update); /* PUT - Update in DB */
+router.put('/edit/:id', productFormValidation, productsController.update); /* PUT - Update in DB */
 
 /*** DELETE ONE PRODUCT***/ 
 router.get('/delete/:id', productsController.edit); /* DELETE - Delete from DB */

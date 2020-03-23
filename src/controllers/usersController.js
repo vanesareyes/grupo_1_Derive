@@ -1,7 +1,7 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const path = require('path');
-const { check, validationResult, body } = require('express-validator');
+let { check, validationResult, body } = require('express-validator');
 //let usersFilePath = path.join(__dirname, '../data/users.json');
 //let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const db = require('../database/models');
@@ -18,9 +18,9 @@ const controller = {
         res.render('register-form')
     },
 
-    store: (req, res, next) => {
+    store: (req, res) => {
         let errors = validationResult(req)
-        console.log(errors)
+        // console.log(errors)
 
         if (errors.isEmpty()) {
             db.user.findOrCreate({

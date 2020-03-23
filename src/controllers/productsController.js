@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+let { check, validationResult, body } = require('express-validator');
 //const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 //const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
@@ -120,22 +120,21 @@ const controller = {
     },
 
     update: (req, res) => {
-       db.product.update({
-            name: req.body.name,
-            price: req.body.price,
-            img: req.body.img,
-            img2: req.body.img2,
-            img3: req.body.img3,
-            img4: req.body.img4,
-            img5: req.body.img5,
-            categories_id: req.body.category, 
-            locations_id: req.body.location, 
-            description: req.body.description,
-            stock: req.body.stock
-            // created_at: "",
-            // updated_at: "",
-            // destacado: ""
-        }, {
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            db.product.update({
+                name: req.body.name,
+                price: req.body.price,
+                img: req.body.img,
+                img2: req.body.img2,
+                img3: req.body.img3,
+                img4: req.body.img4,
+                img5: req.body.img5,
+                categories_id: req.body.category, 
+                locations_id: req.body.location, 
+                description: req.body.description,
+                stock: req.body.stock
+            }, {
             where: {
                 id: req.params.id
             }
@@ -146,9 +145,28 @@ const controller = {
             ]
         }
         ).then((updatedProduct) => {
-            console.log(updatedProduct,'product') 
+            // console.log(updatedProduct,'product') 
             res.redirect('/products/detail/' + req.params.id)
         })
+        } else {
+            let productoAEditar = db.product.findByPk(req.params.id, {
+                include: [
+                    "location",
+                    "category"
+                ]
+            });
+            let categories = db.category.findAll();
+            let locations = db.location.findAll();
+            Promise.all([productoAEditar, categories, locations])
+                .then(([product, categories, locations]) => {
+                    res.render('product-edit-form', {
+                        errors: errors.errors,
+                        product,
+                        categories,
+                        locations
+                    })
+                })
+        }
                 
     },
 

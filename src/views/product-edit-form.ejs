@@ -10,7 +10,6 @@
     } else { %> 
     <%- include partials/navbar %>
     <% } %>
-
    <div class="container">
       <div class="col-12 mx-auto text-center">
          <div class="header-title">
@@ -22,6 +21,16 @@
       <div class="row">
          <div class="container">
             <div class="col-12 mx-auto">
+               <% if (typeof errors != 'undefined') { %>
+            <p style="color:red">ERROR</p>
+            <ul>
+                <% for (let i =0; i < errors.length; i++){ %>
+                    <li>
+                        <%=errors[i].msg%>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
                <div class="myform form">
                   <% if(product){%>
                   <form action="/products/edit/<%=product.id%>?_method=put"  name="edit-product" method="POST">
@@ -30,17 +39,17 @@
                         <div class="col">
                            <div class="form-group">
                               <label for="name">Nombre del Producto</label>
-                              <input type="text" name="name"  class="form-control my-input" value= "<%= product.name%>" id="name" placeholder="Ej: Escapada romántica">
+                              <input type="text" name="name"  class="form-control my-input" value= "<%= product.name%>" id="name" placeholder="Ej: Escapada romántica" required="required" minlength="5" maxlength="20">
                            </div>
                            <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label for="price">Valor/Precio</label>
-                              <input type="text" name="price"  class="form-control my-input" value= "<%= product.price%>" id="price" placeholder="Ej: 1250">
+                              <input type="text" name="price"  class="form-control my-input" value= "<%= product.price%>" id="price" placeholder="Ej: 1250" required="required">
                            </div>
                            <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label for="category">Categoría</label>
-                              <select name="category"  class="form-control my-input" id="category" placeholder="Escapada">
+                              <select name="category"  class="form-control my-input" id="category" required="required">
                                  <% categories.forEach( category => {%>
                                     <% if (category.id == product.categories_id) { %>
                                        <option value = "<%=product.category.id%>" selected>
@@ -57,7 +66,7 @@
                            <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label for="location">Ubicación</label>
-                              <select name="location"  class="form-control my-input" id="location">
+                              <select name="location"  class="form-control my-input" id="location" required="required">
                                  <% locations.forEach(place => {%>
                                     <% if (place.id == product.location.id) { %>
                                        <option value = "<%=product.location.id%>" selected>
@@ -74,12 +83,12 @@
                            <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label  for="description">Descripción</label>
-                              <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="5"><%=product.description%></textarea>
+                              <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="5"><%=product.description% required="required" minlength="50" maxlength="150"></textarea>
                            </div>
                            <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label  for="stock">Stock</label>
-                              <input type="number" class="form-control" name="stock" min="1" value="<%= product.stock%>">
+                              <input type="number" class="form-control" name="stock" min="1" value="<%= product.stock%>" required="required">
                            </div>
                            <div class= "dropdown-divider"> </div>
                         </div>
