@@ -54,13 +54,17 @@
                       </div>
                     </div>
                   </th>
-                  <td class="border-0 align-middle"><strong>$ <%=product.cartProduct.unit_price%></strong></td>
-                  <td class="border-0 align-middle"></td>
-                  <td class="border-0 align-middle"><strong><%=product.cartProduct.quantity%></strong></td>
-                  <td class="border-0 align-middle"><strong>$ <%=product.cartProduct.subtotal%></strong></td>         
-                <form action="/carts/<%=product.id%>?_method=delete" method="POST">
-                <td class="align-middle"><a href="" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                </form>
+                  <td class="border-0 text-center"><strong>$ <%=product.cartProduct.unit_price%></strong></td>
+                  <td class="border-0 text-center"><strong><%=product.cartProduct.quantity%></strong></td>
+                  <td class="border-0 text-center"><strong>$ <%=product.cartProduct.subtotal%></strong></td>
+                  <td class="border-0 text-center">
+                    <strong>
+                        <form action="/carts/<%=product.id%>?_method=delete" method="POST">
+                          <a href="" class="text-dark"><i class="fa fa-trash"></i></a>
+                        </form>
+                    </strong>
+                  </td>         
+                
                 </tr>
                 <% }) %>
               </tbody>
