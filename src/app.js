@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 const cartsRouter = require('./routes/carts');
+const apiProductsRouter = require('./routes/api/products');
 const methodOverride = require('method-override');
 
 const session = require('express-session');
@@ -44,6 +45,7 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 app.use('/carts', cartsRouter);
+app.use('/api/products', apiProductsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
