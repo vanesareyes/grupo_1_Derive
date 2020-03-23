@@ -160,13 +160,7 @@ const controller = {
         })
     }
     
-
-        // La otra opción sería solo borrar la que corresponda a esta sesión.
-        // let token = userTokensModel.findByField('token', req.cookies.rememberToken);
-        // if (token) { userTokensModel.destroy(token.id) }
-
 }
 
 module.exports = controller
 
-//falta editar y ver detalle
