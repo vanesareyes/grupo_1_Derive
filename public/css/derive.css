@@ -364,6 +364,7 @@ input[type=file] {
 	left: auto;
 }
 
+
 .separador {margin: 5% 0}
 
 .del-btn{
@@ -391,4 +392,33 @@ input[type=file] {
 	border-radius: 50%;
 	height: 20px;
 	width: 20px;
+}
+
+
+/* input de carga de imagen en el formulario de registro */
+
+input[type=”file”]#imgUpload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label[for="imgUpload"] {
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #106BA0;
+	display: inline-block;
+	transition: all .5s;
+	cursor: pointer;
+	padding: 40px 40px !important;
+	text-transform: uppercase;
+	width: fit-content;
+	text-align: center;
+	border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }
