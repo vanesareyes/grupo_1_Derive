@@ -60,28 +60,50 @@
                     </h6>
                 </div>
                 
-                    <% if (isAdded) { %> 
-                    <div class="col-md-12">
-                        <form action="/carts/<%= product.id %>?_method=put" method="POST">
-                            <input type="number" class="form-control" name="qty" min="1" max="<%= product.stock%>" value="1">  
-                    </div>
-                        <button class="btn btn-primary">Actualizar</button>
-                        </form>
-                    <% } else { %>
-                    <div class="col-md-12">
-                        <form action="/carts" method="POST">
-                            <input type="hidden" name="product_id" value="<%= product.id %>" />
-                            <input type="number" class="form-control" name="qty" min="1" max="<%= product.stock%>" value="1">  
-                    </div>
-                        <button class="btn btn-primary">Vivir la Experiencia!</button>
-                        </form>
-                     <% } %>
-
-                    <% if (isAuthenticated && user.admin == 1) {%> 
-                    <a href="/products/edit/<%= product.id%>" class="btn btn-secondary">Editar</a>
-                    <a href="/products/delete/<%= product.id%>" class="btn btn-danger">Eliminar</a>
-                    <% } %>
+                <% if (isAdded) { %> 
+                <div class="col-md-6">
+                    <form action="/carts/<%= product.id %>?_method=put" method="POST">
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" name="qty" min="1" max="<%= product.stock%>" value="1">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary" style="width:100%;">Actualizar</button>
+                            </div>
+                        </div>
+                    </form> 
                 </div>
+                        
+                <% } else { %>
+                <div class="col-md-6">
+                    <form action="/carts" method="POST">
+                        <div class="row">
+                            <div class="col">
+                                <input type="hidden" name="product_id" value="<%= product.id %>" />
+                                <input type="number" class="form-control" name="qty" min="1" max="<%= product.stock%>" value="1">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary">Vivir la Experiencia!</button>
+                            </div>
+                        </div>
+                    </form> 
+                </div>
+                        
+                <% } %>
+
+                <% if (isAuthenticated && user.admin == 1) {%> 
+                <div class="col-md-6">
+                    <form action="" method="POST">
+                        <div class="row">
+                            <div class="col">
+                                <a href="/products/edit/<%= product.id%>" class="btn btn-secondary">Editar</a>
+                                <a href="/products/delete/<%= product.id%>" class="btn btn-danger">Eliminar</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <% } %>
+                
 
             </div>
         </div>
