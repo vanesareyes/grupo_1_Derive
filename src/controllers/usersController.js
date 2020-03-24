@@ -6,6 +6,7 @@ let { check, validationResult, body } = require('express-validator');
 //let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const db = require('../database/models');
 const sequelize = db.sequelize;
+const { QueryTypes } = require('sequelize');
 const crypto = require('crypto');
 const multer = require('multer');
 
@@ -140,8 +141,11 @@ const controller = {
         res.send('VER TU PERFIL')
     },
 
-    editProfile: (req, res) => {
-        res.render('user-create-form')
+    editProfile: async (req, res) => {
+        let image = await sequelize.query("SELECT profile_img FROM `users` WHERE `id` = " + req.session.user.id, { type: QueryTypes.SELECT });
+        res.render('user-create-form', {
+            image: image[0].profile_img
+        })
     },
 
     processEditProfile: (req, res) => {
@@ -180,11 +184,12 @@ const controller = {
                         where: {
                             id: req.session.user.id
                         }
-                    }).then((updatedProfile) => {
-                        console.log('Nombre del archivo', req.file.filename);
+                    }).then(async (updatedProfile) => {
+                        let image = await sequelize.query("SELECT profile_img FROM `users` WHERE `id` = " + req.session.user.id, { type: QueryTypes.SELECT });
                         res.render('user-create-form', {
                             msg: 'La imagen fue cargada con éxito',
-                            file: `/profilePics/${req.file.filename}`
+                            file: `/profilePics/${req.file.filename}`,
+                            image: image[0].profile_img
                         })
                     })
                 }

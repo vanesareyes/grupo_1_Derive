@@ -34,8 +34,8 @@
                <form class="" action="/users/edit-profile"  name="profile-picture" method="POST" enctype="multipart/form-data">
                   <%= typeof msg != 'undefined' ? msg : '' %>
                      <div class="form-group row align-content-center">
-                        <% if (user.profile_img != null) { %>
-                           <img src="<%= user.profile_img %>"> 
+                        <% if (image != null || image!= 'undefined') { %>
+                           <img src="<%= image %>"> 
                            <label for="profile-picture">Actualizar Imagen de Perfil</label>
                         <% } else { %>
                            <span>Cargar Imagen de Perfil</span>
