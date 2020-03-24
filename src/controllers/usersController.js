@@ -143,6 +143,7 @@ const controller = {
 
     editProfile: async (req, res) => {
         let image = await sequelize.query("SELECT profile_img FROM `users` WHERE `id` = " + req.session.user.id, { type: QueryTypes.SELECT });
+        console.log(image[0].profile_img)
         res.render('user-create-form', {
             image: image[0].profile_img
         })

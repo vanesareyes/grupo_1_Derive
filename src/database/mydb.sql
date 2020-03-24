@@ -538,12 +538,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla mydb.users: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.users: ~10 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`Id`, `name`, `surname`, `email`, `password`, `phone`, `profile_img`, `created_at`, `updated_at`, `admin`) VALUES
 	(10, 'Estono', 'Melo', 'esperaba@hotmail.com', '$2b$10$LuHuU/0/j4nc1BjhecpD6OCjMMJqEIMXpvRjoW9ec81Nm2U6fBi/i', '11549302293', '/profilePics/profile-picture-10.jpg', '2020-03-20 14:05:22', '2020-03-24 16:19:07', 1),
-	(11, 'Vanesa', 'Reyes', 'reyesvanesa@yahoo.com.ar', '$2b$10$xwAVAtds934tPlRB3.nNqu9y7w9YNITSn7B/18yiwRmIUeR1htyZi', '11542232677', NULL, '2020-03-21 11:53:36', '2020-03-21 11:56:03', 1),
-	(12, 'Jezabel', 'Gomez', 'jezabel@hotmail.com', '$2b$10$QS6XdQ.najLEjD6/vWkPwOqFY62vEIq0RJCXa/R8fyNoKjR/1.ZXq', NULL, NULL, '2020-03-21 11:57:17', '2020-03-21 11:57:17', 0);
+	(11, 'Vanesa', 'Reyes', 'reyesvanesa@yahoo.com.ar', '$2b$10$xwAVAtds934tPlRB3.nNqu9y7w9YNITSn7B/18yiwRmIUeR1htyZi', '11542232677', '/profilePics/profile-picture-11.jpg', '2020-03-21 11:53:36', '2020-03-24 16:31:11', 1),
+	(13, 'Jezabel', 'Gomez', 'jezabel@hotmail.com', '$2b$10$rlZO9yLl2x0wxmvKcO47Muq47ssC3mM77q9msh9j88b6lKb/Uk52u', '2123131311', '/profilePics/profile-picture-13.jpg', '2020-03-24 16:32:28', '2020-03-24 16:33:11', 0),
+	(14, 'Cecilia', 'Valenzuela', 'chechula21@yahoo.com.ar', '$2b$10$yi8SUNrMhrL4zeudB34UUO7NZNkX2vQh.AXmFxHJ5q6A0Qj0Xn4HO', '112893191', '/profilePics/profile-picture-14.jpg', '2020-03-24 17:01:02', '2020-03-24 17:03:04', 0),
+	(15, 'Ayelen', 'Marino', 'ayemarino@gmail.com', '$2b$10$itvpXOtwMHBbSxTAnq4Vj.4VOQ8dZb73hlnuhRDiK7FxJglF8OhtC', '', '/profilePics/profile-picture-15.jpg', '2020-03-24 17:04:06', '2020-03-24 17:13:20', 0),
+	(16, 'Matias', 'Albaricoque', 'albaricoque@msn.com', '$2b$10$NN7LEZ/ZIHCjKphfZHFsU.n13sgqUaJTlAckZWyV8TKWI8fVSCpTi', '121891912', '/profilePics/profile-picture-16.jpg', '2020-03-24 17:08:30', '2020-03-24 17:12:38', 0),
+	(17, 'Tadeo', 'DiNapole', 'tdinapole@hotmail.com', '$2b$10$SKSG3GX25Hd0hr2KtRF3R.NY7ZuHIUVtDkGTaLzmVHMeS3xhKBHRe', '412111112', '/profilePics/profile-picture-17.jpg', '2020-03-24 17:14:33', '2020-03-24 17:16:59', 0),
+	(18, 'Leonardo', 'Dicaprio', 'leodicaprio@gmail.com', '$2b$10$t.LsoegHTiN/6C85pKSV8uwGZe2Eb0FlPus0xOmL2iDmWhrpZy1D6', '38119289120', '/profilePics/profile-picture-18.jpg', '2020-03-24 17:18:04', '2020-03-24 17:20:20', 0),
+	(19, 'Esteban', 'Botana', 'estebancito@yahoo.com', '$2b$10$1sHC/998N4sipAQWYY5W/O/tpl.AG.W63nHBguF0wsVtHiweM/3p2', NULL, '/profilePics/profile-picture-19.jpg', '2020-03-24 17:21:42', '2020-03-24 17:23:58', 0),
+	(21, 'Pablo', 'Cardenas', 'cardenas@yahoo.com', '$2b$10$Ki3.Ie89ID3NruZUTMz.tOEWa13bj8OiIMgzRoebyT/DUsFHjTFdu', '', '/profilePics/profile-picture-21.jpg', '2020-03-24 17:29:40', '2020-03-24 17:31:47', 0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.userstokens
@@ -558,10 +565,8 @@ CREATE TABLE IF NOT EXISTS `userstokens` (
   CONSTRAINT `users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla mydb.userstokens: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.userstokens: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `userstokens` DISABLE KEYS */;
-INSERT INTO `userstokens` (`token`, `created_at`, `updated_at`, `users_id`, `id`) VALUES
-	('dwo98dnxeA1JEbfZCa5Da+oucd7fgs9uHqmqk2AG0rVutcjz89eovOKFqjW5IbX5BxCJHbRe7Sr+mcYjxLC0Ng==', '2020-03-21 11:54:46', '2020-03-21 11:54:46', 11, 24);
 /*!40000 ALTER TABLE `userstokens` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.user_product
