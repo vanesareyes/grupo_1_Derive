@@ -35,12 +35,12 @@
                   <%= typeof msg != 'undefined' ? msg : '' %>
                      <div class="form-group row align-content-center">
                         <% if (user.profile_img != null) { %>
-                           <img src="<%= typeof user.profile_img != 'null' ? user.profile_img : '' %>"> 
-                           <span>Actualizar Imagen de Perfil</span>
+                           <img src="<%= user.profile_img %>"> 
+                           <label for="profile-picture">Actualizar Imagen de Perfil</label>
                         <% } else { %>
                            <span>Cargar Imagen de Perfil</span>
                         <% } %>
-                        <input type="file" name="profile-picture">
+                        <input type="file" name="profile-picture" id="profile-picture">
                      </div>
                      <div class="text-center ">
                         <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar imagen!</button>
