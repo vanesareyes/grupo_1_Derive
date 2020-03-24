@@ -15,8 +15,24 @@ const controller = {
                 "location",
                 "category",
             ]
+
         }).then((products) => {
-            let respuesta = products
+            products.forEach(product => {
+                delete product.id;
+            });
+
+            let respuesta = {
+                meta: {
+                    count: products.length,
+                    countByCategory: {
+                        
+                    }
+                },
+                data: {
+                    products
+
+                }
+            }
 
             res.json(respuesta)
         })

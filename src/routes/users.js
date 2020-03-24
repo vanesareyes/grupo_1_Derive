@@ -18,6 +18,8 @@ router.get('/profile', userMiddleware, usersController.profile);
 
 router.get('/edit-profile', userMiddleware, usersController.editProfile);
 
+router.post('/edit-profile', userMiddleware, usersController.uploadProfilePic);
+
 router.put('/edit-profile', usersController.processEditProfile);
 
 router.get('/logout', usersController.logout);

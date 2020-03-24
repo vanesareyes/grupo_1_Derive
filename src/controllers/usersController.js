@@ -7,6 +7,31 @@ let { check, validationResult, body } = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const crypto = require('crypto');
+const multer = require('multer');
+
+//set storage engine
+const storage = multer.diskStorage({
+    destination: './public/profilePics',
+    filename: function(req, file, cb){cb(null, file.fieldname + '-' + req.session.user.id + path.extname(file.originalname));}
+})
+//init upload
+const upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: 25000000,
+    },
+    fileFilter: function(req, file, cb) {
+        const fileTypes = /jpeg|jpg|png|gif/;
+        const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
+        const mimeType = fileTypes.test(file.mimetype);
+
+        if(mimeType && extName){
+            return cb(null, true);
+        } else {
+            cb('Procurá subir una imagen solamente por favor');
+        }
+    }
+}).single('profile-picture');
 
 const controller = {
 
@@ -37,7 +62,6 @@ const controller = {
                     if (!created) {
                         res.render('register-form', { errors: [{ msg: 'Usuario ya existente' }] })
                     } else {
-                        console.log(user.get)
                         res.redirect(301, '/users/login')
                     }
 
@@ -60,7 +84,6 @@ const controller = {
                 if (usuarioALoguearse != null) {
                     if (bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
                     delete usuarioALoguearse.password;
-                    console.log('USUARIOOOOO22222', usuarioALoguearse)
                     req.session.user = usuarioALoguearse;
                     res.locals.user = req.session.user;
                         if (req.body.remember) {
@@ -127,7 +150,6 @@ const controller = {
                 surname: req.body.surname,
                 email: req.body.email,
                 phone: req.body.phone,
-                // profile_img:   VER MULTER
             }, {
                 where: {
                     id: req.session.user.id
@@ -138,6 +160,27 @@ const controller = {
             // res.redirect('/profile')
         })
                 
+    },
+
+    uploadProfilePic: (req, res) => {
+        upload(req, res, (err) => {
+            if(err){
+                res.render('user-create-form', {
+                    msg: err
+                })
+            } else{
+                if(req.file == undefined) {
+                    res.render('user-create-form', {
+                        msg: 'Por favor seleccioná un archivo'
+                    })
+                } else {
+                    res.render('user-create-form', {
+                        msg: 'La imagen fue cargada con éxito',
+                        file: `/profilePics/${req.file.filename}`
+                    })
+                }
+            }
+        }) 
     },
 
     logout: (req, res) => {
