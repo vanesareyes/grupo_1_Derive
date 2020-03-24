@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include partials/head %>
+
+<body>
+  
+  <!-- NavBar -->
+  <% if (isAuthenticated) {
+    %> <%- include partials/newUserNavbar %> <%
+  } else { %> 
+  <%- include partials/navbar %>
+  <% } %>
+
+  
+
+
+<div class="container pt-5">
+   <div class="row">
+
+
+    <div class="col-4">
+      <div class="dash-label">
+        <h3>Usuarios</h3>
+        <h1>XX</h1>
+        <div class="icon1">
+        <i class="fas fa-users"></i>
+        </div>
+      </div>
+    </div>  
+
+    <div class="col-4">
+      <div class="dash-label">
+        <h3>Productos</h3>  
+        <h1>XX</h1>
+        <div class="icon2">
+        <i class="fas fa-luggage-cart"></i>   
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">     
+     <div class="dash-label">  
+        <h3>Categorias</h3>
+        <h1>XX</h1>  
+        <div class="icon3">
+        <i class="fas fa-clipboard-list"></i>           
+     </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container pt-5">
+  <div class="row">
+   
+    <div class="col-6">
+      <div class="dash-label-2">
+      <h3>Lista de productos</h3>
+    <div class="dash-content"> 
+    <ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+    </ul>
+    </div> 
+    </div>
+
+    </div>  
+
+    <div class="col-3">
+      <div class="dash-label-2">
+      <h3>Ultimo Producto</h3>
+     <div class="dash-content"> 
+     <p>Producto...</p>
+     </div>
+  </div>  
+</div> 
+
+    <div class="col-3">
+      <div class="dash-label-2">
+      <h3>Ultimo Usuario</h3>
+      <div class="dash-content"> 
+      <p>Usuario...</p>
+      </div>
+  </div>
+</div>  
+
+  </div>
+</div>    
+</div>
+                    
+  <!-- Footer -->
+  <%- include partials/footer %>
+  
+</body>
+
+</html>
