@@ -174,9 +174,18 @@ const controller = {
                         msg: 'Por favor seleccioná un archivo'
                     })
                 } else {
-                    res.render('user-create-form', {
-                        msg: 'La imagen fue cargada con éxito',
-                        file: `/profilePics/${req.file.filename}`
+                    db.user.update({
+                        profile_img: `/profilePics/${req.file.filename}`
+                    }, {
+                        where: {
+                            id: req.session.user.id
+                        }
+                    }).then((updatedProfile) => {
+                        console.log('Nombre del archivo', req.file.filename);
+                        res.render('user-create-form', {
+                            msg: 'La imagen fue cargada con éxito',
+                            file: `/profilePics/${req.file.filename}`
+                        })
                     })
                 }
             }
