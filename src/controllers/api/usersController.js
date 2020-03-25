@@ -32,11 +32,9 @@ const controller = {
                 exclude: ["password", "admin"]
             }
         })
-        .then(data => {
-        console.log(data.password)
-        delete data.password
-        console.log('DATA', data)
-           res.json(data)
+        .then(user => {
+            user.setDataValue("image_URL","http://localhost:3000/profilePics/profile-picture-" + user.id)
+            res.json(user)
         })
 }
 }
