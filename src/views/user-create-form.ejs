@@ -43,7 +43,7 @@
                         <input type="file" name="profile-picture" id="profile-picture">
                      </div>
                      <div class="text-center ">
-                        <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar imagen!</button>
+                        <button type="submit" class=" btn btn-block send-button tx-tfm" onclick="comprueba_extension(this.form, this.form.profile-picture.value)">Cargar imagen!</button>
                      </div>
                </form>
             </div>
@@ -101,5 +101,7 @@
   <%- include partials/footer.ejs %>
 
 </body>
+
+<script src="../../public/js/validations.js"></script>
 
 </html>
