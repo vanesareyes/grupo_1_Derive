@@ -143,13 +143,16 @@ const controller = {
 
     editProfile: async (req, res) => {
         let image = await sequelize.query("SELECT profile_img FROM `users` WHERE `id` = " + req.session.user.id, { type: QueryTypes.SELECT });
-        console.log(image[0].profile_img)
+        // console.log(image[0].profile_img)
         res.render('user-create-form', {
             image: image[0].profile_img
         })
     },
 
-    processEditProfile: (req, res) => {
+    processEditProfile: async (req, res) => {
+        let errors = validationResult(req)
+        console.log('errores', errors)
+        if (errors.isEmpty()) {
         db.user.update({
                 name: req.body.name,
                 surname: req.body.surname,
@@ -164,6 +167,15 @@ const controller = {
             res.send('Perfil actualizado')           
             // res.redirect('/profile')
         })
+    } else {
+        let image = await sequelize.query("SELECT profile_img FROM `users` WHERE `id` = " + req.session.user.id, { type: QueryTypes.SELECT });
+        res.render('user-create-form', {
+            errors: errors.errors,
+            image: image[0].profile_img
+
+
+        })
+    }
                 
     },
 
