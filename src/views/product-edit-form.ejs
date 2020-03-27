@@ -5,9 +5,9 @@
 
 <body>
     <!-- NavBar -->
-    <% if (isAuthenticated) {
-      %> <%- include partials/newUserNavbar %> <%
-    } else { %> 
+    <% if (isAuthenticated) { %>
+    <%- include partials/newUserNavbar %>
+    <% } else { %> 
     <%- include partials/navbar %>
     <% } %>
    <div class="container">
@@ -32,7 +32,7 @@
             </ul>
         <% } %>
                <div class="myform form">
-                  <% if(product){%>
+                  <% if(product) {%>
                   <form action="/products/edit/<%=product.id%>?_method=put"  name="edit-product" method="POST">
                      <input type="hidden" name="_method" value="PUT" >
                      <div class="row">
@@ -83,7 +83,7 @@
                            <div class= "dropdown-divider"> </div>
                            <div class="form-group">
                               <label  for="description">Descripción</label>
-                              <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="5"><%=product.description% required="required" minlength="50" maxlength="150"></textarea>
+                              <textarea type="text" name="description"  class="form-control my-input" value= "<%= product.description%>" id="description"  rows="5" required="required" minlength="50" maxlength="150"><%= product.description%></textarea>
                            </div>
                            <div class= "dropdown-divider"> </div>
                            <div class="form-group">
@@ -150,7 +150,7 @@
                   <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" name="delete-product">
                      <button type="submit" class="btn btn-danger del-btn">Eliminar producto</button>
                   </form> 
-                  <%} %>
+                  <% } %>
                </div>
                <div class= "dropdown-divider"> </div>
             </div>
