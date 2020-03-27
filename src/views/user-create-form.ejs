@@ -40,10 +40,10 @@
                         <% } else { %>
                            <span>Cargar Imagen de Perfil</span>
                         <% } %>
-                        <input type="file" name="profile-picture" id="profile-picture">
+                        <input type="file" name="profile-picture" id="profile-picture" accept="image/gif,image/jpeg,image/jpg,image/png">
                      </div>
                      <div class="text-center ">
-                        <button type="submit" class=" btn btn-block send-button tx-tfm" onclick="comprueba_extension(this.form, this.form.profile-picture.value)">Cargar imagen!</button>
+                        <button type="submit" class=" btn btn-block send-button tx-tfm">Cargar imagen!</button>
                      </div>
                </form>
             </div>
@@ -102,6 +102,6 @@
 
 </body>
 
-<script src="../../public/js/validations.js"></script>
+
 
 </html>
