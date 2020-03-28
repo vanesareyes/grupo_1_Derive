@@ -480,3 +480,19 @@ label[for="imgUpload"] {
 	height: 100px;
 	border-radius: 50%;
 }
+
+.dashboard-panel-link{
+  font-size: 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: #f1f4ec;
+  background-color: #495057;
+  border-color: #dee2e6 #dee2e6 #dee2e6;
+  font-weight: bold;
+}
+
+.derive-brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.3rem;
+}
