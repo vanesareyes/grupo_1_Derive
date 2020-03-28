@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Panels() {
     return (
         <div>
@@ -11,9 +12,122 @@ function Panels() {
             </div>
           </nav>
           <div className="tab-content" id="nav-tabContent">
-            <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">Acá adentro pondremos el total de usuarios, y un listado detallado de los usuarios</div>
-            <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Acá adentro pondremos el total de productos y un listado detallado de productos</div>
-            <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Acá adentro pondremos el total de categorías, y un listado de cantida de productos por categoría.</div>
+            
+            <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div>
+                <h4 className="mt-3">Cantidad de Usuarios Registrados: 10958</h4>
+              </div>
+              <div>
+                <table className="table">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Apellido</th>
+                          <th scope="col">eMail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Juan</td>
+                          <td>de los Palotes</td>
+                          <td>asiandaelmundo@parenquemebajo.com</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                          <td>Estono Melo</td>
+                          <td>Esperaba</td>
+                          <td>esperaba@hotmail.com</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                          <td>Elsa</td>
+                          <td>Bohr de Lencuentro</td>
+                          <td>unaquilmesfria@porfavor.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            
+            </div>
+            
+            <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div>
+                <h4 className="mt-3">Cantidad de Productos: 842</h4>
+              </div>
+              <div>
+                <table className="table">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Producto</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Localidad</th>
+                          <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Escapada romántica</td>
+                          <td>Escapadas</td>
+                          <td>Palomar de los Pinguinos</td>
+                          <td>$5000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Rafting alocado</td>
+                          <td>Aventura</td>
+                          <td>Río Electrico</td>
+                          <td>$12300</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Masajes paralizantes</td>
+                          <td>Salud</td>
+                          <td>El Spa de los Spañoles</td>
+                          <td>$2345</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+              
+              <div>
+                <h4 className="mt-3">Cantidad de Categoría: 10</h4>
+              </div>
+              <div>
+                <table className="table">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Cantidad de Productos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Escapadas</td>
+                          <td>135</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Aventura</td>
+                          <td>278</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Salud</td>
+                          <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+
+            </div>
           </div>
         </div>
     );
