@@ -17,7 +17,7 @@ function Panels() {
               <div className="row">
                 <div className="col-md-4">
                   <div>
-                    <h4 className="mt-3">Cantidad de Usuarios Registrados: 10958</h4>
+                    <h4 className="mt-3">Cantidad de Usuarios Registrados:<br></br><mark className="total-dashboard-panel">10958</mark></h4>
                   </div>
                 </div>
                 
@@ -65,7 +65,7 @@ function Panels() {
               <div className="row">
                 <div className="col-md-4">
                   <div>
-                    <h4 className="mt-3">Cantidad de Productos: 842</h4>
+                    <h4 className="mt-3">Cantidad de Productos:<br></br><mark className="total-dashboard-panel">842</mark></h4>
                   </div>
                 </div>
                 <div className="col-md-8">
@@ -117,7 +117,7 @@ function Panels() {
               <div className="row">
                 <div className="col-md-4">
                   <div>
-                    <h4 className="mt-3">Cantidad de Categoría: 10</h4>
+                    <h4 className="mt-3">Cantidad de Categoría: <br></br><mark className="total-dashboard-panel">10</mark></h4>
                   </div>
                 </div>
                 <div className="col-md-8">
