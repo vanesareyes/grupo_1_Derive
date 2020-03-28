@@ -1,38 +1,482 @@
-.App {
-  text-align: center;
+/*
+ * Acá empiezan nuestros estilos propios, los que agregamos a los que vienen por default en el paquete Boostrap 
+*/
+body {
+  padding-top: 56px;
+  font-family: 'Lato', sans-serif;
+  background-color: #F1F4ED;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-primary {
+	background-color: #7180AC!important;
+	background-image: url(/images/pexels-photo-3557497.jpg);
+	background-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bg-green {
+	background-color: #50934A!important;
+	background-image: url(/images/nature-forest-trees-fog.jpg);
+	background-position: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.experience-tittle {
+  margin: 2% 0 2% 0;
 }
 
-.App-link {
-  color: #61dafb;
+
+ /* reglas para el shopping cart*/
+.table td, .table th {
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.more-info-btn {
+    font-size: 0.75rem;
+}
+
+.how-many-stars {
+  text-align: right;
+}
+
+.derive-footer {
+  margin: 5% 0 0 0;
+}
+
+.white-text{
+  color: #ffffff;
+}
+
+.btn-saber-mas{
+  background: #ffffff;
+  border-color: #4b74a0;
+	color:#4b74a0;
+}
+
+.btn-saber-mas:hover{
+	background: #4b74a0;
+	color:#fff;
+}
+
+/* productBox on landingContent Styles */
+
+.highlighter:hover{
+	-webkit-box-shadow: 0 0 20px rgba(158, 158, 158, 0.27);
+	box-shadow: 0 0 20px rgba(158, 158, 158, 0.27);
+	transition: box-shadow 0.5s;
+}
+
+.starsize {
+	font-size: 65%;
+}
+
+.card-title {
+    margin-bottom: .30rem;
+}
+
+.btn-knowmore {
+    color: #fff;
+    background-color: #7180AC!important;
+    border-color: #7180AC!important;
+}
+
+.btn-knowmore:hover {
+    color: #fff;
+    background-color: #274060!important;
+    border-color: #274060!important;
+}
+
+/* Nav Styles*/
+
+.bg-dark {
+	background-color: #FFF!important;
+	-webkit-box-shadow: 0px 0px 10px rgba(158, 158, 158, 0.27);
+	box-shadow: 0px 0px 10px rgba(158, 158, 158, 0.27);
+}
+
+.navbar-content .navbar-brand {
+    color: rgb(3, 0, 0);
+}
+
+.navbar-brand {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+}
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+	color: rgb(249, 58, 136);
+	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
+}
+
+.navbar-dark .navbar-nav .active>.nav-link {
+    color: rgb(3, 0, 0);
+}
+
+li .navbar-dark .navbar-nav {
+    color: rgb(3, 0, 0);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(3, 0, 0);
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+	color: rgb(249, 58, 136);
+	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
+}
+
+.nav-link {font-size: 0.85rem;}
+
+.input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child) {
+    border-radius: 10px;
+    border-color: #eaeaea;
+}
+
+/*input:invalid {
+	border: red solid 3px;
+}*/
+
+.form-control {
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+/* CSS para el formulario de registro*/
+
+.send-button{
+  background: #ffffff;
+  border-color: #4b74a0;
+	width:100%;
+	font-weight: 600;
+	color:#4b74a0;
+	padding: 8px 25px;
+}
+
+.send-button:hover{
+	background: #4b74a0;
+	width:100%;
+	font-weight: 600;
+	color:#fff;
+	padding: 8px 25px;
+}
+
+.reset-button{
+background: #ffffff;
+border-color: #e2470a;
+	width:100%;
+	font-weight: 600;
+	color:#e2470a;
+	padding: 8px 25px;
+}
+
+.reset-button:hover{
+	background: #e2470a;
+	width:100%;
+	font-weight: 600;
+	color:#fff;
+	padding: 8px 25px;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+}
+
+.g-button{
+	border: 1px solid #EA4335;
+	background: #ffffff !important;
+	width:100%;
+	font-weight: 600;
+	color:#EA4335;
+	padding: 8px 25px;
+}
+
+.g-button:hover{
+	color: #fff !important;
+	border: 1px solid #EA4335;
+	background: #ea4335 !important;
+	width:100%;
+	font-weight: 600;
+	color:#fff;
+	padding: 8px 25px;
+}
+.my-input{
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	cursor: text;
+	padding: 8px 10px;
+	transition: border .1s linear;
+}
+.header-title{
+	margin: 2rem 0;
+}
+.header-title h1{
+	font-size: 31px;
+	line-height: 40px;
+	font-weight: 600;
+	color:#4c5357;
+}
+.header-title h2{
+	color: #5e8396;
+	font-size: 21px;
+	line-height: 32px;
+	font-weight: 400;
+}
+.login-or {
+	position: relative;
+	color: #aaa;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.span-or {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -2px;
+	margin-left: -25px;
+	background-color: #fff;
+	width: 50px;
+	text-align: center;
+}
+.hr-or {
+	height: 1px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+@media screen and (max-width:480px){
+	.header-title h1{ font-size: 26px; }
+  .header-title h2{ font-size: 20px; }
+} 
+
+
+/* CSS para las FAQs */
+
+.card {
+  border: none;
+}
+
+.card-header {
+  border-bottom: none;
+  background-color: #ffffff;
+}
+
+.card-header h2 button:hover {
+  text-decoration: none;
+}
+
+.stars-left-align {
+	text-align: left;
+}
+
+.faq-btn {
+	text-align: left;
+}
+
+/* Footer Styles */
+
+.footer-band {
+	background-color: #274060!important;
+}
+
+footer p {
+	font-size: 0.8rem;
+	line-height: 1.3;
+	margin-bottom: 0.8rem;
+}
+  
+footer p a {
+text-decoration: none;
+color: #212529;
+}
+
+footer p a:hover {
+text-decoration: none;
+}
+
+/* FAQs Styles*/
+
+
+.faqs {margin: 2rem 0;}
+
+.btn-link {
+font-weight: 400;
+color: #000000;
+text-decoration: none;
+}
+
+.card {background-color: #F1F4ED;}
+
+.card-header {
+border-bottom: none;
+background-color: #F1F4ED;
+padding: 0rem 1.25rem;
+}
+
+.btn-link.focus, .btn-link:focus {
+	text-decoration: none;
+	box-shadow: none;
+}
+
+hr {
+	margin-top: 0.2rem;
+	margin-bottom: 0.3rem;
+	border: 0;
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.card-body {
+	padding: 0.5 1.25rem 1.25rem 1.25rem;
+}
+
+
+input[type=file] {
+	display: block !important;
+	right: 1px;
+	top: 1px;
+	height: 34px;
+	opacity: 0;
+	width: 100%;
+	background: none;
+	position: absolute;
+	overflow: hidden;
+	z-index: 2;
+}
+	
+.control-fileupload {
+	display: block;
+	border: 1px solid #d6d7d6;
+	background: #FFF;
+	border-radius: 4px;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	padding: 0px 10px 2px 10px;
+	overflow: hidden;
+	position: relative;
+}
+	 
+
+.dropdown-menu {
+	/*right: 0;*/ 
+	left: auto;
+}
+
+
+.separador {margin: 5% 0}
+
+.del-btn{
+	background: #EA4335;
+	width:100%;
+	font-weight: 600;
+	color: #fff;
+	padding: 8px 25px;
+	}
+
+.btn-reset{
+	/*background: rgba(255, 255, 255, 0);
+	border-color: rgba(255, 255, 255, 0) ;*/
+	width:100%;
+	font-weight: 600;
+	/*color: #4c5357;*/
+	padding: 8px 25px;
+	}	
+
+.img-edit-col {width:100%;height:100%;}
+
+	.user-profile-image {
+		border-radius: 50%;
+		height: 20px;
+		width: 20px;
+	}
+
+
+	/* Dashboard Styles*/
+
+	.dash-label {
+	width: 80%;
+	border-radius: 4px;
+    background-color:#ffffff;
+    padding: 12px;
+    margin-right: 15px;
+	float: left;
+	box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #D6E7D4;
+	}
+
+	.icon1 {
+	color: #50934A;
+	}
+
+	.icon2 {
+	color: #7180AC;	
+	}
+
+	.icon3 {
+	color: #ea4335;	
+	}
+
+	.dash-label-2 {
+	width: 80%;
+	border-radius: 4px;
+	background-color:#ffffff;
+	margin-right: 15px;
+	padding: 12px;
+	float: left;
+	box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #D6E7D4;
+	}
+
+	.dash-content {
+	background-color: #AAD5A4;
+	border-radius: 2px;
+	text-align: left;
+	}
+
+	
+
+
+
+
+.img-edit-content {float:left;width:100%;height:100%;object-fit:cover;}
+
+.user-profile-image {
+	border-radius: 50%;
+	height: 20px;
+	width: 20px;
+}
+
+
+/* input de carga de imagen en el formulario de registro */
+
+input[type=”file”]#imgUpload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label[for="imgUpload"] {
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #106BA0;
+	display: inline-block;
+	transition: all .5s;
+	cursor: pointer;
+	padding: 40px 40px !important;
+	text-transform: uppercase;
+	width: fit-content;
+	text-align: center;
+	border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.profile_img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
 }
