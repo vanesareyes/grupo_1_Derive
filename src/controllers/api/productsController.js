@@ -5,39 +5,42 @@ let { check, validationResult, body } = require('express-validator');
 //const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../../database/models');
 const sequelize = db.sequelize;
+const { QueryTypes } = require('sequelize');
 
 const controller = {
 
     //List products
-    list: (req, res) => {
-        db.product.findAll({
-            include: [
-                "location",
-                "category",
-            ]
+    list: async (req, res) => {
+        let products = await sequelize.query("SELECT products.id AS `id`, products.name, products.description, categories.category, locations.location FROM `products` LEFT OUTER JOIN `locations` ON `products`.`locations_id` LEFT OUTER JOIN `categories` ON `products`.`categories_id`", { type: QueryTypes.SELECT }); 
 
-        }).then((products) => {
-            products.forEach(product => {
-                delete product.id;
-            });
-
-            let respuesta = {
-                meta: {
-                    count: products.length,
-                    countByCategory: {
-                        
-                    }
+        for (product of products){
+            product.detail = "api/products/" + product.id
+            }
+        let respuesta = {
+            meta: {
+                count: products.length
                 },
-                data: {
-                    products
-
-                }
+                products
             }
 
             res.json(respuesta)
-        })
 
+        
     },
+    detail: (req, res) => {
+        db.product.findByPk(req.params.id, {
+            include: [
+                "location",
+                "category"
+            ]
+        }
+            
+    )
+        .then(product => {
+            product.setDataValue("image_URL",product.img)
+            res.json(product)
+        })
+    }
 
 };
 

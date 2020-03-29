@@ -59,16 +59,16 @@ class Products extends Component {
                               <th scope="col">Producto</th>
                               <th scope="col">Categoria</th>
                               <th scope="col">Localidad</th>
-                              <th scope="col">Valor</th>
+                              <th scope="col">Descripción</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                               <th scope="row">{product.id}</th>
                               <td>{product.name}</td>
-                              <td>{product.category.category}</td>
+                              <td>{product.category}</td>
+                              <td>{product.location}</td>
                               <td>{product.description}</td>
-                              <td>{product.price}</td>
                             </tr>
                         </tbody>
                     </table>

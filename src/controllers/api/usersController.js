@@ -9,7 +9,7 @@ const { QueryTypes } = require('sequelize');
 
 
 const controller = {
-    //List products
+    //List users
     list: async function (req, res) {
         let users = await sequelize.query("SELECT id, name, surname, email FROM `users`", { type: QueryTypes.SELECT }); 
         
@@ -26,6 +26,7 @@ const controller = {
             res.json(respuesta)
     },
     
+    // User's details
     detail: (req,res) => {
         db.user.findByPk(req.params.id, {
             attributes: {
@@ -33,7 +34,7 @@ const controller = {
             }
         })
         .then(user => {
-            user.setDataValue("image_URL","http://localhost:3000/profilePics/profile-picture-" + user.id)
+            user.setDataValue("image_URL","http://localhost:3001/profilePics/profile-picture-" + user.id)
             res.json(user)
         })
 }
