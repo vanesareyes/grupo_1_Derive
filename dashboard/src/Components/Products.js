@@ -51,7 +51,7 @@ class Products extends Component {
                 </div>
                 <div className="col-md-8">
                   <div>
-                  {products.map(product => (
+                  
                     <table className="table">
                         <thead>
                             <tr>
@@ -63,16 +63,18 @@ class Products extends Component {
                             </tr>
                         </thead>
                         <tbody>
+                        {products.map((product,i) => (
                             <tr>
-                              <th scope="row">{product.id}</th>
-                              <td>{product.name}</td>
-                              <td>{product.category}</td>
-                              <td>{product.location}</td>
-                              <td>{product.description}</td>
+                              <th scope="row" key={product.id + i}>{product.id}</th>
+                              <td key={product.name + i}>{product.name}</td>
+                              <td key={product.category + i}>{product.category}</td>
+                              <td key={product.location + i}> {product.location}</td>
+                              <td key={product.description + i}>{product.description}</td>
                             </tr>
+                        ))}
                         </tbody>
                     </table>
-                  ))}
+                  
                   </div>
                 </div>
               </div>

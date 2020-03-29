@@ -55,7 +55,7 @@ class Usuarios extends Component {
                
                <div className="col-md-8">
                  <div>
-                 {users.map(user => (
+                 
                    <table className="table">
                        <thead>
                            <tr>
@@ -66,15 +66,17 @@ class Usuarios extends Component {
                            </tr>
                        </thead>
                        <tbody>
+                       {users.map((user,i) => (
                            <tr>
-                             <th scope="row">{user.id}</th>
-                             <td>{user.name}</td>
-                             <td>{user.surname}</td>
-                             <td>{user.email}</td>
+                             <th scope="row" key={user.id + i}>{user.id}</th>
+                             <td key={user.name + i}>{user.name}</td>
+                             <td key={user.surname + i}>{user.surname}</td>
+                             <td key={user.email + i}>{user.email}</td>
                            </tr>
+                            ))}
                        </tbody>
                    </table>
-                 ))}
+                
                  </div>
                </div>
              </div>               
