@@ -12,6 +12,7 @@ const controller = {
     //List products
     list: async (req, res) => {
         let products = await sequelize.query("SELECT products.id AS `id`, products.name, products.description, categories.category, locations.location FROM `products` LEFT OUTER JOIN `locations` ON `products`.`locations_id` LEFT OUTER JOIN `categories` ON `products`.`categories_id`", { type: QueryTypes.SELECT }); 
+        console.log(products.length, 'CANTIDAD')
 
         for (product of products){
             product.detail = "api/products/" + product.id

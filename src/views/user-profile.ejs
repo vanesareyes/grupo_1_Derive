@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include partials/head %>
+
+    <body>
+
+        <!-- NavBar -->
+        <% if (typeof locals.user != 'undefined') { %>
+            <%- include partials/newUserNavbar %>
+                <% } else { %>
+                    <%- include partials/navbar %>
+                        <% } %>
+
+                        <div class="container pt-5">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="experience-tittle">
+                                        <%= user.name %>
+                                    </h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row align-content-center">
+                                        <% if (image != null || image!= 'undefined') { %>
+                                           <img class="profile_img" src="<%= image %>"> 
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 mb-3">
+                                            <!--<h3>Nombre de la Experiencia</h3>-->
+                                            <span class="text-muted font-weight-normal font-italic d-block" id="userName">Nombre: <%= user.name %></span>
+                                            <span class="text-muted font-weight-normal font-italic d-block" id="userSurname">Apellido: <%= user.surname %></span>
+                                            <span class="text-muted font-weight-normal font-italic d-block" id="userEmail">Email: <%= user.email %></span>
+                                            <span class="text-muted font-weight-normal font-italic d-block" id="userPhone">Teléfono: <%= user.phone ? user.phone : '' %></span>
+                                        </div>
+                                                                       
+                                        <div class="col-md-6">
+                                            <form action="/users/edit-profile" method="GET">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a href="/users/edit-profile" class="btn btn-secondary">Editar</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        
+                                        
+                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                                <!-- Footer -->
+                                <%- include partials/footer.ejs %>
+
+    </body>
+
+</html>

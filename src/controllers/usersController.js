@@ -136,9 +136,14 @@ const controller = {
             })
         } 
     },
-    profile: (req, res) => {
-        // res.render('user-profile') FALTA LA VISTA
-        res.send('VER TU PERFIL')
+    profile: async (req, res) => {
+        let image = await sequelize.query("SELECT profile_img FROM `users` WHERE `id` = " + req.session.user.id, { type: QueryTypes.SELECT });
+        res.render('user-profile',{
+             image: image[0].profile_img
+
+         }) 
+
+        // res.send('VER TU PERFIL')
     },
 
     editProfile: async (req, res) => {
