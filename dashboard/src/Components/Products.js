@@ -41,8 +41,9 @@ class Products extends Component {
            return <div>Loading...</div>;
          } else {
            return (
-            <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
+            
+            
+            <div>
               <div className="row">
                 <div className="col-md-4">
                   <div>
@@ -77,8 +78,10 @@ class Products extends Component {
                   
                   </div>
                 </div>
-              </div>
-              </div>
+                </div>
+                </div>
+              
+              
            )
          }
        }
