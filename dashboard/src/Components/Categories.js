@@ -8,8 +8,7 @@ class Categories extends Component {
          
            return (
 
-            <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              <div className="row">
+                <div className="row">            
                 <div className="col-md-4">
                   <div>
                     <h4 className="mt-3">Cantidad de Categoría: <br></br><mark className="total-dashboard-panel">10</mark></h4>
@@ -45,8 +44,7 @@ class Categories extends Component {
                     </table>
                   </div>
                 </div>
-              </div>
-            </div>
+                </div>
               )
            
          }

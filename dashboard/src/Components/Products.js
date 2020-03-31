@@ -44,6 +44,7 @@ class Products extends Component {
             
             
             <div>
+              <div className="row">
                 <div className="col-md-4">
                   <div>
                     <h4 className="mt-3">Cantidad de Productos:<br></br><mark className="total-dashboard-panel">{count}</mark></h4>
@@ -76,6 +77,7 @@ class Products extends Component {
                     </table>
                   
                   </div>
+                </div>
                 </div>
                 </div>
               

@@ -42,8 +42,8 @@ class Usuarios extends Component {
          } else {
            return (
             
-            
             <div>
+            <div className="row">
                <div className="col-md-4">
                  <div>
                    <h4 className="mt-3">Cantidad de Usuarios Registrados:<br></br>
@@ -78,7 +78,7 @@ class Usuarios extends Component {
                 
                  </div>
                </div>
-             
+               </div>
                </div>
            
 
