@@ -68,8 +68,8 @@ class Products extends Component {
                             <tr>
                               <th scope="row" key={product.id + i}>{product.id}</th>
                               <td key={product.name + i}>{product.name}</td>
-                              <td key={product.category + i}>{product.category}</td>
-                              <td key={product.location + i}> {product.location}</td>
+                              <td key={product.category.category + i}>{product.category.category}</td>
+                              <td key={product.location.location + i}> {product.location.location}</td>
                               <td key={product.description + i}>{product.description}</td>
                             </tr>
                         ))}
