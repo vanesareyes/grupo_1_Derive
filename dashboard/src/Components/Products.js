@@ -47,11 +47,11 @@ class Products extends Component {
               <div className="row">
                 <div className="col-md-4">
                   <div>
-                    <h4 className="mt-3">Cantidad de Productos:<br></br><mark className="total-dashboard-panel">{count}</mark></h4>
+                    <h4 className="mt-3">Cantidad de <br></br>Productos:<br></br><mark className="total-dashboard-panel">{count}</mark></h4>
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <div>
+                  
                   
                     <table className="table">
                         <thead>
@@ -76,7 +76,7 @@ class Products extends Component {
                         </tbody>
                     </table>
                   
-                  </div>
+                  
                 </div>
                 </div>
                 </div>
