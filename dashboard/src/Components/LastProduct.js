@@ -40,7 +40,7 @@ class LastProduct extends Component {
                             </tr>
                             <tr>
                             <th>Imagen</th>
-                                <td>URL de imagen del producto</td>
+                                <td><img className="dashboard-img" src="http://placehold.it/700x400" alt=""></img></td>
                             </tr>
                             <tr>
                             <th>Stock</th>
