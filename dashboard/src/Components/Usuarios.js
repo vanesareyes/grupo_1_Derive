@@ -41,10 +41,9 @@ class Usuarios extends Component {
            return <div>Loading...</div>;
          } else {
            return (
-            <div className="tab-content" id="nav-tabContent">
             
-            <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-             <div className="row">
+            
+            <div>
                <div className="col-md-4">
                  <div>
                    <h4 className="mt-3">Cantidad de Usuarios Registrados:<br></br>
@@ -79,10 +78,9 @@ class Usuarios extends Component {
                 
                  </div>
                </div>
-             </div>               
-           </div>
-          
-           </div>
+             
+               </div>
+           
 
            )
          }

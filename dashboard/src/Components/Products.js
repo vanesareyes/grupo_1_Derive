@@ -41,9 +41,9 @@ class Products extends Component {
            return <div>Loading...</div>;
          } else {
            return (
-            <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
-              <div className="row">
+            
+            
+            <div>
                 <div className="col-md-4">
                   <div>
                     <h4 className="mt-3">Cantidad de Productos:<br></br><mark className="total-dashboard-panel">{count}</mark></h4>
@@ -77,8 +77,9 @@ class Products extends Component {
                   
                   </div>
                 </div>
-              </div>
-              </div>
+                </div>
+              
+              
            )
          }
        }
