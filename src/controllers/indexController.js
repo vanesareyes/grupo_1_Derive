@@ -31,16 +31,6 @@ const controller = {
         res.render('faqs', { faqs})
     },
 
-    
-    // shoppingCart: (req, res) => {
-    //     db.cart.findByPk(req.session.cart)
-    //     .then(data => {
-    //         res.json({cart: data})
-    //         // res.render('shoppingCart')
-    //     })
-        
-    // },
-
 
     contact: (req, res) => {
         res.render('contact')
