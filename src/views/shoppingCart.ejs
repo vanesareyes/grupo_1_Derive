@@ -19,6 +19,7 @@
       <div class="row">
         <div class="col-lg-12 p-5 bg-white">
 
+          <%if(cart.products.length > 0) {%>
           <!--Shopping cart table-->
           <div class="table-responsive">
             <table class="table">
@@ -59,8 +60,8 @@
                   <td class="border-0 text-center"><strong>$ <%=product.cartProduct.subtotal%></strong></td>
                   <td class="border-0 text-center">
                     <strong>
-                        <form action="/carts/<%=product.id%>?_method=delete" method="POST">
-                          <a href="" class="text-dark"><i class="fa fa-trash"></i></a>
+                        <form method="POST" action="/carts/<%=product.id%>?_method=DELETE">
+                          <button type="submit" name="_method" value="DELETE"><i class="fa fa-trash"></i></button>
                         </form>
                     </strong>
                   </td>         
@@ -70,6 +71,12 @@
               </tbody>
             </table>
           </div>
+          <%} else {%>
+          <div>
+            <h4>Tu carrito está vacío</h4>
+            <a href="/products">Seguir comprando</a>
+          </div>
+          <%}%>
       </div>
 
       <div class="row py-5 p-4 bg-white">

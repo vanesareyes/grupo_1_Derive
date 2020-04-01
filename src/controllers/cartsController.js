@@ -71,7 +71,7 @@ const controller = {
 
     destroy: (req, res) => {
         req.session.cart = 11;
-        // console.log('PRODUCTOID',req.params.product)
+        console.log('PRODUCTOID',req.params.product)
 
         db.cartProduct.destroy({
             where: {
@@ -79,8 +79,7 @@ const controller = {
                 cart_id: req.session.cart,
             }
         })
-        res.send('Producto borrado')
-        // res.redirect('/cart')
+        res.redirect('/carts')
     }
 }
 

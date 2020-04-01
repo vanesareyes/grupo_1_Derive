@@ -17,8 +17,9 @@
 
                                 <!-- Contact Content -->
 
-
                                 <div class="container">
+
+                                    <%= typeof msg != 'undefined' ? msg : '' %>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="header-title">
@@ -48,13 +49,18 @@
                                                     Contacto
                                                 </h1>
                                             </div>
+                                            <form action= "/contact" method="POST">
                                             <div class="form-group">
                                                 <label for="name">Nombre</label>
-                                                <input type="text" name="name" class="form-control my-input">
+                                                <input type="text" name="name" class="form-control my-input" required="required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Email</label>
+                                                <input type="email" name="email" class="form-control my-input" required="required">
                                             </div>
                                             <div class="form-group">
                                                 <label for="description">Comentarios</label>
-                                                <textarea class="form-control my-input" name="description" rows="3" id="description"></textarea>
+                                                <textarea class="form-control my-input" name="description" rows="3" id="description" required="required"></textarea>
                                             </div>
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -64,7 +70,7 @@
                                             <div class="text-center ">
                                                 <button type="submit" class=" btn btn-block send-button tx-tfm">Enviar</button>
                                             </div>
-
+                                        </form>
 
 
 
