@@ -1,7 +1,7 @@
 # Acerca de Derivé.
 
 Nuestro cliente, la empresa argentina **Derivé**, es una novedosa forma de compartir y regalar experiencias. 
-La palabra 'derivé' proviene del francés 'dériver' que traducido siginifica dejarse llevar.
+La palabra 'derivé' proviene del francés 'dériver' que traducido significa dejarse llevar.
 
 Derivé ofrece un canal retail con un total de X experiencias que incluyen más de X propuestas y momentos inigualables en entretenimientos, restaurantes, spas, salones de belleza, hoteles y actividades de aventura, entre otros.
 
@@ -28,7 +28,8 @@ Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado 
 Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
 
 ###### Vanesa Reyes
-Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
+JR Full Stack developer. Orientada a Back End y JavaScript. Científica y consultora en gestión de ruido en el océano. Estudiante de la licenciatura en Cs. de la Computación en la Univerdad de Buenos Aires.
+En 2019 realicé en Digital House el curso de Fullstack Node JS a raíz de obtener una Beca del Banco Santander.
 
 ## Acerca de 'derive.com'
 
@@ -52,9 +53,13 @@ Se planteó la construcción de un sitio eComerce en el que los usuarios puedan 
 
 - Express
 - Multer
+- Bcrypt
+- Cookie-parser
 - Method Override
 - Express-Session
 - Path
+- Nodemon
+- Mysql2
 - Sequelize
 - Sequelizer
 - Sequelize-cli
@@ -71,7 +76,7 @@ Se planteó la construcción de un sitio eComerce en el que los usuarios puedan 
 ## Instructivo para iniciar el sitio localmente:
 
 **Programas requeridos:**
-| SQL Workbench (para correr el script de la base de datos) |
+| Gestor de bases de datos MySQL (e.g. SQL Workbench, HeidiSQL) |
 | MAMP / XAMPP                                              |
 
 
@@ -89,13 +94,19 @@ Se planteó la construcción de un sitio eComerce en el que los usuarios puedan 
 
 ```~npm start```
 
-#### El sitio corre en [https://localhost:3000](https://localhost:3000)
+#### El sitio corre en [https://localhost:3001](https://localhost:3001)
 
 Para utilizar y testear las funcionalidades de administrador (CRUD de productos, dashboard) es necesario iniciar sesión con un usuario que posea dichos permisos. Para eso, utilizar el siguiente:
 
 Usuario administrador: 
  - email: esperaba@hotmail.com
  - password: esperaba
+ 
+ #### Para visualizar el Dashboard en React JS instalar dependencias e iniciar el proyecto dentro de la carpeta './dashboard' (El sitio corre en [https://localhost:3000](https://localhost:3000))
+ 
+  ```~npm i```
+  
+  ```~npm start```
 
 Que tengas un gran codeo y gracias por ver nuestro código.
 
