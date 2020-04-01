@@ -86,7 +86,7 @@ body {
 
 /* Nav Styles*/
 
-.bg-dark {
+.bg-light {
 	background-color: #FFF!important;
 	-webkit-box-shadow: 0px 0px 10px rgba(158, 158, 158, 0.27);
 	box-shadow: 0px 0px 10px rgba(158, 158, 158, 0.27);
@@ -101,26 +101,26 @@ body {
 	font-size: 2rem;
 }
 
-.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
 	font-family: 'Dancing Script', cursive;
 	font-size: 2rem;
 	color: rgb(249, 58, 136);
 	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
 }
 
-.navbar-dark .navbar-nav .active>.nav-link {
+.navbar-light .navbar-nav .active>.nav-link {
     color: rgb(3, 0, 0);
 }
 
-li .navbar-dark .navbar-nav {
+li .navbar-light .navbar-nav {
     color: rgb(3, 0, 0);
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link {
     color: rgb(3, 0, 0);
 }
 
-.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
 	color: rgb(249, 58, 136);
 	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
 }
@@ -479,4 +479,8 @@ label[for="imgUpload"] {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
+}
+
+.navbar-toggler-icon {
+	color: #000000!important;
 }
