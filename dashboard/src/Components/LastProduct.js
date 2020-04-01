@@ -1,17 +1,59 @@
 import React, { Component } from 'react';
 
 class LastProduct extends Component {
-    
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      product:{}
+    }
+}
+
+componentDidMount() {
+  console.log('Me monte')
+  fetch("http://localhost:3001/api/products")
+    .then(response => response.json())
+    .then(
+      (data) => {
+        this.setState({
+          isLoaded: true,
+          product: data.products.pop()
+      })
+      fetch(this.state.product.detail)
+      .then(response => response.json())
+      .then(
+        (data) => {
+          this.setState({
+            isLoaded: true,
+            product: data
+        })
+      })  
+      },
+        (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+        }
+    )
+  }
+ 
     
        
        render() {
-         
-           return (
-
-                <div className="row">            
+        const {error,isLoaded, product} = this.state;
+        if(error) {
+        return <div>Error: {error.message}</div>;
+        } else if (!isLoaded) {
+          return <div>Loading...</div>;
+        } else {
+          return (
+              <div className="row">            
                 <div className="col-md-4">
                   <div>
-                    <h4 className="mt-3">Último Prodcuto Cargado</h4>
+                    <h4 className="mt-3">Último Producto Cargado</h4>
                   </div>
                 </div>
                 <div className="col-md-8">
@@ -20,31 +62,31 @@ class LastProduct extends Component {
                         <tbody>
                             <tr>
                                 <th>Nombre</th>
-                                <td>Nombre del Producto</td>
+                                <td>{product.name}</td>
                             </tr>
                             <tr>
                             <th>Descripción</th>
-                                <td>Descripción del producto</td>
+                                <td>{product.description}</td>
                             </tr>
                             <tr>
                             <th>Categoría</th>
-                                <td>Categoría del producto</td>
+                                <td>{product.category.category}</td>
                             </tr>
                             <tr>
                             <th>Locación</th>
-                                <td>Locación del producto</td>
+                                <td>{product.location.location}</td>
                             </tr>
                             <tr>
                             <th>Precio</th>
-                                <td>Precio del producto</td>
+                                <td>{product.price}</td>
                             </tr>
                             <tr>
                             <th>Imagen</th>
-                                <td><img className="dashboard-img" src="http://placehold.it/700x400" alt=""></img></td>
+                                <td><img className="dashboard-img" src={product.image_URL} alt=""></img></td>
                             </tr>
                             <tr>
                             <th>Stock</th>
-                                <td>Stock del producto</td>
+                                <td>{product.stock}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -56,6 +98,6 @@ class LastProduct extends Component {
          }
        }
     
-
+      }
         
 export default LastProduct;

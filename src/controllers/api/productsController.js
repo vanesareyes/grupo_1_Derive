@@ -20,6 +20,10 @@ const controller = {
                 exclude: ["price", "img", "img2", "img3", "img4", "img5", "categories_id", "locations_id", "createdAt", "created_at", "updatedAt", "updated_at", "stock", "destacado", "deletedAt", "deleted_at", "product.category.id", "location.id" ]
             }
         }).then(products => {
+            for (product of products){
+                product.setDataValue("detail","http://localhost:3001/api/products/" + product.id) 
+                
+            }
             let respuesta = {                
                 meta: {
                     count: products.length
