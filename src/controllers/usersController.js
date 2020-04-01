@@ -169,8 +169,8 @@ const controller = {
                 }
             }
         ).then((updatedProfile) => {
-            res.send('Perfil actualizado')           
-            // res.redirect('/profile')
+            // res.send('Perfil actualizado')           
+            res.redirect('profile')
         })
     } else {
         let image = await sequelize.query("SELECT profile_img FROM `users` WHERE `id` = " + req.session.user.id, { type: QueryTypes.SELECT });

@@ -71,7 +71,7 @@ const controller = {
 
     destroy: (req, res) => {
         req.session.cart = 11;
-        console.log('PRODUCTOID',req.params.product)
+        // console.log('PRODUCTOID',req.params.product)
 
         db.cartProduct.destroy({
             where: {
