@@ -16,28 +16,27 @@
 
   <div class="pb-5">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 p-5 bg-white">
-
+      <div class="row py-5 p-4 bg-white">
+        <div class="col-lg-12">
           <%if(cart.products.length > 0) {%>
           <!--Shopping cart table-->
           <div class="table-responsive">
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col" class="border-0 bg-light">
+                  <th scope="col" class="border-0">
                     <div class="p-2 px-3 text-uppercase">Experiencia</div>
                   </th>
-                  <th scope="col" class="border-0 bg-light">
+                  <th scope="col" class="border-0">
                     <div class="py-2 text-uppercase">Precio unitario</div>
                   </th>
-                  <th scope="col" class="border-0 bg-light">
+                  <th scope="col" class="border-0">
                     <div class="py-2 text-uppercase">Participantes</div>
                   </th>
-                  <th scope="col" class="border-0 bg-light">
+                  <th scope="col" class="border-0">
                     <div class="py-2 text-uppercase">Subtotal</div>
                   </th>
-                  <th scope="col" class="border-0 bg-light">
+                  <th scope="col" class="border-0">
                     <div class="py-2 text-uppercase">Remover</div>
                   </th>
                 </tr>
@@ -61,7 +60,7 @@
                   <td class="border-0 text-center">
                     <strong>
                         <form method="POST" action="/carts/<%=product.id%>?_method=DELETE">
-                          <button type="submit" name="_method" value="DELETE"><i class="fa fa-trash"></i></button>
+                          <button class="shopping-cart-trash" type="submit" name="_method" value="DELETE"><i class="fa fa-trash"></i></button>
                         </form>
                     </strong>
                   </td>         
