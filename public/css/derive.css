@@ -484,3 +484,8 @@ label[for="imgUpload"] {
 .navbar-toggler-icon {
 	color: #000000!important;
 }
+
+.shopping-cart-trash {
+	border-color: #fff;
+	background-color: #fff;
+}
