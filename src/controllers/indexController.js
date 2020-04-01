@@ -36,6 +36,13 @@ const controller = {
         res.render('contact')
     },
 
+    processContact: (req, res) => {
+      // res.send("Gracias por contactarnos, te responderemos a la brevedad")
+      res.render('contact', {
+        msg: "Gracias por contactarnos, te responderemos a la brevedad"
+      })
+    },
+
     search: (req, res) => {
         let categories = db.category.findAll();
         let locations = db.location.findAll();

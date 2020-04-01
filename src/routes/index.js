@@ -12,11 +12,10 @@ router.get('/faqs', indexController.faqs);
 // router.get('/shopping-cart', indexController.shoppingCart);
 
 router.get('/contact', indexController.contact);
+router.post('/contact', indexController.processContact);
 
 router.get('/busqueda', indexController.search);
 router.get('/busqueda-avanzada', indexController.advancedSearch);
-
-
 
 
 module.exports = router;
