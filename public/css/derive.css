@@ -489,3 +489,7 @@ label[for="imgUpload"] {
 	border-color: #fff;
 	background-color: #fff;
 }
+
+.wv-heading--title {
+	margin-bottom: 0;
+}
