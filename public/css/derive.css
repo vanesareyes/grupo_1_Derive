@@ -7,6 +7,7 @@ body {
   background-color: #F1F4ED;
 }
 
+
 .bg-primary {
 	background-color: #7180AC!important;
 	background-image: url(/images/pexels-photo-3557497.jpg);
@@ -449,7 +450,7 @@ input[type=file] {
 
 /* input de carga de imagen en el formulario de registro */
 
-input[type=”file”]#imgUpload {
+input[type=”file”]#profile-picture {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -457,6 +458,8 @@ input[type=”file”]#imgUpload {
 	position: absolute;
 	z-index: -1;
 }
+
+
 
 label[for="imgUpload"] {
 	font-size: 14px;
@@ -481,6 +484,41 @@ label[for="imgUpload"] {
 	border-radius: 50%;
 }
 
+<<<<<<< HEAD
+.alert {
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: text;
+    padding: 8px 10px;
+	transition: border .1s linear;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.img-load {
+	margin-bottom: 10px;
+}
+
+label[for="profile-picture"] {
+	color: #5e8396;
+    font-size: 21px;
+    line-height: 32px;
+	font-weight: 400;
+	margin-left: 32px;
+}
+
+=======
 .navbar-toggler-icon {
 	color: #000000!important;
 }
@@ -503,3 +541,4 @@ label[for="imgUpload"] {
 	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
 	text-decoration: none;
 }
+>>>>>>> 77c08d3819398334d959d46be023fe6e16082d5d

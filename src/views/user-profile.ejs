@@ -12,46 +12,59 @@
                     <%- include partials/navbar %>
                         <% } %>
 
+
                         <div class="container pt-5">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <h3 class="experience-tittle">
-                                        <%= user.name %>
-                                    </h3>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row align-content-center">
-                                        <% if (image != null || image!= 'undefined') { %>
-                                           <img class="profile_img" src="<%= image %>"> 
-                                        <% } %>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 mb-3">
-                                            <!--<h3>Nombre de la Experiencia</h3>-->
-                                            <span class="text-muted font-weight-normal font-italic d-block" id="userName">Nombre: <%= user.name %></span>
-                                            <span class="text-muted font-weight-normal font-italic d-block" id="userSurname">Apellido: <%= user.surname %></span>
-                                            <span class="text-muted font-weight-normal font-italic d-block" id="userEmail">Email: <%= user.email %></span>
-                                            <span class="text-muted font-weight-normal font-italic d-block" id="userPhone">Teléfono: <%= user.phone ? user.phone : '' %></span>
-                                        </div>
-                                                                       
-                                        <div class="col-md-6">
-                                            <form action="/users/edit-profile" method="GET">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <a href="/users/edit-profile" class="btn btn-secondary">Editar</a>
-                                                    </div>
+                             <div class="col-md-6 col-sm-6 mb-3">
+                                  <div class="header-title">
+                                     <h1 class="wv-heading--title">
+                                     <%= user.name %> <%= user.surname %>
+                                     </h1>
+                                     <h2 class="wv-heading--subtitle">
+                                     Bienvenid@ a Derivè!  
+                                     </h2>
+                                  </div>
+                               </div>
+
+                               <div class="col-md-6 col-sm-6 mb-3">
+                                <div class="form">
+                                       <form action="/users/edit-profile"  name="profile-picture" method="POST" enctype="multipart/form-data">
+                                          <%= typeof msg != 'undefined' ? msg : '' %>
+                                             <div class="form-group">
+                                                <% if (image != null || image!= 'undefined') { %>
+                                                    <img class="profile_img" src="<%= image %>"> 
+                                                 <% } else { %>
+                                                    <i class="fas fa-user-circle"></i>
+                                                 <% } %>
+                                             </div>
+                                       </form>
+                                            <div class="alert alert-secondary" role="alert">
+                                                <span class="text-muted font-weight-normal font-italic d-block" id="userName">Nombre: <%= user.name %></span>
+                                            </div>
+                                            <div class="alert alert-secondary" role="alert">
+                                                <span class="text-muted font-weight-normal font-italic d-block" id="userSurname">Apellido: <%= user.surname %></span>
+                                            </div>
+                                            <div class="alert alert-secondary" role="alert">
+                                                <span class="text-muted font-weight-normal font-italic d-block" id="userEmail">Email: <%= user.email %></span>
+                                            </div>    
+                                            <div class="alert alert-secondary" role="alert">
+                                                <span class="text-muted font-weight-normal font-italic d-block" id="userPhone">Teléfono: <%= user.phone ? user.phone : '' %></span>
+                                            </div>
+                                            <div class= "dropdown-divider"> </div>                               
+                                            <div class="col-md-6 col-sm-6 mb-3">
+                                                <div class="text-center">
+                                                <form action="/users/edit-profile" method="GET">
+                                                <div class="form-group row align-content-center">    
+                                                <a href="/users/edit-profile" class="btn btn-block send-button tx-tfm">Editar Datos</a> 
+                                                </form>
                                                 </div>
-                                            </form>
-                                        </div>
-                                        
-                                        
-                        
-                                    </div>
+                                                </div>                               
+                                            </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>      
+                        </div>                          
+
                         
 
                                 <!-- Footer -->
