@@ -36,7 +36,7 @@ const controller = {
                 }
             })
 
-            res.redirect('/carts)
+            res.redirect('/carts')
         })
     },
 
@@ -65,7 +65,7 @@ const controller = {
         //     console.log('RSULTADO',result)
         // )
 
-        res.redirect('/carts)
+        res.redirect('/carts')
         })
     },
 
