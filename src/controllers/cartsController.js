@@ -35,12 +35,8 @@ const controller = {
                 subtotal: qty * product.price
                 }
             })
-            
-            let msg = 1;
 
-            res.redirect('/products/detail/' + product.id, {
-                msg: msg
-            })
+            res.redirect('/carts)
         })
     },
 
@@ -67,12 +63,9 @@ const controller = {
         //     //     total: result[0].total
         //     // })
         //     console.log('RSULTADO',result)
-        // )            
-        let msg = 1;
+        // )
 
-        res.redirect('/products/detail/' + product.id, {
-            msg
-        })
+        res.redirect('/carts)
         })
     },
 
