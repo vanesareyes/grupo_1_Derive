@@ -36,7 +36,11 @@ const controller = {
                 }
             })
             
-            res.redirect('/carts')
+            let msg = 1;
+
+            res.redirect('/products/detail/' + product.id, {
+                msg: msg
+            })
         })
     },
 
@@ -44,7 +48,7 @@ const controller = {
         req.session.cart = 11;
 
         let product = await db.product.findByPk(req.params.product)
-        console.log('PRODUCTO',product)
+        console.log('PRODUCTO',product.id)
 
         db.cart.findByPk(req.session.cart).then(cart => {
             cart.addProduct(product, {through: {
@@ -64,8 +68,11 @@ const controller = {
         //     // })
         //     console.log('RSULTADO',result)
         // )            
+        let msg = 1;
 
-        res.redirect('/carts')
+        res.redirect('/products/detail/' + product.id, {
+            msg: msg
+        })
         })
     },
 
