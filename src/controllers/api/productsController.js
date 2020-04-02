@@ -10,8 +10,8 @@ const { QueryTypes } = require('sequelize');
 const controller = {
 
     // //List products
-    list: (req, res) => {
-        db.product.findAll({
+    list: async (req, res) => {
+       let products = db.product.findAll({
             include: [
                 "location",
                 "category"
@@ -19,7 +19,12 @@ const controller = {
             attributes: {
                 exclude: ["price", "img", "img2", "img3", "img4", "img5", "categories_id", "locations_id", "createdAt", "created_at", "updatedAt", "updated_at", "stock", "destacado", "deletedAt", "deleted_at", "product.category.id", "location.id" ]
             }
-        }).then(products => {
+        })
+        
+        let countByCategory = await sequelize.query("SELECT categories.category, COUNT(products.id) AS `countByCategory` FROM `products` INNER JOIN `locations` ON locations.id = `products`.`locations_id` INNER JOIN `categories` ON categories.id = `products`.`categories_id` GROUP BY categories.category", { type: QueryTypes.SELECT });
+
+        Promise.all([products, countByCategory])        
+          .then(([products, countByCategory]) => {
             for (product of products){
                 product.setDataValue("detail","http://localhost:3001/api/products/" + product.id) 
                 
@@ -28,6 +33,7 @@ const controller = {
                 meta: {
                     count: products.length
                     },
+                countByCategory,
                 products
             }
             res.json(respuesta)        
