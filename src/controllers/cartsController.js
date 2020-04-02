@@ -71,7 +71,7 @@ const controller = {
         let msg = 1;
 
         res.redirect('/products/detail/' + product.id, {
-            msg: msg
+            msg
         })
         })
     },

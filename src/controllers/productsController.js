@@ -46,10 +46,12 @@ const controller = {
             })
             .then((product) => {
                 // console.log('PRODUCTO',product)
+                let msg = undefined;
                 res.render('productDetail', {
                     product,
                     cart,
-                    isAdded: isAdded.length > 0
+                    isAdded: isAdded.length > 0,
+                    msg : msg
                 })
             })
 
