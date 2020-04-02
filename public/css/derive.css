@@ -484,7 +484,6 @@ label[for="imgUpload"] {
 	border-radius: 50%;
 }
 
-<<<<<<< HEAD
 .alert {
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     cursor: text;
@@ -518,7 +517,6 @@ label[for="profile-picture"] {
 	margin-left: 32px;
 }
 
-=======
 .navbar-toggler-icon {
 	color: #000000!important;
 }
@@ -541,4 +539,3 @@ label[for="profile-picture"] {
 	text-shadow: 0px 0px 5px rgba(249, 58, 138, 0.15);
 	text-decoration: none;
 }
->>>>>>> 77c08d3819398334d959d46be023fe6e16082d5d
