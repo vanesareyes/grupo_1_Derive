@@ -24,8 +24,9 @@ En 2019 realicé en Digital House el curso de Fullstack Node JS a raíz de obten
 ###### Matias Sicardi
 JR Full Stack developer. Orientado a Front End y UX. Crítico en Artes (ISDA), Consultor UX para Museos e Instituciones Culturales, apasionado por mezclar Código, Arte, Cultura y Comunicación, con un profundo conocimiento en el campo de las Instituciones Culturales y Artísticas Latinoamericanas. En 2010 realicé el Programa Ejecutivo de Community Management en la UP. En 2014 realicé el curso de Front End Web Designer en Coderhouse. En 2019 realicé en Digital House el curso de Fullstack Node JS.
 
-###### Leonardo Bana
-Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
+###### Leonardo Baña
+JR Full Stack developer. Orientado a Front End y MySQL. Técnico superior en higiene y seguridad en el trabajo. En el año 2012 rendí el First certificate in english (FCE). Cocinero entusiasta, amante de la música y los deportes extremos. 
+En 2019 realicé en Digital House el curso de Fullstack Node JS.
 
 ###### Vanesa Reyes
 JR Full Stack developer. Orientada a Back End y JavaScript. Científica y consultora en gestión de ruido en el océano. Estudiante de la licenciatura en Cs. de la Computación en la Univerdad de Buenos Aires.
