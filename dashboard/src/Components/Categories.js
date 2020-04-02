@@ -63,7 +63,7 @@ componentDidMount() {
                             <tr>
                               <th scope="row"key={i + 1}>{i+1}</th>
                               <td key={category.category + i}>{category.category}</td>
-                              <td key={category.countByCategory + i}>{category.countByCategory}</td>
+                              <td className="text-center" key={category.countByCategory + i}>{category.countByCategory}</td>
                             </tr>
                             ))}
                         </tbody>
