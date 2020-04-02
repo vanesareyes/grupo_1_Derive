@@ -22,7 +22,7 @@ JR Full Stack developer. Orientado a Back End y JavaScript. Estudiante de la lic
 En 2019 realicé en Digital House el curso de Fullstack Node JS a raíz de obtener una Beca del Banco Santander. En 2020 trabajé como 'software engineer' con el equipo de desarrollo de Orchard Mile.
 
 ###### Matias Sicardi
-Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
+JR Full Stack developer. Orientado a Front End y UX. Crítico en Artes (ISDA), Consultor UX para Museos e Instituciones Culturales, apasionado por mezclar Código, Arte, Cultura y Comunicación, con un profundo conocimiento en el campo de las Instituciones Culturales y Artísticas Latinoamericanas. En 2010 realicé el Programa Ejecutivo de Community Management en la UP. En 2014 realicé el curso de Front End Web Designer en Coderhouse. En 2019 realicé en Digital House el curso de Fullstack Node JS.
 
 ###### Leonardo Bana
 Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
