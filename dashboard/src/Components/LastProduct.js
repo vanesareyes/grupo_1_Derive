@@ -7,11 +7,30 @@ class LastProduct extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      product:{}
+      product:[]
     }
 }
-
 componentDidMount() {
+  console.log('Me monte')
+  fetch("http://localhost:3001/api/products/lastProduct")
+    .then(response => response.json())
+    .then(
+      (data) => {
+        console.log(data)
+        this.setState({
+          isLoaded: true,
+          product: data[0]
+        })
+      },
+      (error) => {
+        this.setState({
+        isLoaded: true,
+        error
+        });
+      }
+    )
+}
+/*componentDidMount() {
   console.log('Me monte')
   fetch("http://localhost:3001/api/products")
     .then(response => response.json())
@@ -40,10 +59,11 @@ componentDidMount() {
     )
   }
  
+        */
     
        
        render() {
-        const {error,isLoaded, product} = this.state;
+        const {error,isLoaded,product} = this.state;
         if(error) {
         return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
@@ -82,7 +102,7 @@ componentDidMount() {
                             </tr>
                             <tr>
                             <th>Imagen</th>
-                                <td><img className="dashboard-img" src={product.image_URL} alt=""></img></td>
+                                <td><img className="dashboard-img" src={product.img} alt=""></img></td>
                             </tr>
                             <tr>
                             <th>Stock</th>
@@ -99,5 +119,5 @@ componentDidMount() {
        }
     
       }
-        
+
 export default LastProduct;

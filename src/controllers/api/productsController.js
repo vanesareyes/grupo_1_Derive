@@ -26,7 +26,7 @@ const controller = {
         Promise.all([products, countByCategory])        
           .then(([products, countByCategory]) => {
             for (product of products){
-                product.setDataValue("detail","http://localhost:3001/api/products/" + product.id) 
+                product.setDataValue("detail","http://localhost:3001/api/products/detail/" + product.id) 
                 
             }
             let respuesta = {                
@@ -57,6 +57,7 @@ const controller = {
 
         
     // },
+
     detail: (req, res) => {
         db.product.findByPk(req.params.id, {
             include: [
@@ -70,8 +71,22 @@ const controller = {
             product.setDataValue("image_URL",product.img)
             res.json(product)
         })
+    },
+    
+    lastProduct: (req, res) => {
+        db.product.findAll({
+            order: sequelize.literal('id DESC'), 
+            limit: 1, 
+            include: [
+                "location",
+                "category"
+            ],
+        }
+        ).then(product => {
+            
+            res.json(product)
+        })
     }
-
 };
 
 module.exports = controller;
